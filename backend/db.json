@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "preco": 6.0,
+        "carrinho": false,
+        "comprado": false,
+        "comprado_por": null
+    },
+    {
+        "id": 2,
+        "preco": 6.0,
+        "carrinho": false,
+        "comprado": false,
+        "comprado_por": null
+    },
+    {
+        "id": 3,
+        "preco": 6.0,
+        "carrinho": false,
+        "comprado": false,
+        "comprado_por": null
+    },
+    {
+        "id": 4,
+        "preco": 6.0,
+        "carrinho": false,
+        "comprado": false,
+        "comprado_por": null
+    },
+    {
+        "id": 5,
+        "preco": 6.0,
+        "carrinho": false,
+        "comprado": false,
+        "comprado_por": null
+    }
+]
