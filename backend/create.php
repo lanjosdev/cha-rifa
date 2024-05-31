@@ -6,17 +6,19 @@ const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZER
 
 // FUNÇÕES:
 function createNumbers($qtd, $preco) {
+    //Mudara para =array() e testar no dev1
     $createArray = [];
 
     for($idx = 0; $idx < $qtd; $idx++) {
+        //Cria objeto mesmo OU array usando (object)
         $obj = new stdClass;
         $obj->id = $idx + 1;
-        $obj->preco = floatval($preco);
+        $obj->preco = floatval($preco); //retira floatval para teste no dev1
         $obj->carrinho = false;
-        $obj->comprado = false;
         $obj->comprado_por = null;
 
-        $createArray[] = $obj;
+        //Colocar [$idx] e testar no dev1 ???
+        $createArray[$idx] = $obj;
     }
 
     file_put_contents('db.json', json_encode($createArray, CONSTANTS));
@@ -24,16 +26,14 @@ function createNumbers($qtd, $preco) {
     $jsonFileNovo = file_get_contents('db.json');
     $newJsonDecode = json_decode($jsonFileNovo);
     if(json_last_error()) {
-        $response = [
+        return [
             'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
         ];
-
-        return $response;
     }
 
     return [
         'success' => true,
-        'data' => $newJsonDecode
+        'data' => $createArray
     ];    
 }
 
@@ -44,24 +44,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $qtd = $_POST['qtd'] ?? null; //força ser inteiro
     $preco = $_POST['preco'] ?? 20.0;
 
-    // if(json_last_error()) {
-    //     $response = [
-    //         'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
-    //     ];
-    // }
-    // else {
-        if($qtd && $qtd > 0) {
-            $response = createNumbers($qtd, $preco);
-        }
-        else {
-            $response = [
-                'erro' => 'Erro no POST'
-            ];
-        }
-    // }
+    if($qtd && $qtd > 0) {
+        $response = createNumbers($qtd, $preco);
+    }
+    else {
+        $response = [
+            'erro' => 'Erro no POST'
+        ];
+    }
 
     echo json_encode($response, CONSTANTS);
-} else {
+} 
+else {
     // Se a requisição não for do tipo GET, retorna um erro
     $response = [
         'erro' => 'Método não permitido'

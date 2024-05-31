@@ -33,7 +33,7 @@ function updateNumber($id, $objEdit, $jsonDeco) {
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
     $id = intval($_POST['id']); //força ser inteiro
-    $objEdit = json_decode(($_POST['editObj']));
+    $objEdit = json_decode(($_POST['editObj'])); //força ser obj??? melhor(object)?
 
     if(json_last_error()) {
         $response = [

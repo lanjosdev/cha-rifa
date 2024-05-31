@@ -1,31 +1,32 @@
-<?php 
-
+<?php
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
 $jsonFileString = file_get_contents('db.json');
-$jsonDeco = json_decode($jsonFileString); // array com Objetos
+$jsonDecode = json_decode($jsonFileString); // array com Objetos
 
 
 // FUNÇÕES:
-function getAllNumbers($jsonDeco) {
-    // echo json_encode([
-    //     'success' => true,
-    //     'data' => [5, 4, 3.0]
-    // ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION);
+function getAllNumbers($jsonDecode) {
     
     return [
         'success' => true,
-        'data' => $jsonDeco
+        'data' => $jsonDecode
     ];
 }
 
-function getIdNumber($id, $jsonDeco) {
-    // $sql_code = "SELECT * FROM clientes WHERE id=$idCliente";
-    $itemGet = $jsonDeco[$id - 1]; // Objeto [idx]
+function getIdNumber($id, $jsonDecode) {
+    if(isset($jsonDecode[$id - 1])) {
+        $objGet = $jsonDecode[$id - 1];
+    }
+    else {
+        return [
+            'erro' => 'Item não encontrado'
+        ];
+    }
 
     return [
         'success' => true,
-        'data' => $itemGet
+        'data' => $objGet
     ];    
 }
 
@@ -36,24 +37,23 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
         $response = [
             'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
         ];
-
-        echo json_encode($response, CONSTANTS);
     }
     else {
         $id = $_GET['id'] ?? null;
 
         if($id) {
             //get por id:
-            $response = getIdNumber($id, $jsonDeco);
+            $response = getIdNumber($id, $jsonDecode);
         }
         else {
             // get All:
-            $response = getAllNumbers($jsonDeco);
+            $response = getAllNumbers($jsonDecode);
         }
-
-        echo json_encode($response, CONSTANTS);
     }
-} else {
+
+    echo json_encode($response, CONSTANTS);
+} 
+else {
     // Se a requisição não for do tipo GET, retorna um erro
     $response = [
         'erro' => 'Método não permitido'
