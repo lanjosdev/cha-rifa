@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
+        "preco": 11,
+        "carrinho": true,
+        "comprado_por": "lucas"
     },
     {
         "id": 2,
-        "preco": 20.0,
-        "carrinho": false,
+        "preco": 11,
+        "carrinho": true,
         "comprado_por": null
     },
     {
@@ -26,7 +26,7 @@
     {
         "id": 5,
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null
     },
     {

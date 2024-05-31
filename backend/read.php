@@ -39,15 +39,21 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
         ];
     }
     else {
-        $id = intval($_GET['id']) ?? null;
+        $id = $_GET['id'] ?? null;
 
-        if($id || $id === 0) {
+        if($id) {
             //get por id:
+            $id = intval($id);
             $response = getIdNumber($id, $jsonDecode);
         }
-        else {
+        else if($id === null) {
             // get All:
-            $response = getAllNumbers($jsonDecode);
+            $response = getAllNumbers($jsonDecode);            
+        } 
+        else {
+            $response = [
+                'erro' => 'Item não encontrado'
+            ];
         }
     }
 
