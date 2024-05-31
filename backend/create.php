@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
 
@@ -21,8 +20,10 @@ function createNumbers($qtd, $preco) {
         $createArray[$idx] = $obj;
     }
 
+    // Cria novo ou sobreescreve arquivo "db.json"
     file_put_contents('db.json', json_encode($createArray, CONSTANTS));
 
+    // Verifica se o arquivo foi escrito corretamente
     $jsonFileNovo = file_get_contents('db.json');
     $newJsonDecode = json_decode($jsonFileNovo);
     if(json_last_error()) {
@@ -41,7 +42,7 @@ function createNumbers($qtd, $preco) {
 // REQUESTS & RESPONSES:
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
-    $qtd = $_POST['qtd'] ?? null; //força ser inteiro
+    $qtd = intval($_POST['qtd']) ?? null;
     $preco = $_POST['preco'] ?? 20.0;
 
     if($qtd && $qtd > 0) {

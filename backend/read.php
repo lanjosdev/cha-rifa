@@ -39,9 +39,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
         ];
     }
     else {
-        $id = $_GET['id'] ?? null;
+        $id = intval($_GET['id']) ?? null;
 
-        if($id) {
+        if($id || $id === 0) {
             //get por id:
             $response = getIdNumber($id, $jsonDecode);
         }
