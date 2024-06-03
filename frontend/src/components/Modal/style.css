@@ -1,0 +1,77 @@
+.Modal {
+    padding: 0 15px;
+    background-color: rgba(35, 35, 35, 0.6);
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: showModal .3s ease-in-out;
+
+    .modal-background {   
+        position: absolute;    
+        width: 100%;
+        height: 100%;
+        z-index: 21;
+    }
+
+    .modal-window {
+        background-color: #fff;
+        width: 100%;
+        max-width: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 1px 10px 0px #00000080;
+        /* box-shadow: 0 0 20px 5px #00000085; */
+        z-index: 30;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+
+        animation: showModal .5s ease-in-out;
+
+        svg {
+            margin: 0 auto;
+            width: 100%;
+            max-width: fit-content;
+        }
+
+        .top-window {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .loading-db {
+            padding: 4.2rem 0;
+            text-align: center;
+        }
+
+        /* .content-window {
+           
+        } */
+
+        
+    }
+
+
+    /* ANIMAÇÕES: */
+    @keyframes showModal {
+        0% {
+            opacity: 0; 
+        }
+        100% {
+            opacity: 1; 
+        }
+    }
+}

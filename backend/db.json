@@ -1,601 +1,61 @@
 [
     {
         "id": 1,
-        "preco": 11,
+        "preco": 11.5,
         "carrinho": true,
         "comprado_por": "lucas"
     },
     {
         "id": 2,
-        "preco": 11,
-        "carrinho": true,
+        "preco": 18.0,
+        "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 3,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 4,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 5,
-        "preco": 20.0,
+        "preco": 11.5,
         "carrinho": true,
-        "comprado_por": null
+        "comprado_por": "Lol"
     },
     {
         "id": 6,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 7,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 8,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 9,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     },
     {
         "id": 10,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 11,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 12,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 13,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 14,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 15,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 16,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 17,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 18,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 19,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 20,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 21,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 22,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 23,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 24,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 25,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 26,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 27,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 28,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 29,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 30,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 31,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 32,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 33,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 34,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 35,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 36,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 37,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 38,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 39,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 40,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 41,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 42,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 43,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 44,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 45,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 46,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 47,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 48,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 49,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 50,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 51,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 52,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 53,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 54,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 55,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 56,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 57,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 58,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 59,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 60,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 61,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 62,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 63,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 64,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 65,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 66,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 67,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 68,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 69,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 70,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 71,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 72,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 73,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 74,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 75,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 76,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 77,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 78,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 79,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 80,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 81,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 82,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 83,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 84,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 85,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 86,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 87,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 88,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 89,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 90,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 91,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 92,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 93,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 94,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 95,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 96,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 97,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 98,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 99,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 100,
-        "preco": 20.0,
+        "preco": 18.0,
         "carrinho": false,
         "comprado_por": null
     }

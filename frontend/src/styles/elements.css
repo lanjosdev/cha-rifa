@@ -1,0 +1,85 @@
+/* GRID LAYOUT */
+.grid {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+}
+/* GRID LAYOUT */
+
+.btn-add {
+    background-color: var(--color-primary);
+    padding: 0 1rem;
+    /* height: $height; */
+    /* line-height: $height; */
+
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 7px;
+    
+    /* will-change: filter; */
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(0.9);
+    }
+}
+
+.btn-add-secundary {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: .4rem .5rem .4rem .1rem;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    transition: all .4s ease-in-out;
+
+    ion-icon {
+        background-color: var(--color-primary);
+        padding: 1px;
+        color: var(--color-bg-2);
+        font-size: 2.1rem;
+        border-radius: 50%;
+
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+
+        ion-icon {
+            background-color: transparent;
+            transform: rotate(90deg);
+            color: #fff;
+        }
+    }
+}
+
+.btn-close {
+    line-height: 0;
+    height: fit-content;
+    border: 2px solid var(--color-text);
+    border-radius: 6px;
+
+    transition: all .2s ease-in-out;
+
+    ion-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &:hover {
+        background-color: var(--color-text);
+        color: #fff;
+    }            
+}

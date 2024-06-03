@@ -1,0 +1,145 @@
+:root {
+    --color-primary: #1f80e0;
+    --color-secundary: #3b3b3b;
+    --color-bg-1: #EEEEEE;
+    --color-bg-2: #D5D3D2;
+    --color-text: #222121;
+
+    --gray-100: #F4F4F4;
+    --gray-200: #e1e1e6;
+    --gray-300: #d5d3d2;
+    --gray-400: #656362;
+    --gray-600: #323238;
+    --gray-700: #2D2C29;
+    --gray-800: #202024;
+    --gray-900: #121214;
+
+    --font-main: 'Open Sans';
+    --font-headers: 'Krona One';
+
+    /* color-scheme: light dark; */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+img {
+    display: inline-block;
+    width: 100%;
+    max-width: fit-content;
+}
+
+a {
+    display: inline-block;
+    /* color: inherit; */
+    text-decoration: none;
+}
+
+input, textarea, select {
+    outline: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+button {
+    display: inline-block;
+    cursor: pointer;
+}
+/* RESET */
+
+
+/* GLOBAL */
+html {
+    scroll-behavior: smooth;
+
+    font-size: 62.5%; /* Pra usar rem divisivel por 10 */
+    @media screen and (max-width: 480px) {
+        font-size: 55%;
+    }
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-color: var(--color-bg-1);
+    font-size: 1.6rem; /* Pra garantir q o padrao seja 16px no navegador*/
+    color: var(--color-text);
+}
+body, input, textarea, button, select, a {
+    font-family: var(--font-main), Verdana, sans-serif;
+}
+
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* GLOBAL */
+
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+.fadeIn {
+    animation: fadeIn .5s ease;
+}
+
+@keyframes showSidebar {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+.showSidebar {
+    animation: showSidebar .3s ease-in-out;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+.show {
+    animation: show .4s ease-in-out;
+}
+/* ANIMATIONS */
