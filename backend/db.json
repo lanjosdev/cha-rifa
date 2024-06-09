@@ -7,9 +7,9 @@
     },
     {
         "id": 2,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
+        "preco": 15,
+        "carrinho": true,
+        "comprado_por": "Lol"
     },
     {
         "id": 3,

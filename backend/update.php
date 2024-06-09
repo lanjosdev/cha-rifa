@@ -1,4 +1,5 @@
 <?php
+require('index.php');
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
 $jsonFileString = file_get_contents('db.json');
