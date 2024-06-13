@@ -1,61 +1,13 @@
 [
     {
         "id": 1,
-        "preco": 11.5,
+        "preco": 15.0,
         "carrinho": true,
-        "comprado_por": "lucas"
+        "comprado_por": "Lol"
     },
     {
         "id": 2,
-        "preco": 15,
-        "carrinho": true,
-        "comprado_por": "Lol"
-    },
-    {
-        "id": 3,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 4,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 5,
-        "preco": 11.5,
-        "carrinho": true,
-        "comprado_por": "Lol"
-    },
-    {
-        "id": 6,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 7,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 8,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 9,
-        "preco": 18.0,
-        "carrinho": false,
-        "comprado_por": null
-    },
-    {
-        "id": 10,
-        "preco": 18.0,
+        "preco": 12.0,
         "carrinho": false,
         "comprado_por": null
     }

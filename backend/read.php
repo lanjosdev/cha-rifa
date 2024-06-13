@@ -2,7 +2,7 @@
 require('index.php');
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
-$jsonFileString = file_get_contents('db.json');
+$jsonFileString = file_get_contents('./db.json');
 $jsonDecode = json_decode($jsonFileString); // array com Objetos
 
 
@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
         } 
         else {
             $response = [
-                'erro' => 'Item não encontrado'
+                'erro' => 'Parametro Invalido'
             ];
         }
     }

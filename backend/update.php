@@ -2,19 +2,20 @@
 require('index.php');
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
-$jsonFileString = file_get_contents('db.json');
+$jsonFileString = file_get_contents('./db.json');
 $jsonDecode = json_decode($jsonFileString); // array com Objetos
 
 
 // FUNÇÕES:
 function updateItem($id, $objEdit, $jsonDecode) {
+    $objEdit->preco = floatval($objEdit->preco);
     $jsonDecode[$id - 1] = $objEdit;
 
-    $newFileString = file_put_contents('db.json', json_encode($jsonDecode, CONSTANTS));
+    $newFileString = file_put_contents('./db.json', json_encode($jsonDecode, CONSTANTS));
 
     // usar essa logica no create OU verificar permissões de edição de arquivo no dev1 ???
     if($newFileString) {
-        $jsonFileAtualizado = file_get_contents('db.json');
+        $jsonFileAtualizado = file_get_contents('./db.json');
         $newJsonDecode = json_decode($jsonFileAtualizado);
         if(json_last_error()) {
             return [
@@ -38,11 +39,11 @@ function updateItem($id, $objEdit, $jsonDecode) {
 // REQUESTS & RESPONSES:
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
-    $id = intval($_POST['id']) ?? null; //força ser inteiro
-    $objEdit = $_POST['editObj'] ?? null; //transfroma string em obj
+    $id = $_POST['id'] ?? null;
+    $objEdit = $_POST['editObj'] ?? null;
 
-    if($id && $objEdit) {
-        $objEdit = json_decode($objEdit);
+    if(isset($id) && isset($objEdit)) {
+        $objEdit = json_decode($objEdit); //recebe em string e transforma em obj/array
 
         if(json_last_error()) {
             $response = [
@@ -50,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
         } 
         else if($id == $objEdit->id) {
-            $response = updateItem($id, $objEdit, $jsonDecode);
+            $response = updateItem(intval($id), $objEdit, $jsonDecode);
         } 
         else {
             $response = [

@@ -6,26 +6,25 @@ const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZER
 
 // FUNÇÕES:
 function createNumbers($qtd, $preco) {
-    //Mudara para =array() e testar no dev1
     $createArray = [];
 
     for($idx = 0; $idx < $qtd; $idx++) {
-        //Cria objeto mesmo OU array usando (object)
+        ////Cria objeto mesmo OU array usando (object)
         $obj = new stdClass;
         $obj->id = $idx + 1;
-        $obj->preco = floatval($preco); //retira floatval para teste no dev1
+        $obj->preco = $preco;
         $obj->carrinho = false;
         $obj->comprado_por = null;
 
-        //Colocar [$idx] e testar no dev1 ???
-        $createArray[$idx] = $obj;
+        //Colocar [$idx] e testar no dev1 ////
+        $createArray[] = $obj;
     }
 
     // Cria novo ou sobreescreve arquivo "db.json"
-    file_put_contents('db.json', json_encode($createArray, CONSTANTS));
+    file_put_contents('./db.json', json_encode($createArray, CONSTANTS));
 
     // Verifica se o arquivo foi escrito corretamente
-    $jsonFileNovo = file_get_contents('db.json');
+    $jsonFileNovo = file_get_contents('./db.json');
     $newJsonDecode = json_decode($jsonFileNovo);
     if(json_last_error()) {
         return [
@@ -43,11 +42,11 @@ function createNumbers($qtd, $preco) {
 // REQUESTS & RESPONSES:
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
-    $qtd = intval($_POST['qtd']) ?? null;
-    $preco = $_POST['preco'] ?? 20.0;
+    $qtd = $_POST['qtd'] ?? null;
+    $preco = $_POST['preco'] ?? 15.0;
 
-    if($qtd && $qtd > 0) {
-        $response = createNumbers($qtd, $preco);
+    if(isset($qtd) && $qtd > 0) {
+        $response = createNumbers(intval($qtd), floatval($preco));
     }
     else {
         $response = [
