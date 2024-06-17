@@ -1,6 +1,6 @@
 {
   "functions": {
-    "index.php": {
+    "backend/index.php": {
       "memory": 1024,
       "includeFiles": "db.json"
     }
@@ -8,7 +8,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "index.php"
+      "destination": "backend/index.php"
     }
   ]
 }
