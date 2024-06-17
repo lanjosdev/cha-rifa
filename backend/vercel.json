@@ -1,14 +1,7 @@
 {
   "functions": {
-    "backend/index.php": {
-      "memory": 1024,
-      "includeFiles": "db.json"
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.1"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "backend/index.php"
-    }
-  ]
+  }
 }
