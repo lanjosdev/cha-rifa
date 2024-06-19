@@ -1,11 +1,12 @@
 /* GRID LAYOUT */
 .grid {
     width: 100%;
-    max-width: 1280px;
+    max-width: 900px;
 
     margin: 0 auto;
 }
 /* GRID LAYOUT */
+
 
 .btn-add {
     background-color: var(--color-primary);
@@ -83,3 +84,111 @@
         color: #fff;
     }            
 }
+
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+.fadeIn {
+    animation: fadeIn .5s ease;
+}
+
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
+.fadeInRight {
+    animation: fadeInRight .5s ease;
+}
+
+@keyframes fadeInTop {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+.fadeInTop {
+    animation: fadeInTop .5s ease;
+}
+
+@keyframes fadeInBottom {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+.fadeInBottom {
+    animation: fadeInBottom .5s ease;
+}
+
+@keyframes fadeInZoom {
+    0% {
+      opacity: 0;
+      transform: scale(.5);
+    }
+    /* 100% {
+      opacity: 1;
+      transform: translateY(0%);
+    } */
+}
+.fadeInZoom {
+    animation: fadeInZoom .6s ease;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+.show {
+    animation: show .4s ease-in-out;
+}
+
+@keyframes showSidebar {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+.showSidebar {
+    animation: showSidebar .3s ease-in-out;
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* ANIMATIONS */

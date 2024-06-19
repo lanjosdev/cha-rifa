@@ -14,6 +14,7 @@ import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_GET_FILTER, NUMEROS_UPDATE_ID 
 import { toast } from "react-toastify";
 
 // Utils:
+import { formatarCasasNumero } from '../../utils/formatNumbers'
 
 // Assets:
 
@@ -26,20 +27,23 @@ export default function Home() {
     const [showError, setShowError] = useState(false);
     
     const [numbers, setNumbers] = useState([]); 
+    const [numbersSelecionados, setNumbersSelecionados] = useState([]);
     
+
     
     async function carregaNumbersRifa() 
     {
         try {
-            let obj = {
-                "preco": 16,
-                "carrinho": false,
-                "comprado_por": null,
-                "contato": null
-            };
+            // let obj = {
+            //     "preco": 15,
+            //     "carrinho": false,
+            //     "comprado_por": null,
+            //     "contato": null
+            // };
 
-            // const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
-            const response = await NUMEROS_UPDATE_ID(2, obj);
+            //const response = await NUMEROS_UPDATE_ID(2, obj);
+            //const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
+            const response = await NUMEROS_GET_ALL();
             console.log(response);
       
             setNumbers(response);
@@ -59,6 +63,29 @@ export default function Home() {
 
 
 
+    function handleNumerosSelecionados(numeroClicado) 
+    {
+        //let btns = document.querySelectorAll('.list-numbers button');
+        //let newLista = numbersSelecionados;
+
+        if(numbersSelecionados.includes(numeroClicado.id)) {
+            //newLista = newLista.filter(item => item != numeroClicado.id);
+            //btns[numeroClicado.idx].classList.remove('active');
+            setNumbersSelecionados(numbersSelecionados.filter(item => item != numeroClicado.id));
+        }
+        else {
+            //newLista.push(numeroClicado.id);
+            //btns[numeroClicado.idx].classList.add('active');
+            setNumbersSelecionados(prev=> [...prev, numeroClicado.id]);
+        }
+    }
+
+    function handleMostraSelecionados() 
+    {
+        console.log(numbersSelecionados);
+    }
+
+
     return (
         <>
         <header></header>
@@ -67,35 +94,36 @@ export default function Home() {
             <div className="grid">
 
             <h1>Cha rifa</h1>
+            <span>Numeros selecionado: {numbersSelecionados.length}</span>
 
             <div className="painel">
                 <div className="painel-content">
+
                     {loading ? (
                         
                     <p>Carregando...</p>
 
                     ) : (
 
+                    numbers.length > 0 ? (
                     <div className="list-numbers">
-                        {numbers.length > 0 ? (
-            
-                        numbers.map((number)=> (
-                            <>
-                            <button key={number.id}>
-                                {number.id}
-                            </button>
-                            <br />
-                            </>
-                        ))
-
-                        ) : (
-                        
-                        <p className='msg-erro'>{showError}</p>
-                        
-                        )}
+                        {numbers.map((numero, idx)=> (
+                        <button 
+                        key={numero.id} 
+                        onClick={()=> handleNumerosSelecionados({...numero, idx: idx})} 
+                        className={numbersSelecionados.includes(numero.id) ? 'active' : ''}
+                        >
+                            {formatarCasasNumero(numero.id)}
+                        </button>
+                        ))}                                                                                    
                     </div>
+                    ) : (
+                    <p className='msg-erro'>Nenhum numero no DB</p>
+                    )
 
                     )}
+
+                    <button onClick={handleMostraSelecionados}>Mostrar</button>
                 </div>
             </div>
 

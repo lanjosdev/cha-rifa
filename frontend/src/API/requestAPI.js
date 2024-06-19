@@ -14,7 +14,7 @@ export async function NUMEROS_CREATE_ALL(arrayObjs) {
    console.log('CALL FUNCTION API');
 
    const response = await axios({
-      method: "post",
+      method: "put",
       url: API_URL + '/numeros',
       data: arrayObjs,
       headers: { 
@@ -26,6 +26,7 @@ export async function NUMEROS_CREATE_ALL(arrayObjs) {
    // console.log(response.data);
    return response.data;
 }
+
 
 // Pega todos os Numeros (READ):
 export async function NUMEROS_GET_ALL() {
@@ -63,22 +64,22 @@ export async function NUMEROS_GET_FILTER(param) {
    return response.data;
 }
 
-// Edita numero (UPDATE):
+// Edita Numero (UPDATE):
 export async function NUMEROS_UPDATE_ID(id, newObj) {
    console.log('CALL FUNCTION API');
    
-   // const response = await axios.update(API_URL + '/numeros/' + id, newObj, { 
-   //    headers: { "Accept": "application/json" } 
-   // });
-   const response = await axios({
-      method: "update",
-      url: API_URL + '/numeros/' + id,
-      data: newObj,
-      headers: {
-         "Accept": "application/json",
-         'Access-Control-Allow-Origin': '*',
-      } 
+   const response = await axios.put(API_URL + '/numeros/' + id, newObj, { 
+      headers: { "Accept": "application/json" }
    });
+   // const response = await axios({
+   //    method: "put",
+   //    url: API_URL + '/numeros/' + id,
+   //    data: newObj,
+   //    headers: {
+   //       "Accept": "application/json",
+   //       'Access-Control-Allow-Origin': '*',
+   //    } 
+   // });
 
    // console.log(response.data);
    return response.data;

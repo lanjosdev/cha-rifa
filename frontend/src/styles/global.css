@@ -1,12 +1,19 @@
 :root {
-    --color-primary: #1f80e0;
-    --color-secundary: #3b3b3b;
-    --color-bg-1: #EEEEEE;
-    --color-bg-2: #D5D3D2;
+    --color-primary: #3483fa;
+    --color-secundary: #333133;
+    
+    --color-bg-1: #f0f0f0;
+    --color-bg-2: #dddddd;
+    --color-bg-3: #a8a8ad;
     --color-text: #222121;
+    
+    --color-w: #fff;
+    --color-b: #000;
+    --color-red: #E94D4D;
+    --color-ciano: #0AA699;
 
     --gray-100: #F4F4F4;
-    --gray-200: #e1e1e6;
+    --gray-200: #ECECEC;
     --gray-300: #d5d3d2;
     --gray-400: #656362;
     --gray-600: #323238;
@@ -76,6 +83,8 @@ body {
     background-color: var(--color-bg-1);
     font-size: 1.6rem; /* Pra garantir q o padrao seja 16px no navegador*/
     color: var(--color-text);
+
+    /* overflow-x: hidden; */
 }
 body, input, textarea, button, select, a {
     font-family: var(--font-main), Verdana, sans-serif;
@@ -85,61 +94,9 @@ body, input, textarea, button, select, a {
     opacity: 0.6;
     cursor: not-allowed;
 }
+label:has(+[required])::after {
+    content: ' *';
+    color: red;
+    font-size: 14px;
+}
 /* GLOBAL */
-
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-}
-.fadeIn {
-    animation: fadeIn .5s ease;
-}
-
-@keyframes showSidebar {
-    from {
-      opacity: 0;
-      transform: translateX(200px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-}
-.showSidebar {
-    animation: showSidebar .3s ease-in-out;
-}
-
-@keyframes show {
-    0% {
-        opacity: 0; 
-    }
-    100% {
-        opacity: 1; 
-    }
-}
-.show {
-    animation: show .4s ease-in-out;
-}
-/* ANIMATIONS */
