@@ -1,6 +1,6 @@
 // Funcionalidades / Libs:
 import { useState, useEffect } from 'react';
-import { NUMBERS_GET_ALL } from '../../API/requestAPI';
+import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_GET_FILTER, NUMEROS_UPDATE_ID } from '../../API/requestAPI';
 // import { useNavigate } from 'react-router-dom';
 // import Cookies from "js-cookie";
 
@@ -28,22 +28,30 @@ export default function Home() {
     const [numbers, setNumbers] = useState([]); 
     
     
-    async function carregaNumbersRifa() {
+    async function carregaNumbersRifa() 
+    {
         try {
-            const response = await NUMBERS_GET_ALL();
-            console.log(response.data);
+            let obj = {
+                "preco": 16,
+                "carrinho": false,
+                "comprado_por": null,
+                "contato": null
+            };
+
+            // const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
+            const response = await NUMEROS_UPDATE_ID(2, obj);
+            console.log(response);
       
-            setNumbers(response.data);
-          } 
-          catch(erro) {
-            console.log('Deu erro:');
-            console.log(erro);
-            setShowError('Números não encontrado!');
+            setNumbers(response);
+        } 
+        catch(erro) {
+            console.log('Deu erro: ', erro);
+            //setShowError('Números não encontrado!');
             toast.error('Erro ao carregar números');
-          }
-          finally {
+        }
+        finally {
             setLoading(false);
-          }        
+        }        
     }
     useEffect(()=> {
         carregaNumbersRifa();        
@@ -72,9 +80,12 @@ export default function Home() {
                         {numbers.length > 0 ? (
             
                         numbers.map((number)=> (
+                            <>
                             <button key={number.id}>
                                 {number.id}
                             </button>
+                            <br />
+                            </>
                         ))
 
                         ) : (

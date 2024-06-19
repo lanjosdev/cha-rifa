@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Pages:
 import Home from "./pages/Home";
-//import Grupo from './pages/Grupo';
+import Admin from "./pages/admin";
 // import Termos from "./pages/Termos";
 // import Brocked from "./pages/Brocked";
 
@@ -16,23 +16,7 @@ export default function AppRoutes() {
         <Routes>
             <Route path="/" element={ <Home/> } />
 
-            {/* <Route path="/grupo/:idGrupo" element={ <Grupo/> } /> */}
-
-
-            {/* <Route path="/termos" element={ 
-                <PrivateRoute> <Termos/> </PrivateRoute>  
-            }/> */}
-
-
-            {/* <Route path="/edite/:idCliente" element={ <EditaCliente /> } /> */}
-
-
-            {/* <Route path="/blocked" element={ <Brocked/> } /> */}
-
-
-            {/* <Route element={<PrivateRoute />}>
-                <Route path="/home" element={<Home/>} />
-            </Route> */}
+            <Route path='/admin' element={ <Admin/> } />
         </Routes>
     )
 }

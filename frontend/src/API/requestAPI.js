@@ -9,74 +9,77 @@ export const API_URL = api.api_url;
 
 
 // End-Points / Rotas da API:
-// READ //
-// Pega todos os Numbers db.json (READ):
-export async function NUMBERS_GET_ALL() {
+// Adiciona array de objetos (CREATE):
+export async function NUMEROS_CREATE_ALL(arrayObjs) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/read.php', {
-        headers: { "Accept": "application/json" },
-   });
-
-   // console.log(response.data);
-   return response.data;
-}
-// READ //
-
-
-
-
-// Pega Grupo pelo ID (READ):
-export async function GRUPO_GET_ID(idGrupo) {
-   console.log('CALL FUNCTION API');
-   const response = await axios.get(API_URL + '/grupo/' + idGrupo, { 
-      headers: { "Accept": "application/json" } 
+   const response = await axios({
+      method: "post",
+      url: API_URL + '/numeros',
+      data: arrayObjs,
+      headers: { 
+         "Accept": "application/json",
+         'Access-Control-Allow-Origin': '*',
+      } 
    });
 
    // console.log(response.data);
    return response.data;
 }
 
-// Adiciona novo Grupo (CREATE):
-export async function GRUPO_POST_ADD(grupo) {
+// Pega todos os Numeros (READ):
+export async function NUMEROS_GET_ALL() {
    console.log('CALL FUNCTION API');
-   const response = await axios.post(API_URL + '/grupo', {
-      "nome": grupo
-   },
-   { 
-      headers: { "Accept": "application/json" } 
-   }
-   );
+
+   const response = await axios.get(API_URL + '/numeros', {
+      headers: { "Accept": "application/json" },
+   });
 
    // console.log(response.data);
    return response.data;
 }
 
-// Edita nome do Grupo (UPDATE):
-export async function GRUPO_POST_EDIT(idGrupo, newNome) {
+// Pega Numero pelo ID (READ):
+export async function NUMEROS_GET_ID(id) {
    console.log('CALL FUNCTION API');
-   const response = await axios.post(API_URL + '/grupo/' + idGrupo, {
-      "nome": newNome,
-      "_method": "patch"
-   },
-   { 
-      headers: { "Accept": "application/json" } 
-   }
-   );
+
+   const response = await axios.get(API_URL + '/numeros/' + id, { 
+      headers: { "Accept": "application/json" }
+   });
 
    // console.log(response.data);
    return response.data;
 }
 
-// Deletar Grupo (DELETE):
-export async function GRUPO_DELETE(idGrupo) {
+// Filtra por parametro get (READ):
+export async function NUMEROS_GET_FILTER(param) {
    console.log('CALL FUNCTION API');
-   const response = await axios.delete(API_URL + '/grupo/' + idGrupo, {
-      headers: { "Accept": "application/json" } 
-   }
-   );
+
+   const response = await axios.get(API_URL + '/numeros?' + param.key + '=' + param.value, { 
+      headers: { "Accept": "application/json" }
+   });
 
    // console.log(response.data);
    return response.data;
 }
-// GRUPOS END //
+
+// Edita numero (UPDATE):
+export async function NUMEROS_UPDATE_ID(id, newObj) {
+   console.log('CALL FUNCTION API');
+   
+   // const response = await axios.update(API_URL + '/numeros/' + id, newObj, { 
+   //    headers: { "Accept": "application/json" } 
+   // });
+   const response = await axios({
+      method: "update",
+      url: API_URL + '/numeros/' + id,
+      data: newObj,
+      headers: {
+         "Accept": "application/json",
+         'Access-Control-Allow-Origin': '*',
+      } 
+   });
+
+   // console.log(response.data);
+   return response.data;
+}
