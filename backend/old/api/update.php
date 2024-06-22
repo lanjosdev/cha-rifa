@@ -9,7 +9,14 @@ $jsonDecode = json_decode($jsonFileString); // array com Objetos
 // FUNÇÕES:
 function updateItem($id, $objEdit, $jsonDecode) {
     $objEdit->preco = floatval($objEdit->preco);
-    $jsonDecode[$id - 1] = $objEdit;
+    if(isset($jsonDecode[$id - 1])) {
+        $jsonDecode[$id - 1] = $objEdit;
+    }
+    else {
+        return [
+            'erro' => 'ID não encontrado'
+        ];
+    }
 
     $newFileString = file_put_contents('./db.json', json_encode($jsonDecode, CONSTANTS));
 

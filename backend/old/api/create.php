@@ -15,6 +15,7 @@ function createNumbers($qtd, $preco) {
         $obj->preco = $preco;
         $obj->carrinho = false;
         $obj->comprado_por = null;
+        $obj->contato = null;
 
         //Colocar [$idx] e testar no dev1 ////
         $createArray[] = $obj;
