@@ -34,16 +34,17 @@ export default function Home() {
     async function carregaNumbersRifa() 
     {
         try {
-            // let obj = {
-            //     "preco": 15,
-            //     "carrinho": false,
-            //     "comprado_por": null,
-            //     "contato": null
-            // };
+            let obj = {
+                "id": 2,
+                "preco": 10,
+                "carrinho": false,
+                "comprado_por": null,
+                "contato": null
+            };
 
-            //const response = await NUMEROS_UPDATE_ID(2, obj);
+            const response = await NUMEROS_UPDATE_ID(2, obj);
             //const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
-            const response = await NUMEROS_GET_ALL();
+            //const response = await NUMEROS_GET_ALL();
             console.log(response);
       
             setNumbers(response);

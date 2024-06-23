@@ -55,7 +55,7 @@ export default function Admin() {
         setLoading(true);
 
         let qtd = inputQtd.current?.value;
-        let preco = inputPreco.current?.value || 15.0;
+        let preco = inputPreco.current?.value || 14.0;
 
         console.log('Quantidade: ', parseInt(qtd));
         console.log('Preco: ', parseFloat(preco));
@@ -64,20 +64,20 @@ export default function Admin() {
             qtd = parseInt(qtd);
             preco = parseFloat(preco);
 
-            let newArray = [];
-            for(let idx = 1; idx <= qtd; idx++) {
-                newArray.push({
-                    "id": idx,
-                    "preco": preco,
-                    "carrinho": false,
-                    "comprado_por": null,
-                    "contato": null
-                });
-            }
+            // let newArray = [];
+            // for(let idx = 1; idx <= qtd; idx++) {
+            //     newArray.push({
+            //         "id": idx,
+            //         "preco": preco,
+            //         "carrinho": false,
+            //         "comprado_por": null,
+            //         "contato": null
+            //     });
+            // }
 
-            if(newArray.length === qtd) {
+            // if(newArray.length === qtd) {
                 try {
-                    const response = await NUMEROS_CREATE_ALL(newArray);
+                    const response = await NUMEROS_CREATE_ALL(qtd, preco);
                     console.log(response);  
                     
                     toast.success('Nova lista de numeros criada!');
@@ -86,7 +86,7 @@ export default function Admin() {
                     console.log('DEU ERRO: ', erro);
                     toast.error('Erro ao criar lista!');
                 }
-            }
+            // }
         }
 
         console.log('Fim handleSubmitArrayObjs()');

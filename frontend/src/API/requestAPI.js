@@ -10,47 +10,83 @@ export const API_URL = api.api_url;
 
 // End-Points / Rotas da API:
 // Adiciona array de objetos (CREATE):
-export async function NUMEROS_CREATE_ALL(arrayObjs) {
+export async function NUMEROS_CREATE_ALL(qtd, preco) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios({
-      method: "put",
-      url: API_URL + '/numeros',
-      data: arrayObjs,
+   const response = await axios.post(API_URL + '/create.php', {
+      "qtd": qtd,
+      "preco": preco
+   }, {
       headers: { 
          "Accept": "application/json",
-         'Access-Control-Allow-Origin': '*',
-      } 
+         "Access-Control-Allow-Origin": "*"
+       }
    });
 
    // console.log(response.data);
    return response.data;
 }
+// export async function NUMEROS_CREATE_ALL(arrayObjs) {
+//    console.log('CALL FUNCTION API');
+
+//    const response = await axios({
+//       method: "put",
+//       url: API_URL + '/numeros',
+//       data: arrayObjs,
+//       headers: { 
+//          "Accept": "application/json",
+//          'Access-Control-Allow-Origin': '*',
+//       } 
+//    });
+
+//    // console.log(response.data);
+//    return response.data;
+// }
 
 
 // Pega todos os Numeros (READ):
 export async function NUMEROS_GET_ALL() {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/numeros', {
+   const response = await axios.get(API_URL + '/read.php', {
       headers: { "Accept": "application/json" },
    });
 
    // console.log(response.data);
    return response.data;
 }
+// export async function NUMEROS_GET_ALL() {
+//    console.log('CALL FUNCTION API');
+
+//    const response = await axios.get(API_URL + '/numeros', {
+//       headers: { "Accept": "application/json" },
+//    });
+
+//    // console.log(response.data);
+//    return response.data;
+// }
 
 // Pega Numero pelo ID (READ):
 export async function NUMEROS_GET_ID(id) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/numeros/' + id, { 
+   const response = await axios.get(API_URL + '/read.php?id=' + id, { 
       headers: { "Accept": "application/json" }
    });
 
    // console.log(response.data);
    return response.data;
 }
+// export async function NUMEROS_GET_ID(id) {
+//    console.log('CALL FUNCTION API');
+
+//    const response = await axios.get(API_URL + '/numeros/' + id, { 
+//       headers: { "Accept": "application/json" }
+//    });
+
+//    // console.log(response.data);
+//    return response.data;
+// }
 
 // Filtra por parametro get (READ):
 export async function NUMEROS_GET_FILTER(param) {
@@ -68,7 +104,10 @@ export async function NUMEROS_GET_FILTER(param) {
 export async function NUMEROS_UPDATE_ID(id, newObj) {
    console.log('CALL FUNCTION API');
    
-   const response = await axios.put(API_URL + '/numeros/' + id, newObj, { 
+   const response = await axios.post(API_URL + '/update.php', {
+      "id": id,
+      "editObj": newObj
+   }, {
       headers: { "Accept": "application/json" }
    });
    // const response = await axios({
