@@ -1,18 +1,20 @@
 <?php
-require('index.php');
+require('../index.php');
+
 // VARIAVEIS:
 const CONSTANTS = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
-$jsonFileString = file_get_contents('db.json');
+$jsonFileString = file_get_contents('../db.json');
 $jsonDecode = json_decode($jsonFileString); // array com Objetos
 
 
 // FUNÇÕES:
 function getAllNumbers($jsonDecode) {
     
-    return [
-        'success' => true,
-        'data' => $jsonDecode
-    ];
+    // return [
+    //     'success' => true,
+    //     'data' => $jsonDecode
+    // ];
+    return $jsonDecode;
 }
 
 function getIdNumber($id, $jsonDecode) {
@@ -25,10 +27,11 @@ function getIdNumber($id, $jsonDecode) {
         ];
     }
 
-    return [
-        'success' => true,
-        'data' => $objGet
-    ];    
+    // return [
+    //     'success' => true,
+    //     'data' => $objGet
+    // ]; 
+    return $objGet;   
 }
 
 

@@ -30,10 +30,7 @@ function updateItem($id, $objEdit, $jsonDecode) {
             ];
         }
 
-        return [
-            'success' => true,
-            'data' => $newJsonDecode[$id - 1]
-        ]; 
+        return $newJsonDecode[$id - 1]; 
     }
     else {
         return [
