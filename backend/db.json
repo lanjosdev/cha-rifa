@@ -1,30 +1,16 @@
 [
     {
         "id": 1,
-        "preco": 24.0,
+        "preco": 15.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null
     },
     {
-        "id": 2,
-        "preco": 24.0,
+        "preco": 15.0,
         "carrinho": false,
-        "comprado_por": null,
-        "contato": null
-    },
-    {
-        "preco": 15,
-        "carrinho": false,
-        "comprado_por": null,
+        "comprado_por": "Lucas",
         "contato": null,
-        "id": 3
-    },
-    {
-        "preco": 15,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 4
+        "id": 2
     }
 ]
