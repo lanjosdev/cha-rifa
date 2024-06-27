@@ -138,7 +138,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
             }
         }
         else if($id === null) {
-            echo "get All \n";
+            //echo "get All \n";
 
             $response = getAllNumbers($jsonDecode);            
         } 

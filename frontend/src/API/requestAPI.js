@@ -48,9 +48,7 @@ export async function NUMEROS_CREATE_ALL(qtd, preco) {
 export async function NUMEROS_GET_ALL() {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/read.php', {
-      headers: { "Accept": "application/json" },
-   });
+   const response = await axios.get(API_URL + '/read.php');
 
    // console.log(response.data);
    return response.data;

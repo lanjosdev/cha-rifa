@@ -42,9 +42,9 @@ export default function Home() {
                 "contato": null
             };
 
-            const response = await NUMEROS_UPDATE_ID(2, obj);
+            // const response = await NUMEROS_UPDATE_ID(2, obj);
             //const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
-            //const response = await NUMEROS_GET_ALL();
+            const response = await NUMEROS_GET_ALL();
             console.log(response);
       
             setNumbers(response);
