@@ -53,16 +53,6 @@ export async function NUMEROS_GET_ALL() {
    // console.log(response.data);
    return response.data;
 }
-// export async function NUMEROS_GET_ALL() {
-//    console.log('CALL FUNCTION API');
-
-//    const response = await axios.get(API_URL + '/numeros', {
-//       headers: { "Accept": "application/json" },
-//    });
-
-//    // console.log(response.data);
-//    return response.data;
-// }
 
 // Pega Numero pelo ID (READ):
 export async function NUMEROS_GET_ID(id) {
@@ -99,25 +89,14 @@ export async function NUMEROS_GET_FILTER(param) {
 }
 
 // Edita Numero (UPDATE):
-export async function NUMEROS_UPDATE_ID(id, newObj) {
+export async function NUMEROS_UPDATE_ID(formData) {
    console.log('CALL FUNCTION API');
-   
-   const response = await axios.post(API_URL + '/update.php', {
-      "id": id,
-      "editObj": newObj
-   }, {
-      headers: { "Accept": "application/json" }
-   });
-   // const response = await axios({
-   //    method: "put",
-   //    url: API_URL + '/numeros/' + id,
-   //    data: newObj,
-   //    headers: {
-   //       "Accept": "application/json",
-   //       'Access-Control-Allow-Origin': '*',
-   //    } 
-   // });
 
-   // console.log(response.data);
-   return response.data;
+   const response = await axios({
+      method: 'post',
+      url: API_URL + '/update.php',
+      data: formData, // ID já está no formData
+   });
+
+   console.log(response.data);
 }

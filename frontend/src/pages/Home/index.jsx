@@ -33,21 +33,26 @@ export default function Home() {
     
     async function carregaNumbersRifa() 
     {
-        try {
-            let obj = {
-                "id": 2,
-                "preco": 10,
-                "carrinho": false,
-                "comprado_por": null,
-                "contato": null
-            };
+        //=> UPDATE
+        // let idCliente = 2;
+        // let obj = {
+        //     preco: 10,
+        //     carrinho: false,
+        //     comprado_por: null,
+        //     contato: null
+        // };
 
-            // const response = await NUMEROS_UPDATE_ID(2, obj);
+        // let formData = new FormData();
+        // formData.append('id', idCliente);
+        // formData.append('editObj', JSON.stringify(obj));
+        
+        try {
+            // const response = await NUMEROS_UPDATE_ID(formData);
             //const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});
             const response = await NUMEROS_GET_ALL();
             console.log(response);
       
-            setNumbers(response);
+            setNumbers(response.data);
         } 
         catch(erro) {
             console.log('Deu erro: ', erro);

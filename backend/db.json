@@ -7,9 +7,9 @@
         "contato": null
     },
     {
-        "preco": 15.0,
+        "preco": 10.0,
         "carrinho": false,
-        "comprado_por": "Lucas",
+        "comprado_por": null,
         "contato": null,
         "id": 2
     }
