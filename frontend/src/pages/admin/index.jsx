@@ -8,9 +8,6 @@ import { NUMEROS_CREATE_ALL } from '../../API/requestAPI';
 // import { UserContext } from "../../contexts/userContext";
 
 // Components:
-// import { Header } from '../../components/ui/Header';
-// import { Tabela } from '../../components/ui/Tabela';
-// import { Modal } from '../../components/ui/Modal';
 import { toast } from "react-toastify";
 
 // Utils:
@@ -27,36 +24,15 @@ export default function Admin() {
     
     const inputQtd = useRef('');
     const inputPreco = useRef('');
-    
-    
-    // async function carregaNumbersRifa() {
-    //     try {
-    //         const response = await NUMBERS_GET_ALL();
-    //         console.log(response.data);
-      
-    //         setNumbers(response.data);
-    //       } 
-    //       catch(erro) {
-    //         console.log('Deu erro:');
-    //         console.log(erro);
-    //         setShowError('Números não encontrado!');
-    //         toast.error('Erro ao carregar números');
-    //       }
-    //       finally {
-    //         setLoading(false);
-    //       }        
-    // }
-    // useEffect(()=> {
-    //     carregaNumbersRifa();        
-    // }, []);
-    async function handleSubmitArrayObjs(e)
+
+
+    async function handleSubmitCreateArrayObjs(e)
     {
         e.preventDefault();
         setLoading(true);
 
         let qtd = inputQtd.current?.value;
-        let preco = inputPreco.current?.value || 14.0;
-
+        let preco = inputPreco.current?.value || 15;
         console.log('Quantidade: ', parseInt(qtd));
         console.log('Preco: ', parseFloat(preco));
 
@@ -64,35 +40,34 @@ export default function Admin() {
             qtd = parseInt(qtd);
             preco = parseFloat(preco);
 
-            // let newArray = [];
-            // for(let idx = 1; idx <= qtd; idx++) {
-            //     newArray.push({
-            //         "id": idx,
-            //         "preco": preco,
-            //         "carrinho": false,
-            //         "comprado_por": null,
-            //         "contato": null
-            //     });
-            // }
+            if(preco <= 0) {
+                toast.error('Preço inválido');
+                setLoading(false);
+                return;
+            }
 
-            // if(newArray.length === qtd) {
-                try {
-                    const response = await NUMEROS_CREATE_ALL(qtd, preco);
-                    console.log(response);  
-                    
-                    toast.success('Nova lista de numeros criada!');
-                }
-                catch(erro) {
-                    console.log('DEU ERRO: ', erro);
-                    toast.error('Erro ao criar lista!');
-                }
-            // }
+            let formData = new FormData();
+            formData.append('qtd', qtd);
+            formData.append('preco', preco);
+
+            try {
+                const response = await NUMEROS_CREATE_ALL(formData);
+                console.log(response);  
+                
+                toast.success('Nova lista de números criada!');
+            }
+            catch(erro) {
+                console.log('DEU ERRO: ', erro);
+                toast.error('Erro ao criar lista!');
+            }
+        }
+        else {
+            toast.error('Preencha os campos corretamente');
         }
 
-        console.log('Fim handleSubmitArrayObjs()');
+        console.log('Fim handleSubmitCreateArrayObjs()');
         setLoading(false);
     }
-
 
 
     return (
@@ -102,12 +77,12 @@ export default function Admin() {
         <main className='Page Home'>
             <div className="grid">
 
-            <h1>Cha rifa (cria numbers)</h1>
+            <h1>Cha rifa (cria nova lista de numbers)</h1>
 
-            <form onSubmit={handleSubmitArrayObjs}>
+            <form onSubmit={handleSubmitCreateArrayObjs}>
                 <div className="label-input">
                     <label htmlFor="qtd">Qtd de Numeros:</label>
-                    <input type="number" name="" id="qtd" ref={inputQtd} required />
+                    <input type="number" id="qtd" ref={inputQtd} min='1' required />
                 </div>
                 <div className="label-input">
                     <label htmlFor="preco">Preco:</label>

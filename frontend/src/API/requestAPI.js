@@ -10,39 +10,14 @@ export const API_URL = api.api_url;
 
 // End-Points / Rotas da API:
 // Adiciona array de objetos (CREATE):
-export async function NUMEROS_CREATE_ALL(qtd, preco) {
+export async function NUMEROS_CREATE_ALL(formData) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.post(API_URL + '/create.php', {
-      "qtd": qtd,
-      "preco": preco
-   }, {
-      headers: { 
-         "Accept": "application/json",
-         "Access-Control-Allow-Origin": "*"
-       }
-   });
+   const response = await axios.post(API_URL + '/create.php', formData);
 
    // console.log(response.data);
    return response.data;
 }
-// export async function NUMEROS_CREATE_ALL(arrayObjs) {
-//    console.log('CALL FUNCTION API');
-
-//    const response = await axios({
-//       method: "put",
-//       url: API_URL + '/numeros',
-//       data: arrayObjs,
-//       headers: { 
-//          "Accept": "application/json",
-//          'Access-Control-Allow-Origin': '*',
-//       } 
-//    });
-
-//    // console.log(response.data);
-//    return response.data;
-// }
-
 
 // Pega todos os Numeros (READ):
 export async function NUMEROS_GET_ALL() {
@@ -98,5 +73,6 @@ export async function NUMEROS_UPDATE_ID(formData) {
       data: formData, // ID já está no formData
    });
 
-   console.log(response.data);
+   // console.log(response.data);
+   return response.data;
 }

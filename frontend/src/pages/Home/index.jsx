@@ -1,7 +1,7 @@
 // Funcionalidades / Libs:
 import { useState, useEffect } from 'react';
 import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_GET_FILTER, NUMEROS_UPDATE_ID } from '../../API/requestAPI';
-// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import Cookies from "js-cookie";
 
 // Contexts:
@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import { formatarCasasNumero } from '../../utils/formatNumbers'
 
 // Assets:
+// import Logo from '../../../assets/LOGO-BIZSYS_preto.png';
 
 // Estilo:
 import './style.css';
@@ -52,7 +53,7 @@ export default function Home() {
             const response = await NUMEROS_GET_ALL();
             console.log(response);
       
-            setNumbers(response.data);
+            setNumbers(response);
         } 
         catch(erro) {
             console.log('Deu erro: ', erro);
@@ -94,24 +95,36 @@ export default function Home() {
 
     return (
         <>
-        <header></header>
+        <header className='Header'>
+            <div className="grid">
+            
+            <Link to='/'>
+                {/* <img src={Logo} alt="Logo" /> */}
+                <div>Cha Rifa do Caê (logo)</div>
+            </Link>
+
+            <button className="btn-infos">?</button>
+
+            </div>
+        </header>
 
         <main className='Page Home'>
             <div className="grid">
 
-            <h1>Cha rifa</h1>
-            <span>Numeros selecionado: {numbersSelecionados.length}</span>
+            <div className="banner">
+                BANNER DE PREMIOS AQUI
+            </div>
 
-            <div className="painel">
-                <div className="painel-content">
+            <div className='filter'>FILTRO DE NUMEROS AQUI</div>
 
-                    {loading ? (
-                        
+            <div className="painel-numbers">
+                {loading ? (
+                    
                     <p>Carregando...</p>
 
-                    ) : (
+                ) : (
 
-                    numbers.length > 0 ? (
+                numbers.length > 0 ? (
                     <div className="list-numbers">
                         {numbers.map((numero, idx)=> (
                         <button 
@@ -123,18 +136,41 @@ export default function Home() {
                         </button>
                         ))}                                                                                    
                     </div>
-                    ) : (
+                ) : (
                     <p className='msg-erro'>Nenhum numero no DB</p>
-                    )
+                )
 
-                    )}
-
-                    <button onClick={handleMostraSelecionados}>Mostrar</button>
-                </div>
+                )}
             </div>
 
             </div>
         </main>
+
+        <div className='Controle'>
+            <div className="grid">
+
+            <div className='nums-selecionados'>
+                {numbersSelecionados.length > 1 ? (
+                <>
+                <p>{numbersSelecionados.length} números</p> selecionados
+                </>
+                ) : (
+                <>
+                <p>{numbersSelecionados.length} número</p> selecionado
+                </>
+                )}
+            </div>
+
+            <button className='btn-add' disabled={numbersSelecionados.length == 0}>
+                <p>Adicionar</p> ao carrinho
+            </button>
+
+            <button className='btn-cart'>
+                <ion-icon name="cart-outline"></ion-icon>
+            </button>
+
+            </div>
+        </div>
         </>
     )
 }
