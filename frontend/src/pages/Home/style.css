@@ -1,7 +1,7 @@
 .Header {
-    background-color: var(--color-w);
-    border: 1px solid var(--color-text);
+    background-color: var(--color-primary);
     padding: 1rem 1.7rem;
+    color: var(--color-w);
     
     width: 100%;
     /* height: 4rem; usa padding mesmo*/ 
@@ -10,19 +10,19 @@
     left: 0;
     z-index: 10;
     /* box-shadow: 0px 1px 7px 2px rgba(49, 49, 49, 0.452); */
-    box-shadow: 0px 0px 12px 1px #3f3f3f62;
+    /* box-shadow: 0px 0px 12px 1px #3f3f3f62; */
 
     .grid {
-        position: relative;
-        /* height: 100%; usa padding mesmo*/
+        /* position: relative; */
+        height: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .btn-infos {
+        /* .btn-infos {
             position: absolute;
             right: 0;
-        }
+        } */
     }
 
     a > div {
@@ -32,35 +32,78 @@
 }
 
 .Page {
-    padding: 4rem 1.7rem;
+    background-color: var(--color-secundary);
+
+    /* .grid {
+        background-color: var(--color-secundary);
+    } */
 
     .banner {
-        border: 1px solid var(--color-text);
-        border-radius: 10px;
-        height: 9rem;
+        padding: 4rem 1.7rem 0 1.7rem;
+        height: 16rem;
 
         display: flex;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center; */
+        gap: 1rem;
 
-        margin-bottom: 1.5rem;
+        /* white-space: nowrap; */
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        margin-bottom: 3rem;
+
+        p {
+            background-color: var(--color-w);
+            border-radius: 10px;
+            padding: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            /* width: 100%; */
+            width: 17rem;
+            min-width: 17rem;
+        }
     }
 
     .filter {
-        background-color: var(--color-w);
+        background-color: var(--color-secundary);
+        padding: 1rem 1.7rem 0 1.7rem;
         position: sticky;
-        top: 5.5rem;
+        top: 6rem;
+        
+        /* border-radius: 0 0 25px 25px; */
+        box-shadow: 0 .5rem 1rem 1rem var(--color-secundary);
+        
+        .btns {
+            background-color: var(--color-w);
+            border-radius: 10px;
+            padding: 1rem;
 
-        border: 1px solid var(--color-text);
-        border-radius: 10px;
-        padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
 
-        text-align: center;
 
-        margin-bottom: 1.5rem;
+            button {
+                height: 3rem;
+                font-family: var(--font-main);
+                padding: 0 1rem;
+            }
+        }
+
     }
     
     .painel-numbers {
+        border-top: 1.5rem solid var(--color-secundary);
+        background-color: var(--color-w);
+        border-radius: 30px;
+        padding: 2.5rem 1.7rem 5rem 1.7rem;
 
         .list-numbers {
             display: grid;
@@ -73,21 +116,9 @@
             } */
             gap: 1.3rem 1rem;
 
-            button {
+            .btn-disponivel {
                 /* box-shadow: 0 0 0px .8px var(--color-text); */
                 height: 3.2rem;
-                border: 1px solid var(--color-text);
-                border-radius: 10px;
-
-                font-family: var(--font-numbers);
-                font-size: 1.6rem;
-                font-weight: 500;
-
-                &.active {
-                    border: none;
-                    background-color: var(--color-primary);
-                    color: var(--color-w);
-                }
             }
         }
     }
@@ -96,8 +127,8 @@
 .Controle {
     padding: 0 1.7rem;
     background-color: var(--color-bg-2);
-    box-shadow: 0 -1px 15px 25px var(--color-bg-1);
-    height: 5rem;
+    box-shadow: 0 -1px 22px 35px var(--color-w);
+    height: 7.5rem;
     position: sticky;
     bottom: 0;
 
@@ -107,13 +138,29 @@
         display: flex;
         justify-content: center;
 
-        .nums-selecionados {
+        .centro-controle {
+            position: relative;
+            top: -3.5rem;
+
+            .nums-selecionados {
+                margin-top: .5rem;
+
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        }
+
+        .btn-infos {
             position: absolute;
             left: 0;
         }
         .btn-cart {
             position: absolute;
             right: 0;
+
+            ion-icon {
+                font-size: 3.8rem;
+            }
         }
         
     }

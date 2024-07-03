@@ -98,12 +98,14 @@ export default function Home() {
         <header className='Header'>
             <div className="grid">
             
-            <Link to='/'>
+            <a href='#iniciar'>
                 {/* <img src={Logo} alt="Logo" /> */}
                 <div>Cha Rifa do Caê (logo)</div>
-            </Link>
-
-            <button className="btn-infos">?</button>
+            </a>
+            {/* <Link to='/'>
+                <img src={Logo} alt="Logo" />
+                <div>Cha Rifa do Caê (logo)</div>
+            </Link> */}
 
             </div>
         </header>
@@ -112,10 +114,20 @@ export default function Home() {
             <div className="grid">
 
             <div className="banner">
-                BANNER DE PREMIOS AQUI
+                <p>BANNER PREMIO <br /> 1º LUGAR</p>
+                <p>BANNER PREMIO <br /> 2º LUGAR</p>
+                <p>BANNER PREMIO <br /> 3º LUGAR</p>
             </div>
 
-            <div className='filter'>FILTRO DE NUMEROS AQUI</div>
+            <div id='iniciar'> <br /> <br /> <br /> </div>
+
+            <div className='filter'>
+                <div className="btns">
+                    <button className='btn-disponivel'>Disponíveis</button>
+                    <button className='btn-reservado'>Reservados</button>
+                    <button className='btn-comprado'>Comprados</button>
+                </div>
+            </div>
 
             <div className="painel-numbers">
                 {loading ? (
@@ -130,7 +142,7 @@ export default function Home() {
                         <button 
                         key={numero.id} 
                         onClick={()=> handleNumerosSelecionados({...numero, idx: idx})} 
-                        className={numbersSelecionados.includes(numero.id) ? 'active' : ''}
+                        className={`btn-disponivel ${numbersSelecionados.includes(numero.id) ? 'active' : ''}`}
                         >
                             {formatarCasasNumero(numero.id)}
                         </button>
@@ -148,22 +160,28 @@ export default function Home() {
 
         <div className='Controle'>
             <div className="grid">
-
-            <div className='nums-selecionados'>
-                {numbersSelecionados.length > 1 ? (
-                <>
-                <p>{numbersSelecionados.length} números</p> selecionados
-                </>
-                ) : (
-                <>
-                <p>{numbersSelecionados.length} número</p> selecionado
-                </>
-                )}
-            </div>
-
-            <button className='btn-add' disabled={numbersSelecionados.length == 0}>
-                <p>Adicionar</p> ao carrinho
+            
+            <button className="btn-infos">
+                i
             </button>
+
+            <div className="centro-controle">
+                <button className='btn-add' disabled={numbersSelecionados.length == 0}>
+                    <p>Adicionar</p> ao carrinho
+                </button>
+
+                <div className='nums-selecionados'>
+                    {numbersSelecionados.length > 1 ? (
+                    <>
+                    <p>{numbersSelecionados.length} números</p> selecionados
+                    </>
+                    ) : (
+                    <>
+                    <p>{numbersSelecionados.length} número</p> selecionado
+                    </>
+                    )}
+                </div>
+            </div>
 
             <button className='btn-cart'>
                 <ion-icon name="cart-outline"></ion-icon>
