@@ -16,7 +16,7 @@
         /* position: relative; */
         height: 4rem;
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
 
         /* .btn-infos {
@@ -25,9 +25,17 @@
         } */
     }
 
-    a > div {
+    /* a > div {
         font-family: var(--font-headers);
         font-size: 2rem;
+    } */
+    a {
+        line-height: 0;
+        
+        img {
+            max-width: 15rem;
+            filter: brightness(1.1);
+        }
     }
 }
 
@@ -38,8 +46,33 @@
         background-color: var(--color-secundary);
     } */
 
+    .capa {
+        /* background-color: red; */
+        padding-top: 3.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            max-width: 35rem;
+        }
+        a {
+            transform: translateY(-30%);
+
+            text-align: center;
+            font-weight: 800;
+        }
+    }
+
+    
+    h2 {
+        padding: 0 1.7rem;
+
+        margin-bottom: 1rem;
+    }
     .banner {
-        padding: 4rem 1.7rem 0 1.7rem;
+        padding: 0 1.7rem;
         height: 16rem;
 
         display: flex;
@@ -52,8 +85,6 @@
         &::-webkit-scrollbar {
             display: none;
         }
-
-        margin-bottom: 3rem;
 
         p {
             background-color: var(--color-w);
@@ -70,7 +101,11 @@
             min-width: 17rem;
         }
     }
-
+    
+    h2#iniciar {
+        padding-top: 2.5rem;
+        margin-bottom: 0;
+    }
     .filter {
         background-color: var(--color-secundary);
         padding: 1rem 1.7rem 0 1.7rem;
@@ -92,7 +127,7 @@
 
             button {
                 height: 3rem;
-                font-family: var(--font-main);
+                font-family: var(--font-main), sans-serif;
                 padding: 0 1rem;
             }
         }
@@ -131,16 +166,18 @@
     height: 7.5rem;
     position: sticky;
     bottom: 0;
+    line-height: 110%;
 
     .grid {
         height: 100%;
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
 
         .centro-controle {
             position: relative;
-            top: -3.5rem;
+            top: -2rem;
 
             .nums-selecionados {
                 margin-top: .5rem;
@@ -150,6 +187,9 @@
             }
         }
 
+        button {
+            line-height: 120%;
+        }
         .btn-infos {
             position: absolute;
             left: 0;
@@ -158,10 +198,26 @@
             position: absolute;
             right: 0;
 
-            ion-icon {
-                font-size: 3.8rem;
+            .indicador {
+                visibility: hidden;
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: red;
+                border-radius: 50%;
+                /* padding: .2rem; */
+                color: var(--color-w);
+                width: 2rem;
+                height: 2rem;
+                line-height: 160%;
+
+                font-size: 1.3rem;
             }
         }
+        /* &:has(.btn-add[disabled]) .btn-cart .indicador {
+            visibility: hidden;
+        } */
         
     }
 }

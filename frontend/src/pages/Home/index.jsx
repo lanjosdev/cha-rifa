@@ -10,14 +10,15 @@ import { Link } from 'react-router-dom';
 // Components:
 // import { Header } from '../../components/ui/Header';
 // import { Tabela } from '../../components/ui/Tabela';
-// import { Modal } from '../../components/ui/Modal';
+import { ModalIntro } from '../../components/Modal';
 import { toast } from "react-toastify";
 
 // Utils:
 import { formatarCasasNumero } from '../../utils/formatNumbers'
 
 // Assets:
-// import Logo from '../../../assets/LOGO-BIZSYS_preto.png';
+import Logo from '../../assets/logo.png';
+import Capa from '../../assets/capa.jpg';
 
 // Estilo:
 import './style.css';
@@ -25,7 +26,10 @@ import './style.css';
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
-    const [showError, setShowError] = useState(false);
+    // const [showError, setShowError] = useState(false);
+    const [showModalIntro, setShowModalIntro] = useState(true);
+    const [isInfo, setIsInfo] = useState(false);
+
     
     const [numbers, setNumbers] = useState([]); 
     const [numbersSelecionados, setNumbersSelecionados] = useState([]);
@@ -87,10 +91,10 @@ export default function Home() {
         }
     }
 
-    function handleMostraSelecionados() 
-    {
-        console.log(numbersSelecionados);
-    }
+    // function handleMostraSelecionados() 
+    // {
+    //     console.log(numbersSelecionados);
+    // }
 
 
     return (
@@ -98,14 +102,12 @@ export default function Home() {
         <header className='Header'>
             <div className="grid">
             
-            <a href='#iniciar'>
-                {/* <img src={Logo} alt="Logo" /> */}
+            {/* <a href='#iniciar'>
                 <div>Cha Rifa do Caê (logo)</div>
-            </a>
-            {/* <Link to='/'>
+            </a> */}
+            <Link to='/'>
                 <img src={Logo} alt="Logo" />
-                <div>Cha Rifa do Caê (logo)</div>
-            </Link> */}
+            </Link>
 
             </div>
         </header>
@@ -113,13 +115,21 @@ export default function Home() {
         <main className='Page Home'>
             <div className="grid">
 
+            <div className="capa">
+                <img src={Capa} alt="Capa da rifa" />
+
+                <a className='btn-add' href='#iniciar'>Escolha seus números</a>
+            </div>
+
+            <h2>Prêmios</h2>
             <div className="banner">
                 <p>BANNER PREMIO <br /> 1º LUGAR</p>
                 <p>BANNER PREMIO <br /> 2º LUGAR</p>
                 <p>BANNER PREMIO <br /> 3º LUGAR</p>
             </div>
+            
 
-            <div id='iniciar'> <br /> <br /> <br /> </div>
+            <h2 id='iniciar'>Selecione os números</h2>
 
             <div className='filter'>
                 <div className="btns">
@@ -161,8 +171,8 @@ export default function Home() {
         <div className='Controle'>
             <div className="grid">
             
-            <button className="btn-infos">
-                i
+            <button className="btn-infos" onClick={()=> {setShowModalIntro(true); setIsInfo(true)}}>
+                <ion-icon name="information-circle-outline"></ion-icon>
             </button>
 
             <div className="centro-controle">
@@ -185,10 +195,18 @@ export default function Home() {
 
             <button className='btn-cart'>
                 <ion-icon name="cart-outline"></ion-icon>
+                <div className='indicador'>{numbersSelecionados.length}</div>
             </button>
 
             </div>
         </div>
+
+        {showModalIntro && (
+        <ModalIntro
+            closeModal={()=> setShowModalIntro(false)}
+            isInfo={isInfo}
+        />        
+        )}
         </>
     )
 }

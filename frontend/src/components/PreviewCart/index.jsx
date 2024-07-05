@@ -17,27 +17,17 @@ import './style.css';
 //     grupos: PropTypes.array
 // }
 // eslint-disable-next-line react/prop-types
-export function PreviewCart({ show, onHide, dataModal }) {   
+export function PreviewCart() {   
   // const [linkQR, setLinkQR] = useState(''); 
 
+
   return (
-    <>
-    {show &&
-      <div className="Modal">
+    <div className='PreviewCart'>
+      <div className="cart-background"></div>
 
-          <div className="modal-background" onClick={onHide}></div>
-
-          <div className="modal-window">
-            <h4>{dataModal[0].nome}</h4>
-
-            {/* dataModal array é temp, sera só obj com infos do user */}
-            <QRCodeSVG value={`${dataModal[0].url}id/${dataModal[1]+50}/200/300`} size={250} includeMargin={true}/>
-
-            <Button onClick={onHide}>Fechar</Button>
-          </div>
-      
-      </div>
-    }
-    </>
+      <div className="cart-window">
+        carrinho
+      </div>            
+    </div>
   )
 }

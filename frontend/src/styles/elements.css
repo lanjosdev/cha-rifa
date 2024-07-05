@@ -1,3 +1,7 @@
+body:has(.Modal) {
+    overflow-y: hidden;
+}
+
 /* GRID LAYOUT */
 .grid {
     width: 100%;
@@ -43,7 +47,7 @@
     border: 1px solid var(--color-text);
     border-radius: 10px;
 
-    font-family: var(--font-numbers);
+    font-family: var(--font-numbers), monospace;
     font-size: 1.6rem;
     font-weight: 500;
 
@@ -58,7 +62,7 @@
     /* border: 1px solid var(--color-text); */
     border-radius: 10px;
 
-    /* font-family: var(--font-numbers); */
+    font-family: var(--font-numbers), monospace;
     font-size: 1.6rem;
     font-weight: 500;
 
@@ -69,11 +73,11 @@
     }
 }
 .btn-comprado {
-    background-color: #85fa81;
+    background-color: #97f894;
     /* border: 1px solid var(--color-text); */
     border-radius: 10px;
 
-    /* font-family: var(--font-numbers); */
+    font-family: var(--font-numbers), monospace;
     font-size: 1.6rem;
     font-weight: 500;
 
@@ -84,13 +88,32 @@
     }
 }
 
-.btn-infos {
-    height: 2.5rem;
-    width: 2.5rem;
-    border: 1px solid var(--color-text);
-    border-radius: 50%;
-    font-size: 1.4rem;
-    /* font-weight: 600; */
+.btn-infos, .btn-cart {
+    /* line-height: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 4.2rem;
+    }
+}
+
+.btn-suport {
+    background-color: #00D757;
+    border-radius: 5px;
+    color: var(--color-w);
+    padding: .5rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    /* width: 100%;
+    max-width: fit-content; */
+
+    line-height: 0;
+    font-weight: 600;
 }
 
 

@@ -5,13 +5,19 @@
     /* --color-primary: #ff7a3c; */
     /* --color-primary: #fc804f; */
     /* --color-primary: #fd885a; */
-    --color-primary: #fd805a;
+    /* --color-primary: #fd805a; */
+    /* --color-primary: #C46237; */
+    /* --color-primary: #ce6133; */
+    --color-primary: #e6713f;
     /* --color-secundary: #ffd8b3; */
     /* --color-secundary: #fdb28f; */
-    --color-secundary: #f8b8a4;
+    /* --color-secundary: #f8bfa4; */
+    /* --color-secundary: #f8bfa4; */
+    /* --color-secundary: #f8b293; */
+    --color-secundary: #F4CFBF;
     
     --color-bg-1: #fff;
-    --color-bg-2: #dddddd;
+    --color-bg-2: #d7ecc5;
     --color-bg-3: #a8a8ad;
     --color-text: #222121;
     
@@ -29,8 +35,8 @@
     --gray-800: #202024;
     --gray-900: #121214;
 
-    --font-main: 'Open Sans';
-    --font-headers: 'Patrick Hand';
+    --font-main: "Nunito";
+    --font-headers: "Lilita One";
     --font-numbers: 'Azeret Mono';
 
     /* color-scheme: light dark; */
@@ -71,6 +77,7 @@ ul, ol, li {
 button {
     background-color: transparent;
     display: inline-block;
+    color: var(--color-text);
     cursor: pointer;
 }
 /* RESET */
@@ -97,7 +104,7 @@ body {
     /* overflow-x: hidden; */
 }
 body, input, textarea, button, select, a {
-    font-family: var(--font-main), Verdana, sans-serif;
+    font-family: var(--font-main), sans-serif;
 }
 
 [disabled] {
