@@ -47,7 +47,6 @@
     } */
 
     .capa {
-        /* background-color: red; */
         padding-top: 3.5rem;
 
         display: flex;
@@ -132,6 +131,17 @@
             }
         }
 
+        @media (max-width: 320px) {
+            /* padding: 1rem 0 0 0; */
+
+            .btns {
+                gap: .6rem;
+
+                button {
+                    font-size: 13px;
+                }
+            }
+        }
     }
     
     .painel-numbers {
