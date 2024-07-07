@@ -45,6 +45,36 @@ body:has(.PreviewCart) {
     }
 }
 
+.btn-carrinho {
+    background-color: var(--color-secundary);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    /* height: $height; */
+    /* line-height: $height; */
+
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    
+    /* p {
+        font-weight: 900;
+    } */
+    
+    /* will-change: filter; */
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(0.9);
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        /* background-color: #fdc0aa; */
+    }
+}
+
 .btn-disponivel {
     background-color: var(--color-w);
     border: 1px solid var(--color-text);
@@ -145,6 +175,16 @@ body:has(.PreviewCart) {
 
     line-height: 0;
     font-weight: 600;
+}
+
+.msg-erro {
+    background-color: #F8D7DA;
+    border: 1px solid #F2B6B9;
+    border-radius: 5px;
+    color: var(--color-text);
+
+    padding: 1rem;
+
 }
 
 

@@ -1,6 +1,6 @@
 // Funcionalidades / Libs:
 import { useState, useEffect } from 'react';
-import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_GET_FILTER, NUMEROS_UPDATE_ID } from '../../API/requestAPI';
+import { NUMEROS_GET_ALL, NUMEROS_GET_FILTER } from '../../API/requestAPI';
 import { Link } from 'react-router-dom';
 // import Cookies from "js-cookie";
 
@@ -27,7 +27,6 @@ import './style.css';
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
-    const [showMsgFeedback, setShowMsgFeedback] = useState('Carregando...');
     const [showModalIntro, setShowModalIntro] = useState(false);
     const [firstAcess, setfirstAcess] = useState(true);
     const [showCart, setShowCart] = useState(false);
@@ -35,6 +34,7 @@ export default function Home() {
     const [numbers, setNumbers] = useState([]); 
     const [numbersSelecionados, setNumbersSelecionados] = useState([]);
     const [numbersCarrinho, setNumbersCarrinho] = useState([]);
+    const [subtotalCarrinho, setSubtotalCarrinho] = useState(0);
 
     
     
@@ -77,6 +77,20 @@ export default function Home() {
         carregaNumbersRifa();        
     }, []);
 
+    useEffect(()=> {
+        function atualizaSubtotal() {
+            console.log('Effect atualiza subtotal');
+
+            let valorNum = 20;
+            if(numbersSelecionados.length >= 5) {
+                valorNum = 15;
+            }
+            let subtotal = valorNum * numbersSelecionados.length;
+            setSubtotalCarrinho(subtotal);
+        }
+        atualizaSubtotal();
+    }, [numbersSelecionados]);
+
 
 
     function handleNumerosSelecionados(numeroClicado) 
@@ -115,69 +129,8 @@ export default function Home() {
         // setShowMsgFeedback('Adicionando...');
 
         setNumbersCarrinho(numbersSelecionados);
+
         setLoading(false);
-        
-        //=> Verificar se os nums selecionado de fato estão disponiveis:
-        // let idsNumsSelecionados = numbersSelecionados;
-        // let idsStringConsulta = '';
-        // idsNumsSelecionados.forEach((id, idx) => {
-        //     idsStringConsulta += `${id}${idx!==idsNumsSelecionados.length-1 ? ',':''}`;                       
-        // });
-        // console.log(idsStringConsulta);
-        
-        // try {
-        //     const response = await NUMEROS_GET_ID(idsStringConsulta);
-        //     console.log(response);
-
-        //     if(response.length !== idsNumsSelecionados.length) {
-        //         // let diferenca = idsNumsSelecionados.length - response.length;
-        //         let msgFeedback = `${idsNumsSelecionados.length > 1 ? `Dos ${idsNumsSelecionados.length} números que você selecionou, apenas os ${response.length} abaixo estão disponiveis:` : 'O número que você selecionou não está mais disponível, selecione outro'}`;
-
-        //         setShowMsgFeedback(msgFeedback);
-        //         let idsResponse = response.map((item)=> item.id);
-        //         setNumbersSelecionados(idsResponse);
-        //     }
-        // }
-        // catch(erro) {
-        //     console.log('DEU ERRO NA VERIFICAÇÃO: ', erro);
-        //     toast.error('Algum erro na verificação');
-        // }
-
-        // setLoading(false);
-
-
-
-        //=> Adiciona de fato no carrinho (UPDATE)
-        // try {
-        //     let numerosCarrinho = [];
-        //     // let preco = idsNumsSelecionados > 5 ? 15 : 20;
-        //     for(let id of idsNumsSelecionados) {
-        //         let idCliente = id;
-        //         let obj = {
-        //             preco: 20,
-        //             carrinho: true,
-        //             comprado_por: null,
-        //             contato: null
-        //         };
-                
-        //         let formData = new FormData();
-        //         formData.append('id', idCliente);
-        //         formData.append('editObj', JSON.stringify(obj));
-
-        //         const response = await NUMEROS_UPDATE_ID(formData);
-        //         numerosCarrinho.push(response);
-        //     }
-
-        //     setNumbersCarrinho(numerosCarrinho);
-        // }
-        // catch(erro) {
-        //     console.log('DEU ERRO: ', erro);
-        //     toast.error('Algum erro ao adicionar no carrinho, verique se carrinho');
-        // }
-        // finally {
-        //     setLoading(false);
-        //     setShowMsgFeedback('');
-        // }
     }
 
 
@@ -231,7 +184,7 @@ export default function Home() {
             </div>
 
             <div className="painel-numbers">
-                {loading && showMsgFeedback == 'Carregando...' ? (
+                {loading == 'Carregando...' ? (
                     
                     <p>Carregando...</p>
 
@@ -309,6 +262,9 @@ export default function Home() {
         <PreviewCart
             closeCart={()=> setShowCart(false)}
             numbersCarrinho={numbersCarrinho}
+            setNumbersCarrinho={setNumbersCarrinho}
+            setNumbersSelecionados={setNumbersSelecionados}
+            subtotalCarrinho={subtotalCarrinho}
         />        
         )}
         </>
