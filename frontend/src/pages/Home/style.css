@@ -8,7 +8,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     /* box-shadow: 0px 1px 7px 2px rgba(49, 49, 49, 0.452); */
     /* box-shadow: 0px 0px 12px 1px #3f3f3f62; */
 
@@ -16,7 +16,7 @@
         /* position: relative; */
         height: 4rem;
         display: flex;
-        /* justify-content: center; */
+        justify-content: space-between;
         align-items: center;
 
         /* .btn-infos {
@@ -113,6 +113,7 @@
         
         /* border-radius: 0 0 25px 25px; */
         box-shadow: 0 .5rem 1rem 1rem var(--color-secundary);
+        z-index: 8;
         
         .btns {
             background-color: var(--color-w);
@@ -176,6 +177,7 @@
     height: 7.5rem;
     position: sticky;
     bottom: 0;
+    z-index: 9;
     line-height: 110%;
 
     .grid {
@@ -209,8 +211,7 @@
             right: 0;
 
             .indicador {
-                visibility: hidden;
-
+                /* visibility: hidden; */
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -225,9 +226,9 @@
                 font-size: 1.3rem;
             }
         }
-        /* &:has(.btn-add[disabled]) .btn-cart .indicador {
-            visibility: hidden;
-        } */
+        &:has(.btn-add:not([disabled]):active) .btn-cart {
+            animation: animateTremida .3s ease-in-out;
+        }
         
     }
 }

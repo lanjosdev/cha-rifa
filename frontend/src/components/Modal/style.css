@@ -12,7 +12,7 @@
     height: 100%;
     min-height: 100vh;
     min-height: 100dvh;
-    z-index: 20;
+    z-index: 101;
     overflow-y: auto;
 
     display: flex;
@@ -25,7 +25,7 @@
         position: absolute;    
         width: 100%;
         height: 100%;
-        z-index: 21;
+        z-index: 102;
     }
 
     .modal-window {
@@ -39,7 +39,7 @@
         border-radius: 20px;
         box-shadow: 0px 1px 10px 0px #00000080;
         /* box-shadow: 0 0 20px 5px #00000085; */
-        z-index: 30;
+        z-index: 103;
 
         display: flex;
         flex-direction: column;
@@ -51,6 +51,15 @@
         .top-window {
             display: flex;
             justify-content: space-between;
+
+            button {
+                line-height: 0;
+                height: fit-content;
+
+                ion-icon {
+                    font-size: 2.5rem;
+                }
+            }
         }
 
         .content-window {
@@ -58,15 +67,15 @@
                 max-width: 32rem;
             }
 
-            .check-not-show {
+            /* .check-not-show {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: .5rem;
-            }
+            } */
 
             .btn-add {
-                margin-top: 1.5rem;
+                /* margin-top: 1.5rem; */
 
                 padding: 1rem 1.5rem;
                 font-size: 1.8rem;
@@ -77,18 +86,31 @@
         }
 
         .suporte-window {
+            margin-top: 1rem;
             text-align: left;
 
-            .btns-suport {
+            p {
+                a {
+                    color: #00D757;
+                    font-weight: 600;
+                    text-decoration: underline;
+
+                    ion-icon {
+                        margin-left: .2rem;
+                        transform: translateY(20%);
+                    }
+                }
+            }
+
+            /* .btns-suport {
                 margin-top: .6rem;
 
                 display: flex;
                 justify-content: center;
                 gap: 1rem;
-            }
+            } */
         }
 
-        
         @media (max-width: 480px) {
             left: 1.7rem;
             right: 1.7rem;
