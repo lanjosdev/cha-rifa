@@ -75,7 +75,7 @@ body:has(.PreviewCart) {
     }
 }
 
-.btn-disponivel {
+.btn {
     background-color: var(--color-w);
     border: 1px solid var(--color-text);
     border-radius: 10px;
@@ -90,10 +90,10 @@ body:has(.PreviewCart) {
         color: var(--color-w);
     }
 }
-.btn-reservado {
+.btn.reservado {
     position: relative;
     background-color: #fffab8;
-    /* border: 1px solid var(--color-text); */
+    border: none;
     border-radius: 10px;
 
     font-family: var(--font-numbers), monospace;
@@ -123,9 +123,9 @@ body:has(.PreviewCart) {
         z-index: 5;
     }
 }
-.btn-comprado {
+.btn.comprado {
     background-color: #97f894;
-    /* border: 1px solid var(--color-text); */
+    border: none;
     border-radius: 10px;
 
     font-family: var(--font-numbers), monospace;
