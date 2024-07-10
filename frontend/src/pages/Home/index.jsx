@@ -15,7 +15,7 @@ import { PreviewCart } from '../../components/PreviewCart';
 import { toast } from "react-toastify";
 
 // Utils:
-import { formatarCasasNumero } from '../../utils/formatNumbers'
+import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
@@ -39,6 +39,7 @@ export default function Home() {
     const [subtotalCarrinho, setSubtotalCarrinho] = useState(0);
 
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
+    const sessaoCookie = Cookies.get('sessao');
     
     
     useEffect(()=> {
@@ -59,6 +60,7 @@ export default function Home() {
             else {
                 setShowModalIntro(true);
             }
+
             
             //=> Carrega numeros
             try {
@@ -84,12 +86,20 @@ export default function Home() {
             console.log('Effect verifica carrinho cookie');
 
             if(numerosCarrinhoCookie) {
-                setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
-                setNumbersSelecionados(JSON.parse(numerosCarrinhoCookie));
+                if(sessaoCookie) {
+                    setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
+                    setNumbersSelecionados(JSON.parse(numerosCarrinhoCookie));
+                }
+                else {
+                    toast.info('Sua sessão expirou. Recomece seu carrinho.');
+                    Cookies.remove('numerosCarrinho');
+                    setNumbersCarrinho([]);
+                    setNumbersSelecionados([]);
+                }
             }
         }
         verificaCarrinhoCookie();
-    }, [numerosCarrinhoCookie]);
+    }, [numerosCarrinhoCookie, sessaoCookie]);
 
     useEffect(()=> {
         function atualizaSubtotal() {
@@ -136,17 +146,17 @@ export default function Home() {
         }
     }
 
-    // async function handleAddCarrinho() {
-    //     setLoading(true);
-    //     // setShowMsgFeedback('Adicionando...');
-
-    //     setNumbersCarrinho(numbersSelecionados);
-
-    //     setLoading(false);
-    // }
     async function handleVerificaNumSelecionados() 
     {
         setLoading(true);
+
+        //=> Registra inicio de sessao a partir de add algum num no carrinho
+        if(!sessaoCookie) {
+            console.log('INICIO DE SESSÃO');
+            Cookies.set('sessao', JSON.stringify('iniciou'), {
+                expires: 1/144 //10min??
+            });
+        }
         
         //=> Verificar se os nums do state selecionados de fato estão disponiveis:
         // let idsNumsSelecionados = numbersSelecionados;
@@ -241,20 +251,8 @@ export default function Home() {
             if(updateAddCarrinho.length > 0) {
                 await updateAddNumCarrinho(updateAddCarrinho);
             }
-            // if(!erro) {
-            //     erro = await updateAddNumCarrinho();
-            // }
-            // else {
-            //     await updateAddNumCarrinho();
-            // }
 
-
-            // setTimeout(()=> {
             setShowCart(true);
-            // }, 300);
-            // if(!erro) toast.success('TUDO OK P/ DIRECIONAR');
-            //setShowMsgFeedback('');
-            ////DIRECIONA PARA OUTRA PAGE
         }
         catch(erro) {
             console.log('DEU ERRO NA VERIFICAÇÃO: ', erro);
@@ -342,6 +340,10 @@ export default function Home() {
                 <p>BANNER PREMIO <br /> 2º LUGAR</p>
                 <p>BANNER PREMIO <br /> 3º LUGAR</p>
             </div>
+            <small className='info-premios'>
+                <ion-icon name="information-circle-outline"></ion-icon> 
+                Mais informações sobre os prêmios.
+            </small>
             
 
             <h2 id='iniciar'>Selecione os números</h2>

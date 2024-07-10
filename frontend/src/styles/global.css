@@ -112,7 +112,7 @@ body, input, textarea, button, select, a {
     cursor: not-allowed;
 }
 
-label:has(+[required])::after {
+.label-input:has([required])::after {
     content: ' *';
     color: red;
     font-size: 14px;

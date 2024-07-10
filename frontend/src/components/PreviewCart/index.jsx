@@ -2,6 +2,7 @@
 // import PropTypes from "prop-types";
 import { useState } from 'react';
 import { NUMEROS_GET_ALL, NUMEROS_UPDATE_ID } from '../../API/requestAPI';
+import { Link } from 'react-router-dom';
 import Cookies from "js-cookie";
 
 // Components:
@@ -246,7 +247,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
             <div className="separator"></div>
 
             <div className="resume">
-              <h3>Resumo da Compra:</h3>
+              <h3>Resumo do Pedido:</h3>
 
               <div className="total">
                 <div className="label-valor">
@@ -262,7 +263,15 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
                 </div>
 
                 <div className="label-valor">
-                  <p>Subtotal</p>
+                  <p>Quantidade</p>
+
+                  <div className="ligador"></div>
+                
+                  <p className='qtd'>{numbersCarrinho.length} unid</p>
+                </div>
+
+                <div className="label-valor">
+                  <p className='total'>Total</p>
 
                   <div className="ligador"></div>
                 
@@ -275,13 +284,17 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
           </div>
 
           <div className="btns">
+            <p>
+              Em caso de problemas ou precisar de suporte, só chamar no <a href="https://wa.me/5511949066546?text=Ola%20Lucas" target="_blank">WhatsApp<ion-icon name="logo-whatsapp"></ion-icon></a>.
+            </p>
+
             <button className='btn-add' onClick={closeCart}>
               {numbersCarrinho.length > 0 ? 'Selecionar mais números' : 'Selecionar números'}
             </button>
 
-            <button className='btn-carrinho' disabled={numbersCarrinho.length == 0 || loading} >
+            <Link to='/checkout' className='btn-carrinho' disabled={numbersCarrinho.length == 0 || loading} >
               Ir para o carrinho
-            </button>
+            </Link>
           </div>
 
 

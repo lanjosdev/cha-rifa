@@ -100,6 +100,16 @@
             min-width: 17rem;
         }
     }
+    .info-premios {
+        display: flex;
+        align-items: center;
+        gap: .1rem;
+
+        padding: 1rem 1.7rem 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-decoration: underline;
+    }
     
     h2#iniciar {
         padding-top: 2.5rem;
@@ -166,6 +176,10 @@
                 /* box-shadow: 0 0 0px .8px var(--color-text); */
                 height: 3.2rem;
             }
+        }
+
+        > p {
+            text-align: center;
         }
     }
 }
