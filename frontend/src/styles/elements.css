@@ -311,4 +311,16 @@ body:has(.PreviewCart) {
         transform: rotate(25deg) scale(1);
     }
 }
+
+@keyframes fadenInHeigth {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: auto;
+    }
+}
+.fadenInHeigth {
+    animation: fadenInHeigth 1s ease;
+}
 /* ANIMATIONS */

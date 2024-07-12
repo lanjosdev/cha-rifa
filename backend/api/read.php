@@ -115,13 +115,13 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if($id) {
             if(strpos($id, ",")) {
-                echo "por array \n";
+                //echo "por array \n";
 
                 $ids = explode(",", $id);
                 $response = getIdsNumbers($ids, $jsonDecode);
             }
             else {
-                echo "por id \n";
+                //echo "por id \n";
 
                 $id = intval($id);
                 $response = getIdNumber($id, $jsonDecode);

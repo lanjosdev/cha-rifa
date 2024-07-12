@@ -154,7 +154,7 @@ export default function Home() {
         if(!sessaoCookie) {
             console.log('INICIO DE SESSÃO');
             Cookies.set('sessao', JSON.stringify('iniciou'), {
-                expires: 1/144 //10min??
+                expires: 1/96 //15min??
             });
         }
         
@@ -295,7 +295,7 @@ export default function Home() {
         setNumbersSelecionados(numerosCarrinho);
         setNumbersCarrinho(numerosCarrinho);
         Cookies.set('numerosCarrinho', JSON.stringify(numerosCarrinho), {
-            expires: 1/2
+            expires: 1 //24h
         });
     }
 

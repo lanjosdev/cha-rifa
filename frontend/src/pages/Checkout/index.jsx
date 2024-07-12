@@ -10,12 +10,14 @@ import Cookies from "js-cookie";
 
 // Components:
 import { toast } from "react-toastify";
+import InputMask from 'react-input-mask';
 
 // Utils:
 import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
+import LogoPix from '../../assets/logo-pix.svg';
 
 // Estilo:
 import './style.css';
@@ -28,6 +30,10 @@ export default function Checkout() {
     const [numbersCarrinho, setNumbersCarrinho] = useState([]);
     const [subtotalCarrinho, setSubtotalCarrinho] = useState([]);
 
+    const [inputNome, setInputNome] = useState('');
+    const [inputPhone, setInputPhone] = useState('');
+    const [btnAvancar, setBtnAvancar] = useState(false);
+
     const navigate = useNavigate();
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
     const sessaoCookie = Cookies.get('sessao');
@@ -39,6 +45,9 @@ export default function Checkout() {
 
             if(numerosCarrinhoCookie) {
                 if(sessaoCookie) {
+                    if(JSON.parse(numerosCarrinhoCookie).length == 0) {
+                        navigate('/');
+                    }
                     setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
                 }
                 else {
@@ -157,42 +166,59 @@ export default function Checkout() {
                 </div>
             </div>
 
+            <h2>Finalizar o Pedido</h2>
             <div className="dados-user">
                 <div className="top">
-                    <h3>Seus dados</h3>
-
-                    <small>Apenas com o propósito de identificação de cada pedido.</small>
+                    <h3><span>1</span> Suas informações:</h3>
                 </div>
+                <p>Pedimos o preenchimento deste campo apenas com o propósito de identificação do seu pedido.</p>
 
                 <div className="form">
                     <div className="label-input">
                         <label htmlFor="">Nome:</label>
-                        <input type="text" required />
+                        <input type="text" value={inputNome} onChange={(e) => setInputNome(e.target.value)} required />
                     </div>
                     <div className="label-input">
                         <label htmlFor="">Celular (WhatsApp):</label>
-                        <input type="text" />
+                        <InputMask 
+                        mask="(99) 99999-9999"
+                        value={inputPhone}
+                        onChange={(e) => setInputPhone(e.target.value)}
+                        />
                     </div>
 
-                    <button>Avançar</button>
+                    <button className='btn-add' disabled={!inputNome} onClick={()=> setBtnAvancar(true)}>Avançar</button>
                 </div>
+
+                <div className={`top ${btnAvancar ? '' : 'desativado'}`}>
+                    <h3><span>2</span> Confirmar pagamento:</h3>
+                </div>
+                {btnAvancar && (
+                    <div className="concluir-pedido">
+                        <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim você será direcionado para respectivo contato para efetuar o pagamento via Pix.</p>
+
+                        <div className="btns-links">
+                            <a href='https://wa.me/5511982809221?text=Lista%0A-%20texto%0A-%20texto'> 
+                                <img src={LogoPix} alt="" />
+                                Confirmar Pix com a Carol <ion-icon name="logo-whatsapp"></ion-icon>
+                            </a>
+                            <a href='https://wa.me/5511949066546?text=Lista%0A-%20texto%0A-%20texto'> 
+                                <img src={LogoPix} alt="" />
+                                Confirmar Pix com o Lucas <ion-icon name="logo-whatsapp"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                )}
             </div>
 
-            <div className="concluir-pedido">
-                <h3>Concluir pedido</h3>
-
-                <small>Basta clicar em um dos botões abaixo para confirmar e finalizar o seu pedido. Assim será enviado o seu pedido para respectivo contato para efetuar o Pix.</small>
-
-                <a href='https://wa.me/5511949066546?text=Lista%0A-%20texto%0A-%20texto'>Confirmar Pix com a Carol</a>
-                <a >Confirmar Pix com o Lucas</a>
-            </div>
+            
 
             </div>
         </main>
 
-        <footer>
+        {/* <footer>
             <p>WebApp desenvolvido por <a href="" target='_blank'>Lucas dos Anjos</a></p>
-        </footer>
+        </footer> */}
         </>
     )
 }

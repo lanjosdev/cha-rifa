@@ -1,5 +1,5 @@
 .Modal {
-    padding: 1.7rem;
+    padding: 0 1.7rem;
     background-color: rgba(35, 35, 35, 0.493);
     backdrop-filter: blur(2px);
 
@@ -32,6 +32,7 @@
         background-color: #fff;
         position: absolute;
         top: 1.7rem;
+        left: 0;
         
         width: 100%;
         max-width: fit-content;
