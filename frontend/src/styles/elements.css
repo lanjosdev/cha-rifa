@@ -4,6 +4,9 @@ body:has(.Modal) {
 body:has(.PreviewCart) {
     overflow-y: hidden;
 }
+body:has(.Checkout) {
+    background-color: var(--color-secundary);
+}
 
 /* GRID LAYOUT */
 .grid {
@@ -126,7 +129,7 @@ body:has(.PreviewCart) {
     }
 }
 .btn.comprado {
-    background-color: #97f894;
+    background-color: #c1ffbf;
     border: none;
     border-radius: 10px;
 
@@ -178,6 +181,18 @@ body:has(.PreviewCart) {
     line-height: 0;
     font-weight: 600;
 }
+.suporte-link {
+    a {
+        color: #00D757;
+        font-weight: 600;
+        text-decoration: underline;
+
+        ion-icon {
+            margin-left: .2rem;
+            transform: translateY(20%);
+        }
+    }
+}
 
 .msg-erro {
     background-color: #F8D7DA;
@@ -186,7 +201,6 @@ body:has(.PreviewCart) {
     color: var(--color-text);
 
     padding: 1rem;
-
 }
 
 

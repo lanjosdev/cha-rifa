@@ -1,6 +1,6 @@
 // Funcionalidades / Libs:
 import { useState, useEffect } from 'react';
-// import { NUMEROS_CREATE_ALL } from '../../API/requestAPI';
+import { NUMEROS_UPDATE_ID } from '../../API/requestAPI';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
@@ -35,6 +35,7 @@ export default function Checkout() {
     const [btnAvancar, setBtnAvancar] = useState(false);
 
     const navigate = useNavigate();
+
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
     const sessaoCookie = Cookies.get('sessao');
 
@@ -78,10 +79,83 @@ export default function Checkout() {
     }, [numbersCarrinho]);
 
 
-    async function handleSubmitCreateArrayObjs(e)
+    async function handleSubmitConfirmarCompra(contato)
     {
-        e.preventDefault();
         setLoading(true);
+
+        console.log('Nome: ', inputNome);
+        console.log('Telefone: ', inputPhone);
+        console.log('Seus numeros: ', numbersCarrinho);
+        console.log('Total: ', subtotalCarrinho);
+
+        let btn;
+        if(contato == 'Carol') {
+            btn = document.querySelector('.lucas');
+            btn.classList.add('hidden');
+        } 
+        else {
+            const btn = document.querySelector('.carol');
+            btn.classList.add('hidden');
+        }
+
+        try {
+            await updateNumComprado(numbersCarrinho);
+
+            let listaMensagem = '';
+            for(let item of numbersCarrinho) {
+                listaMensagem += `-%20${item}%0A`;
+            }
+            let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20%0A`;
+
+            if(contato == 'Carol') {
+                window.location.href = "https://wa.me/5511982809221?text=Lista%0A-%20texto%0A-%20texto";
+            }
+            else {
+                window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
+            }
+
+            Cookies.remove('sessao');
+            Cookies.remove('numerosCarrinho');
+            setNumbersCarrinho([]);
+        }
+        catch(erro) {
+            console.log('DEU ERRO: ', erro);
+            toast.error('Algum erro ao confirmar o pedido!');
+        }
+
+        console.log('Fim handleSubmitConfirmarCompra()');
+        btn.classList.remove('hidden');
+        setLoading(false);
+    }
+
+    async function updateNumComprado(arrayNumCarrinho) 
+    {
+        //=> Atualiza como comprado (UPDATE)
+        console.log('inicia update comprado...');
+        console.log(arrayNumCarrinho);
+
+        try {
+            for(let id of arrayNumCarrinho) {
+                let idNum = id;
+                let obj = {
+                    preco: 20,
+                    carrinho: true,
+                    comprado_por: inputNome,
+                    contato: inputPhone || null
+                };
+                
+                let formData = new FormData();
+                formData.append('id', idNum);
+                formData.append('editObj', JSON.stringify(obj));
+    
+                const response = await NUMEROS_UPDATE_ID(formData);
+                console.log(response);
+            }
+        }
+        catch(erro) {
+            console.log('DEU ERRO: ', erro);
+            toast.error('Algum erro ao confirmar compra!');
+        }
     }
 
 
@@ -193,32 +267,36 @@ export default function Checkout() {
                 <div className={`top ${btnAvancar ? '' : 'desativado'}`}>
                     <h3><span>2</span> Confirmar pagamento:</h3>
                 </div>
-                {btnAvancar && (
-                    <div className="concluir-pedido">
-                        <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim você será direcionado para respectivo contato para efetuar o pagamento via Pix.</p>
+                {btnAvancar && 
+                <div className="concluir-pedido">
+                    <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim você será direcionado para o respectivo contato para efetuar o pagamento via Pix.</p>
 
-                        <div className="btns-links">
-                            <a href='https://wa.me/5511982809221?text=Lista%0A-%20texto%0A-%20texto'> 
-                                <img src={LogoPix} alt="" />
-                                Confirmar Pix com a Carol <ion-icon name="logo-whatsapp"></ion-icon>
-                            </a>
-                            <a href='https://wa.me/5511949066546?text=Lista%0A-%20texto%0A-%20texto'> 
-                                <img src={LogoPix} alt="" />
-                                Confirmar Pix com o Lucas <ion-icon name="logo-whatsapp"></ion-icon>
-                            </a>
-                        </div>
+                    <div className="btns-links">
+                        <button className='carol' onClick={()=> handleSubmitConfirmarCompra('Carol')} disabled={loading}> 
+                            <img src={LogoPix} alt="" />
+                            {loading ? 'Direcionando p/ a Carol...' : 'Confirmar Pix com a Carol'}
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </button>
+                        <button className='lucas' onClick={()=> handleSubmitConfirmarCompra('Lucas')} disabled={loading}> 
+                            <img src={LogoPix} alt="" />
+                            {loading ? 'Direcionando p/ o Lucas...' : 'Confirmar Pix com o Lucas'}
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </button>
                     </div>
-                )}
+                </div>
+                }
             </div>
 
-            
+            <p className="suporte-link">
+                Em caso de problemas ou precisar de suporte, só chamar no <a href="https://wa.me/5511949066546?text=Ola%20Lucas" target="_blank">WhatsApp<ion-icon name="logo-whatsapp"></ion-icon></a>.
+            </p>
 
             </div>
         </main>
 
-        {/* <footer>
-            <p>WebApp desenvolvido por <a href="" target='_blank'>Lucas dos Anjos</a></p>
-        </footer> */}
+        <footer>
+            <p>Aplicação web desenvolvida com 🧡 por <a href="https://lanjosdev.github.io/portfolio" target='_blank'>Lucas dos Anjos</a></p>
+        </footer>
         </>
     )
 }

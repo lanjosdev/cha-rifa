@@ -150,6 +150,7 @@ export default function Home() {
     {
         setLoading(true);
 
+
         //=> Registra inicio de sessao a partir de add algum num no carrinho
         if(!sessaoCookie) {
             console.log('INICIO DE SESSÃO');
@@ -158,6 +159,7 @@ export default function Home() {
             });
         }
         
+
         //=> Verificar se os nums do state selecionados de fato estão disponiveis:
         // let idsNumsSelecionados = numbersSelecionados;
         let idsStringConsulta = '';
@@ -187,16 +189,7 @@ export default function Home() {
                     }
                     setShowMsgFeedback(msgFeedback);
 
-                    // console.log('atualiza numbers...');
-                    // let newNumbers = numbers;
-                    // let numsIndisponiveis = response.filter((num)=> num.carrinho == true);
-                    // numsIndisponiveis.forEach(num => {
-                    //     newNumbers[num.id - 1] = num;
-                    // });
-                    // // for(let number of numsIndisponiveis) {
-                    // //     newNumbers[number.id - 1] = number;
-                    // // }
-                    // setNumbers(newNumbers);
+
                     //=> Carrega numeros
                     try {
                         const response = await NUMEROS_GET_ALL();
@@ -227,10 +220,7 @@ export default function Home() {
                 updateAddCarrinho = [];
                 setNumbersSelecionados(updateAddCarrinho);
 
-                // console.log('atualiza numeros...');
-                // let newNumbers = numbers;
-                // newNumbers[response.id - 1] = response;
-                // setNumbers(newNumbers);
+                
                 //=> Carrega numeros
                 try {
                     //const response = await NUMEROS_GET_FILTER({key: 'carrinho', value: true});

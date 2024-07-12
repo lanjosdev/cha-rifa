@@ -1,8 +1,8 @@
 // Funcionalidades / Libs:
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useState } from 'react';
 import { NUMEROS_GET_ALL, NUMEROS_UPDATE_ID } from '../../API/requestAPI';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
 
 // Components:
@@ -18,16 +18,21 @@ import { formatarCasasNumero } from '../../utils/formatNumbers'
 import './style.css';
 
 
-// PreviewCart.propTypes = {
-//   closeCart: PropTypes.func.isRequired,
-//   numbersCarrinho: PropTypes.array,
-//   setNumbersCarrinho: PropTypes.func,
-//   setNumbersSelecionados: PropTypes.func,
-//   subtotalCarrinho: PropTypes.any
-// }
+PreviewCart.propTypes = {
+  closeCart: PropTypes.func.isRequired,
+  showMsgFeedback: PropTypes.string,
+  setShowMsgFeedback: PropTypes.func,
+  numbersCarrinho: PropTypes.array,
+  setNumbersCarrinho: PropTypes.func,
+  subtotalCarrinho: PropTypes.any,
+  setNumbersSelecionados: PropTypes.func,
+  setNumbers: PropTypes.func
+}
 export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNumbersCarrinho, subtotalCarrinho, setShowMsgFeedback, setNumbers }) {
     const [loading, setLoading] = useState(false); 
     // const [showMsgFeedback, setShowMsgFeedback] = useState('');
+
+    const navigate = useNavigate();
 
 
     async function handleDelNumberCarrinho(numeroDel) 
@@ -284,7 +289,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
           </div>
 
           <div className="btns">
-            <p>
+            <p className="suporte-link">
               Em caso de problemas ou precisar de suporte, só chamar no <a href="https://wa.me/5511949066546?text=Ola%20Lucas" target="_blank">WhatsApp<ion-icon name="logo-whatsapp"></ion-icon></a>.
             </p>
 
@@ -292,9 +297,9 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
               {numbersCarrinho.length > 0 ? 'Selecionar mais números' : 'Selecionar números'}
             </button>
 
-            <Link to='/checkout' className='btn-carrinho' disabled={numbersCarrinho.length == 0 || loading} >
+            <button className='btn-carrinho' onClick={()=> navigate('/checkout')} disabled={numbersCarrinho.length == 0 || loading}>
               Ir para o carrinho
-            </Link>
+            </button>
           </div>
 
 

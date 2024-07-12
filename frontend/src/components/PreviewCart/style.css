@@ -171,26 +171,12 @@
             gap: 1rem;
             width: calc(100% - 4rem);
 
-            p {
+            .suporte-link {
                 margin-bottom: 1.4rem;
-
-                a {
-                    color: #00D757;
-                    font-weight: 600;
-                    text-decoration: underline;
-
-                    ion-icon {
-                        margin-left: .2rem;
-                        transform: translateY(20%);
-                    }
-                }
             }
 
-            button, a {
+            button {
                 font-weight: 700;
-            }
-            a {
-                text-align: center;
             }
         }
 
