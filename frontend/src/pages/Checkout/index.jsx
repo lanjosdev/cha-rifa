@@ -17,7 +17,7 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
-import LogoPix from '../../assets/logo-pix.svg';
+// import LogoPix from '../../assets/logo-pix.svg';
 
 // Estilo:
 import './style.css';
@@ -35,14 +35,19 @@ export default function Checkout() {
     const [btnAvancar, setBtnAvancar] = useState(false);
 
     const navigate = useNavigate();
-
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
     const sessaoCookie = Cookies.get('sessao');
+    const pedidoConfirmadoCookie = Cookies.get('pedidoConfirmado');
 
 
     useEffect(()=> {
-        function verificaCarrinhoCookie() {
-            console.log('Effect verifica carrinho cookie');
+        function verificaCookies() {
+            console.log('Effect /Checkout verifica cookies');
+
+            if(pedidoConfirmadoCookie) {
+                navigate('/fim');
+                return;
+            }
 
             if(numerosCarrinhoCookie) {
                 if(sessaoCookie) {
@@ -61,8 +66,8 @@ export default function Checkout() {
                 navigate('/');
             }
         }
-        verificaCarrinhoCookie();
-    }, [numerosCarrinhoCookie, sessaoCookie, navigate]);
+        verificaCookies();
+    }, [numerosCarrinhoCookie, sessaoCookie, pedidoConfirmadoCookie, navigate]);
 
     useEffect(()=> {
         function atualizaSubtotal() {
@@ -101,18 +106,35 @@ export default function Checkout() {
         try {
             await updateNumComprado(numbersCarrinho);
 
+
             let listaMensagem = '';
             for(let item of numbersCarrinho) {
                 listaMensagem += `-%20${item}%0A`;
             }
-            let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20%0A`;
-
+            let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`;
             if(contato == 'Carol') {
-                window.location.href = "https://wa.me/5511982809221?text=Lista%0A-%20texto%0A-%20texto";
+                setTimeout(()=> {   
+                    // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
+                    window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
+                }, 1000);
             }
             else {
-                window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
+                setTimeout(()=> {   
+                    // window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
+                    window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
+                }, 1000);
             }
+
+            let objCookie = {
+                comprado_por: inputNome,
+                numeros: numbersCarrinho,
+                total: subtotalCarrinho,
+                mensagem: mensagem
+            };
+            Cookies.set('pedidoConfirmado', JSON.stringify(objCookie), {
+                expires: 2 //48h
+            });
+
 
             Cookies.remove('sessao');
             Cookies.remove('numerosCarrinho');
@@ -154,7 +176,7 @@ export default function Checkout() {
         }
         catch(erro) {
             console.log('DEU ERRO: ', erro);
-            toast.error('Algum erro ao confirmar compra!');
+            toast.error('Erro ao confirmar algum número!');
         }
     }
 
@@ -261,26 +283,27 @@ export default function Checkout() {
                         />
                     </div>
 
-                    <button className='btn-add' disabled={!inputNome} onClick={()=> setBtnAvancar(true)}>Avançar</button>
+                    <button className='btn-add' disabled={inputNome.length < 2} onClick={()=> setBtnAvancar(true)}>Avançar</button>
                 </div>
 
                 <div className={`top ${btnAvancar ? '' : 'desativado'}`}>
-                    <h3><span>2</span> Confirmar pagamento:</h3>
+                    <h3><span>2</span> Confirmar pedido:</h3>
                 </div>
                 {btnAvancar && 
                 <div className="concluir-pedido">
-                    <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim você será direcionado para o respectivo contato para efetuar o pagamento via Pix.</p>
+                    <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim que clicar, será gerado os detalhes do seu pedido e direcionado para o respectivo contato para seguir com pagamento.</p>
 
                     <div className="btns-links">
                         <button className='carol' onClick={()=> handleSubmitConfirmarCompra('Carol')} disabled={loading}> 
-                            <img src={LogoPix} alt="" />
-                            {loading ? 'Direcionando p/ a Carol...' : 'Confirmar Pix com a Carol'}
+                            {/* <img src={LogoPix} alt="" /> */}
                             <ion-icon name="logo-whatsapp"></ion-icon>
+                            {loading ? 'Direcionando p/ a Carol...' : 'Confirmar Pedido com a Carol'}
                         </button>
+
                         <button className='lucas' onClick={()=> handleSubmitConfirmarCompra('Lucas')} disabled={loading}> 
-                            <img src={LogoPix} alt="" />
-                            {loading ? 'Direcionando p/ o Lucas...' : 'Confirmar Pix com o Lucas'}
+                            {/* <img src={LogoPix} alt="" /> */}
                             <ion-icon name="logo-whatsapp"></ion-icon>
+                            {loading ? 'Direcionando p/ o Lucas...' : 'Confirmar Pedido com o Lucas'}
                         </button>
                     </div>
                 </div>

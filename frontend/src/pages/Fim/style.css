@@ -1,0 +1,76 @@
+.Header.Fim {
+    position: absolute;
+}
+.Page.Fim {
+    padding: 0 1.7rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        position: relative;
+        background-color: var(--color-w);
+        border-radius: 20px;
+        padding: 5rem 1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+
+        ion-icon {
+            font-size: 8rem;
+            color: #1FA752;
+            background-color: var(--color-w);
+            padding: 0;
+            border-radius: 50%;
+
+            position: absolute;
+            top: calc(-8rem/2);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .resume {
+
+            > p {
+                margin-bottom: 1rem;
+            }
+
+            .resume-dados {
+
+                p {
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .5rem;
+
+                    span.btn.active {
+                        padding: 0 .5rem;
+                    }
+                }
+            }
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transform: translateY(1rem);
+        }
+    }
+}
+
+footer.Fim {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

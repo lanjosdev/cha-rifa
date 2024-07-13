@@ -1,7 +1,7 @@
 // Funcionalidades / Libs:
 import { useState, useEffect } from 'react';
 import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_UPDATE_ID, NUMEROS_GET_FILTER } from '../../API/requestAPI';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
 
 // Contexts:
@@ -38,14 +38,21 @@ export default function Home() {
     const [numbersCarrinho, setNumbersCarrinho] = useState([]);
     const [subtotalCarrinho, setSubtotalCarrinho] = useState(0);
 
+    const navigate = useNavigate();
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
     const sessaoCookie = Cookies.get('sessao');
+    const pedidoConfirmadoCookie = Cookies.get('pedidoConfirmado');
     
     
     useEffect(()=> {
         async function carregaNumbersRifa() 
         {
             console.log('Effect /Home');
+            //=> Verifica se pedido foi confirmado
+            if(pedidoConfirmadoCookie) {
+                navigate('/fim');
+                return;
+            }
 
             //=> Valida o primeiro acesso
             const primeiroAcesso = localStorage.getItem('primeiroAcesso');
@@ -79,7 +86,7 @@ export default function Home() {
             }        
         }
         carregaNumbersRifa();        
-    }, []);
+    }, [navigate, pedidoConfirmadoCookie]);
 
     useEffect(()=> {
         function verificaCarrinhoCookie() {

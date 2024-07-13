@@ -60,7 +60,7 @@ function getParamsNumbers($param, $op, $jsonDecode)
 
     switch($op) {
         case 1:
-            echo "carrinho \n";
+            //echo "carrinho \n";
             
             foreach($jsonDecode as $item) {
                 $strCarrinho = json_encode($item->carrinho);
@@ -70,7 +70,7 @@ function getParamsNumbers($param, $op, $jsonDecode)
             }   
             break;         
         case 2:
-            echo "comprado_por \n";
+            //echo "comprado_por \n";
 
             foreach($jsonDecode as $item) {
                 $strComprador = $item->comprado_por;
