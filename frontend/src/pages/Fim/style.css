@@ -20,7 +20,7 @@
         gap: 1.5rem;
         text-align: center;
 
-        ion-icon {
+        > ion-icon {
             font-size: 8rem;
             color: #1FA752;
             background-color: var(--color-w);
@@ -63,8 +63,9 @@
         .btns {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
-            transform: translateY(1rem);
+            transform: translateY(1.3rem);
         }
     }
 }
@@ -73,4 +74,76 @@ footer.Fim {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.Modal.Envio {
+    
+    .window-envio {
+        background-color: var(--color-w);
+
+        width: 100%;
+        max-width: fit-content; /****/
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0px 1px 10px 0px #00000080;
+        /* box-shadow: 0 0 20px 5px #00000085; */
+        z-index: 103;
+
+        .top-window {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 2rem;
+
+            button {
+                line-height: 0;
+                height: fit-content;
+
+                ion-icon {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .content-window {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.4rem;
+
+            button {
+                background-color: #25D366;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+                
+                width: 100%;
+                max-width: 24.8rem;
+                height: 3.9rem;
+                padding: 0 1rem;
+                
+                font-size: 1.6rem;
+                color: var(--color-w);
+                font-weight: 700;
+
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    filter: drop-shadow(0 0 8px #25D366) brightness(1.1);
+                }
+                &:active {
+                    filter: drop-shadow(0 0 8px #25D366) brightness(0.9);
+                }
+                &:disabled {
+                    opacity: 0.5;
+                }
+
+                ion-icon {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
 }

@@ -113,16 +113,12 @@ export default function Checkout() {
             }
             let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`;
             if(contato == 'Carol') {
-                setTimeout(()=> {   
-                    // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
-                    window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
-                }, 1000);
+                // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
+                window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
             }
             else {
-                setTimeout(()=> {   
-                    // window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
-                    window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
-                }, 1000);
+                // window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
+                window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
             }
 
             let objCookie = {

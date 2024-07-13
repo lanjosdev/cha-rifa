@@ -38,7 +38,7 @@ export function ModalIntro({ closeModal, firstAcess }) {
 
         <div className="modal-background"></div>
 
-        <div className="modal-window">
+        <div className="modal-window showModal">
           <div className="top-window">
             <h4>{firstAcess ? 'Boas vindas' : 'Informações da rifa'}</h4>
 

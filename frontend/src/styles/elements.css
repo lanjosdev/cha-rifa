@@ -112,7 +112,7 @@ body:has(.Checkout) {
     }
 
     &:hover::after {
-        content: 'Está reservado no carrinho de alguem';
+        content: 'Está reservado no carrinho de alguém';
         background-color: #0000007a;
         border-radius: 5px;
         width: 10rem;
@@ -129,6 +129,7 @@ body:has(.Checkout) {
     }
 }
 .btn.comprado {
+    position: relative;
     background-color: #c1ffbf;
     border: none;
     border-radius: 10px;
@@ -141,6 +142,23 @@ body:has(.Checkout) {
         border: none;
         background-color: var(--color-primary);
         color: var(--color-w);
+    }
+
+    &:hover::after {
+        content: 'Já foi comprado por alguém';
+        background-color: #0000007a;
+        border-radius: 5px;
+        width: 10rem;
+        padding: .5rem;
+        color: var(--color-w);
+        font-family: var(--font-main), sans-serif;
+        font-size: 1.3rem;
+
+        position: absolute;
+        top: -150%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
     }
 }
 
@@ -194,6 +212,98 @@ body:has(.Checkout) {
     }
 }
 
+.btn-pix {
+    background-color: #37B4AA;
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    width: 100%;
+    max-width: 25rem;
+    height: 3.9rem;
+    padding: 0 1rem;
+    
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-w);
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px #25D366) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px #25D366) brightness(0.9);
+    }
+
+    img {
+        max-width: 2rem;
+        filter: invert(1);
+    }
+}
+.btn-whats {
+    background-color: #25D366;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    max-width: 25rem;
+    height: 3.9rem;
+    padding: 0 1rem;
+    
+    font-size: 1.6rem;
+    color: var(--color-w);
+    font-weight: 700;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px #25D366) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px #25D366) brightness(0.9);
+    }
+
+    ion-icon {
+        font-size: 2rem;
+    }
+}
+.btn-home {
+    background-color: var(--color-primary);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    max-width: 25rem;
+    height: 3.9rem;
+    padding: 0 1rem;
+    
+    font-size: 1.6rem;
+    color: var(--color-w);
+    font-weight: 700;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(0.9);
+    }
+
+    ion-icon {
+        font-size: 2rem;
+        transform: translateY(-0.1rem);
+    }
+}
+
 .msg-erro {
     background-color: #F8D7DA;
     border: 1px solid #F2B6B9;
@@ -206,6 +316,18 @@ body:has(.Checkout) {
 
 
 /* ANIMATIONS */
+@keyframes showModal {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+.showModal {
+    animation: showModal .5s ease-in-out;
+}
+
 @keyframes fadeIn {
     from {
       opacity: 0;
