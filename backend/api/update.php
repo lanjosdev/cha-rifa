@@ -12,6 +12,11 @@ function updateItem($id, $objEdit, $jsonDecode) {
     $objEdit->id = $id;
     $objEdit->preco = floatval($objEdit->preco);
     if(isset($jsonDecode[$id - 1])) {
+        date_default_timezone_set('America/Sao_Paulo'); // Defina o fuso horário
+        $dataHora = date('d/m/Y H:i:s');
+        // echo "Data e hora atual: $dataHora";
+        $objEdit->update = $dataHora;
+
         $jsonDecode[$id - 1] = $objEdit;
     }
     else {
