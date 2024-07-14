@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 // import { UserContext } from "../../contexts/userContext";
 
 // Components:
+import { ModalPix } from '../../components/ModalPix';
 
 // Utils:
 import { formatarCasasNumero } from '../../utils/formatNumbers';
@@ -111,7 +112,7 @@ export default function Fim() {
                 </div>
 
                 <div className="btns">
-                    <button className='btn-pix'>
+                    <button className='btn-pix' onClick={()=> setShowModalPix(true)}>
                         <img src={LogoPix} alt="" />
                         Mostrar chave Pix
                     </button>
@@ -134,6 +135,8 @@ export default function Fim() {
             <p>Aplicação web desenvolvida com 🧡 por <a href="https://lanjosdev.github.io/portfolio" target='_blank'>Lucas dos Anjos</a></p>
         </footer>
 
+        
+        <ModalPix showModal={showModalPix} closeModal={()=> setShowModalPix(false)} />
 
         {showModalEnvioPedido && (
         <div className='Modal Envio'>

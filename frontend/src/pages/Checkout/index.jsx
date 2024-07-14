@@ -84,6 +84,47 @@ export default function Checkout() {
     }, [numbersCarrinho]);
 
 
+    async function handleDelNumberCarrinho(numeroDel) 
+    {
+      console.log('update carrinho false...');
+      setLoading(true);
+
+      try {
+        let idCliente = numeroDel;
+        // carrinho false
+        let obj = {
+            preco: 20,
+            carrinho: false,
+            comprado_por: null,
+            contato: null
+        };
+        
+        let formData = new FormData();
+        formData.append('id', idCliente);
+        formData.append('editObj', JSON.stringify(obj));
+
+        const response = await NUMEROS_UPDATE_ID(formData);
+        let newNumbersCarrinho = numbersCarrinho.filter((number)=> number != response?.id);
+        console.log('Novo carrinho: ', newNumbersCarrinho);
+        if(newNumbersCarrinho.length == 0) {
+            navigate('/');
+        }
+        
+
+        setNumbersCarrinho(newNumbersCarrinho);
+        Cookies.set('numerosCarrinho', JSON.stringify(newNumbersCarrinho), {
+          expires: 1
+        });
+      }
+      catch(erro) {
+        console.log('DEU ERRO: ', erro);
+        toast.error('Algum erro ao remover número do carrinho');
+      }
+      
+      console.log('fim handleDelNumberCarrinho()');
+      setLoading(false);
+    }
+
     async function handleSubmitConfirmarCompra(contato)
     {
         setLoading(true);
@@ -214,7 +255,7 @@ export default function Checkout() {
                                 >
                                     {formatarCasasNumero(numero)}
                                 </button>
-                                <ion-icon name="trash-outline" onClick={()=> console.log('deleta')}></ion-icon>
+                                <ion-icon name="trash-outline" onClick={()=> handleDelNumberCarrinho(numero)}></ion-icon>
                             </div>
                             ))}
                         </div>
@@ -255,6 +296,12 @@ export default function Checkout() {
                             </div>
                         </div>
                     </div>
+
+                    {loading && (
+                        <div className="loading-window">
+                        <p>Atualizando...</p>
+                        </div>
+                    )}
                 </div>
             </div>
 

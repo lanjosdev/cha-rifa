@@ -233,10 +233,10 @@ body:has(.Checkout) {
     transition: all .3s ease-in-out;
 
     &:hover {
-        filter: drop-shadow(0 0 8px #25D366) brightness(1.1);
+        filter: drop-shadow(0 0 8px #37B4AA) brightness(1.1);
     }
     &:active {
-        filter: drop-shadow(0 0 8px #25D366) brightness(0.9);
+        filter: drop-shadow(0 0 8px #37B4AA) brightness(0.9);
     }
 
     img {

@@ -74,7 +74,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
         // setNumbersSelecionados(newNumbersCarrinho);
         setNumbersCarrinho(newNumbersCarrinho);
         Cookies.set('numerosCarrinho', JSON.stringify(newNumbersCarrinho), {
-          expires: 1/2
+          expires: 1
         });
       }
       catch(erro) {
