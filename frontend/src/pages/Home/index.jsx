@@ -19,7 +19,10 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
-import Capa from '../../assets/capa.jpg';
+import Capa from '../../assets/capa1.jpg';
+import primeiro from '../../assets/1.jpg';
+import segundo from '../../assets/2.jpg';
+import terceiro from '../../assets/3.jpg';
 
 // Estilo:
 import './style.css';
@@ -333,14 +336,14 @@ export default function Home() {
 
             <h2>Prêmios</h2>
             <div className="banner">
-                <p>BANNER PREMIO <br /> 1º LUGAR</p>
-                <p>BANNER PREMIO <br /> 2º LUGAR</p>
-                <p>BANNER PREMIO <br /> 3º LUGAR</p>
+                <div className='one'><img src={primeiro} alt="" /></div>
+                <div className='two'><img src={segundo} alt="" /></div>
+                <div className='three'><img src={terceiro} alt="" /></div>
             </div>
-            <small className='info-premios'>
+            {/* <small className='info-premios'>
                 <ion-icon name="information-circle-outline"></ion-icon> 
                 Mais informações sobre os prêmios.
-            </small>
+            </small> */}
             
 
             <h2 id='iniciar'>Selecione os números</h2>

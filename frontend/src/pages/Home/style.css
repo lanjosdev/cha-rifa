@@ -72,7 +72,7 @@
     }
     .banner {
         padding: 0 1.7rem;
-        height: 16rem;
+        height: fit-content;
 
         display: flex;
         /* justify-content: center; */
@@ -85,19 +85,25 @@
             display: none;
         }
 
-        p {
-            background-color: var(--color-w);
+        div {
+            /* background-color: var(--color-w); */
             border-radius: 10px;
-            padding: 1rem;
+            /* padding: 1rem;
 
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: center; */
 
             /* width: 100%; */
             width: 17rem;
             min-width: 17rem;
+            /* height: fit-content; */
+
+            img {
+                border-radius: 10px;
+                object-fit: cover;
+            }
         }
     }
     .info-premios {
@@ -244,5 +250,25 @@
             animation: animateTremida .3s ease-in-out;
         }
         
+    }
+
+    .btn-infos {
+        position: relative;
+
+        span {
+            background-color: #0000007a;
+            border-radius: 5px;
+            width: 12rem;
+            padding: .5rem;
+            color: var(--color-w);
+            font-family: var(--font-main), sans-serif;
+            font-size: 1.3rem;
+
+            position: absolute;
+            top: -120%;
+            left: 5rem;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
     }
 }
