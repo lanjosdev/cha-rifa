@@ -32,6 +32,7 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     const [showMsgFeedback, setShowMsgFeedback] = useState('');
     const [showModalIntro, setShowModalIntro] = useState(false);
+    const [showModalPremios, setShowModalPremios] = useState(false);
     const [firstAcess, setfirstAcess] = useState(true);
     const [showCart, setShowCart] = useState(false);
 
@@ -331,19 +332,22 @@ export default function Home() {
             <div className="capa">
                 <img src={Capa} alt="Capa da rifa" />
 
-                <a className='btn-add' href='#iniciar'>Escolha seus números</a>
+                <a className='btn-add move-down' href='#iniciar'>
+                    <span>Escolha seus números</span>
+                    <i className="bi bi-chevron-compact-down"></i>
+                </a>
             </div>
 
             <h2>Prêmios</h2>
-            <div className="banner">
-                <div className='one'><img src={primeiro} alt="" /></div>
-                <div className='two'><img src={segundo} alt="" /></div>
-                <div className='three'><img src={terceiro} alt="" /></div>
+            <div className="banners">
+                <div className='primeiro' onClick={()=> setShowModalPremios(true)}></div>
+                <div className='segundo' onClick={()=> setShowModalPremios(true)}></div>
+                <div className='terceiro' onClick={()=> setShowModalPremios(true)}></div>
             </div>
-            {/* <small className='info-premios'>
+            <small className='info-premios' onClick={()=> setShowModalPremios(true)}>
                 <ion-icon name="information-circle-outline"></ion-icon> 
                 Mais informações sobre os prêmios.
-            </small> */}
+            </small>
             
 
             <h2 id='iniciar'>Selecione os números</h2>
@@ -390,7 +394,7 @@ export default function Home() {
             <div className="grid">
             
             <button className="btn-infos" onClick={confirmaPrimeiroAcesso}>
-                {firstAcess && <span>Rever informções da rifa</span>}
+                {firstAcess && <span className='movendo'>Rever informções da rifa</span>}
                 <ion-icon name="information-circle-outline"></ion-icon>
             </button>
 
@@ -429,6 +433,28 @@ export default function Home() {
 
             </div>
         </div>
+
+        {showModalPremios && (
+        <div className='Modal Envio'>
+            <div className="modal-background" onClick={()=> setShowModalPremios(false)}></div>
+
+            <div className="window-envio showModal">
+                <div className="top-window">
+                    <h4>Informações dos prêmios</h4>
+
+                    <button onClick={()=> setShowModalPremios(false)}>
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+                </div>
+
+                <div className="content-window" id='Premios'>
+                    <p><span>1° Lugar:</span> Ensaio Fotográfico com <a href="https://www.instagram.com/fotografia_caroline.b?igsh=MW02dXpoNHljOXQyZg==" target='_blank'>Cacau Brandão</a> (solo ou casal) <span>+</span> Vale compra de R$100 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
+                    <p><span>2° Lugar:</span> Vale compra de R$100 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
+                    <p><span>3° Lugar:</span> Vale compra de R$80 no Ifood.</p>                   
+                </div>
+            </div>
+        </div>
+        )}
 
         {showModalIntro && (
         <ModalIntro

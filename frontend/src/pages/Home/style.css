@@ -55,12 +55,40 @@
 
         img {
             max-width: 35rem;
+            transform: translateX(-.7rem);
         }
-        a {
+        .btn-add {
             transform: translateY(-30%);
 
             text-align: center;
             font-weight: 800;
+
+            filter: drop-shadow(0 0 5px var(--color-primary));
+            display: flex;
+            flex-direction: column;
+            padding: 0rem 2rem;
+
+            height: 5rem;
+            justify-content: center;
+
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                filter: drop-shadow(0 0 8px var(--color-primary)) brightness(1.1);
+            }
+            &:active {
+                filter: drop-shadow(0 0 8px var(--color-primary)) brightness(0.9);
+            }
+
+            span {
+                transform: translateY(.5rem);
+            }
+            i {
+                font-size: 2.5rem;
+                line-height: 0;
+
+                /* margin-bottom: -0.1rem; */
+            }
         }
     }
 
@@ -70,7 +98,7 @@
 
         margin-bottom: 1rem;
     }
-    .banner {
+    .banners {
         padding: 0 1.7rem;
         height: fit-content;
 
@@ -85,25 +113,30 @@
             display: none;
         }
 
-        div {
-            /* background-color: var(--color-w); */
+        > div {
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: center;
             border-radius: 10px;
-            /* padding: 1rem;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center; */
 
             /* width: 100%; */
             width: 17rem;
             min-width: 17rem;
-            /* height: fit-content; */
+            height: 16rem;
+        }
+        .primeiro {
+            background-image: url('../../assets/1.jpg');
 
-            img {
-                border-radius: 10px;
-                object-fit: cover;
-            }
+            /* &:hover::after {
+                visibility: visible;
+                content: 'Ensaio Fotográfico (solo ou casal) + Vale compra de R$100 em roupas e acessórios na Afroperifa';
+            } */
+        }
+        .segundo {
+            background-image: url('../../assets/2.jpg');
+        }
+        .terceiro {
+            background-image: url('../../assets/3.jpg');
         }
     }
     .info-premios {
@@ -112,7 +145,7 @@
         gap: .1rem;
 
         padding: 1rem 1.7rem 0;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 500;
         text-decoration: underline;
     }
@@ -265,10 +298,23 @@
             font-size: 1.3rem;
 
             position: absolute;
-            top: -120%;
-            left: 5rem;
+            top: -110%;
+            left: 5.5rem;
             transform: translateX(-50%);
             z-index: 5;
         }
+    }
+}
+
+#Premios {
+    text-align: left;
+    align-items: flex-start;
+
+    span {
+        font-weight: 700;
+    }
+    a {
+        text-decoration: underline;
+        color: var(--color-primary);
     }
 }

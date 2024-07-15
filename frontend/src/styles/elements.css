@@ -448,6 +448,41 @@ body:has(.Checkout) {
     }
 }
 
+@keyframes movendo {
+    0% {
+        transform: scale(1) translateX(-50%);
+    }
+
+    50% {
+        transform: scale(1.08) translateX(-40%);
+    }
+    
+    100% {
+        transform: scale(1) translateX(-50%);
+    }        
+}
+.movendo {
+    animation: movendo 2.5s linear infinite;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-1rem);
+        filter: drop-shadow(0 0 5px var(--color-primary)) brightness(1);
+    }
+    50% {
+        transform: translateY(0.1rem);
+        filter: drop-shadow(0 0 5px var(--color-primary)) brightness(1.1);
+    }
+    100% {
+        transform: translateY(-1rem);
+        filter: drop-shadow(0 0 5px var(--color-primary)) brightness(1);
+    }
+}
+.move-down {
+    animation: moveDown 2.5s linear infinite;
+}
+
 @keyframes fadenInHeigth {
     0% {
         height: 0;
