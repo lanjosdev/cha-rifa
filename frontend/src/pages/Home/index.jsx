@@ -22,9 +22,9 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 import Logo from '../../assets/logo.png';
 import PixLogo from '../../assets/pix-logo-orange.svg';
 import Capa from '../../assets/capa.jpg';
-import primeiro from '../../assets/1.jpg';
-import segundo from '../../assets/2.jpg';
-import terceiro from '../../assets/3.jpg';
+// import primeiro from '../../assets/1.jpg';
+// import segundo from '../../assets/2.jpg';
+// import terceiro from '../../assets/3.jpg';
 
 // Estilo:
 import './style.css';

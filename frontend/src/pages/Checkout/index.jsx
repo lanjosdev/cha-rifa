@@ -368,7 +368,7 @@ export default function Checkout() {
         </main>
 
         <footer>
-            <p>Aplicação web desenvolvida com 🧡 por <a href="https://lanjosdev.github.io/portfolio" target='_blank'>Lucas dos Anjos</a></p>
+            <p>Aplicação web desenvolvida com 🧡 por <a href="https://github.com/lanjosdev" target='_blank'>Lucas dos Anjos</a></p>
         </footer>
 
         <ModalPix showModal={showModalPix} closeModal={()=> setShowModalPix(false)} />
