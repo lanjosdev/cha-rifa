@@ -14,6 +14,7 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
+import PixLogo from '../../assets/pix-logo-orange.svg';
 import LogoPix from '../../assets/pix-logo.svg';
 
 // Estilo:
@@ -81,6 +82,11 @@ export default function Fim() {
             <Link to='/'>
                 <img src={Logo} alt="Logo" />
             </Link>
+
+            <button className='btn-pix-primary' onClick={()=> setShowModalPix(true)}>
+                <img src={PixLogo} alt="" />
+                Nosso Pix
+            </button>
 
             </div>
         </header>

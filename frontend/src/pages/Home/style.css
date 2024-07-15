@@ -123,6 +123,10 @@
             width: 17rem;
             min-width: 17rem;
             height: 16rem;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
         .primeiro {
             background-image: url('../../assets/1.jpg');
@@ -140,6 +144,7 @@
         }
     }
     .info-premios {
+        max-width: fit-content;
         display: flex;
         align-items: center;
         gap: .1rem;
@@ -148,6 +153,10 @@
         font-size: 1.5rem;
         font-weight: 500;
         text-decoration: underline;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
     
     h2#iniciar {

@@ -11,12 +11,14 @@ import Cookies from "js-cookie";
 // Components:
 import { toast } from "react-toastify";
 import InputMask from 'react-input-mask';
+import { ModalPix } from '../../components/ModalPix';
 
 // Utils:
 import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
+import PixLogo from '../../assets/pix-logo-orange.svg';
 // import LogoPix from '../../assets/logo-pix.svg';
 
 // Estilo:
@@ -26,6 +28,7 @@ import './style.css';
 export default function Checkout() {
     const [loading, setLoading] = useState(false);
     // const [showError, setShowError] = useState(false);
+    const [showModalPix, setShowModalPix] = useState(false);
     
     const [numbersCarrinho, setNumbersCarrinho] = useState([]);
     const [subtotalCarrinho, setSubtotalCarrinho] = useState([]);
@@ -162,16 +165,15 @@ export default function Checkout() {
                 window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
             }
 
+
             let objCookie = {
                 comprado_por: inputNome,
                 numeros: numbersCarrinho,
-                total: subtotalCarrinho,
-                mensagem: mensagem
+                total: subtotalCarrinho
             };
             Cookies.set('pedidoConfirmado', JSON.stringify(objCookie), {
                 expires: 2 //48h
             });
-
 
             Cookies.remove('sessao');
             Cookies.remove('numerosCarrinho');
@@ -226,6 +228,11 @@ export default function Checkout() {
             <Link to='/'>
                 <img src={Logo} alt="Logo" />
             </Link>
+
+            <button className='btn-pix-primary' onClick={()=> setShowModalPix(true)}>
+                <img src={PixLogo} alt="" />
+                Nosso Pix
+            </button>
 
             </div>
         </header>
@@ -363,6 +370,8 @@ export default function Checkout() {
         <footer>
             <p>Aplicação web desenvolvida com 🧡 por <a href="https://lanjosdev.github.io/portfolio" target='_blank'>Lucas dos Anjos</a></p>
         </footer>
+
+        <ModalPix showModal={showModalPix} closeModal={()=> setShowModalPix(false)} />
         </>
     )
 }

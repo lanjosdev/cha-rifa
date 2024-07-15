@@ -212,6 +212,36 @@ body:has(.Checkout) {
     }
 }
 
+.btn-pix-primary {
+    background-color: var(--color-secundary);
+    filter: brightness(1.1);
+    padding: .8rem 1.5rem;
+    border-radius: 10px;
+    /* height: $height; */
+    /* line-height: $height; */
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(1.1);
+    }
+    &:active {
+        filter: drop-shadow(0 0 8px var(--color-primary)) brightness(0.9);
+    }
+
+    img {
+        max-width: 2rem;
+    }
+}
+
 .btn-pix {
     background-color: #37B4AA;
     border-radius: 7px;

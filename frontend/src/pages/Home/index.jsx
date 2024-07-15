@@ -11,6 +11,7 @@ import Cookies from "js-cookie";
 // import { Header } from '../../components/ui/Header';
 // import { Tabela } from '../../components/ui/Tabela';
 import { ModalIntro } from '../../components/Modal';
+import { ModalPix } from '../../components/ModalPix';
 import { PreviewCart } from '../../components/PreviewCart';
 import { toast } from "react-toastify";
 
@@ -19,7 +20,8 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 
 // Assets:
 import Logo from '../../assets/logo.png';
-import Capa from '../../assets/capa1.jpg';
+import PixLogo from '../../assets/pix-logo-orange.svg';
+import Capa from '../../assets/capa.jpg';
 import primeiro from '../../assets/1.jpg';
 import segundo from '../../assets/2.jpg';
 import terceiro from '../../assets/3.jpg';
@@ -32,6 +34,7 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     const [showMsgFeedback, setShowMsgFeedback] = useState('');
     const [showModalIntro, setShowModalIntro] = useState(false);
+    const [showModalPix, setShowModalPix] = useState(false);
     const [showModalPremios, setShowModalPremios] = useState(false);
     const [firstAcess, setfirstAcess] = useState(true);
     const [showCart, setShowCart] = useState(false);
@@ -313,13 +316,18 @@ export default function Home() {
                 <img src={Logo} alt="Logo" />
             </Link>
 
-            {showCart && (
+            {showCart ? (
             <button 
             className='btn-close' 
             onClick={()=> {setShowCart(false); setShowMsgFeedback('')}}
             >
                 {/* <ion-icon name="close-circle-outline"></ion-icon> */}
                 <ion-icon name="close"></ion-icon>
+            </button>
+            ) : (
+            <button className='btn-pix-primary' onClick={()=> setShowModalPix(true)}>
+                <img src={PixLogo} alt="" />
+                Nosso Pix
             </button>
             )}
 
@@ -462,6 +470,8 @@ export default function Home() {
             firstAcess={firstAcess}
         />        
         )}
+
+        <ModalPix showModal={showModalPix} closeModal={()=> setShowModalPix(false)} />
 
         {showCart && (
         <PreviewCart
