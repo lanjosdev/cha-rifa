@@ -224,6 +224,10 @@
                 /* box-shadow: 0 0 0px .8px var(--color-text); */
                 height: 3.2rem;
             }
+
+            &.loading-numbers {
+                opacity: 0.2;
+            }
         }
 
         > p {

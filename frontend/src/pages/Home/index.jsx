@@ -32,6 +32,7 @@ import './style.css';
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
+    const [loadingSessaoExpirada, setLoadingSessaoExpirada] = useState(false);
     const [showMsgFeedback, setShowMsgFeedback] = useState('');
     const [showModalIntro, setShowModalIntro] = useState(false);
     const [showModalPix, setShowModalPix] = useState(false);
@@ -96,19 +97,89 @@ export default function Home() {
     }, [navigate, pedidoConfirmadoCookie]);
 
     useEffect(()=> {
-        function verificaCarrinhoCookie() {
+        async function verificaCarrinhoCookie() {
             console.log('Effect verifica carrinho cookie');
 
             if(numerosCarrinhoCookie) {
                 if(sessaoCookie) {
+                    let numbersId = JSON.parse(numerosCarrinhoCookie).map(num => num.id);
+
                     setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
-                    setNumbersSelecionados(JSON.parse(numerosCarrinhoCookie));
+                    setNumbersSelecionados(numbersId);
                 }
                 else {
                     toast.info('Sua sessão expirou. Recomece seu carrinho.');
-                    Cookies.remove('numerosCarrinho');
+                    //=> await delNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
+                    console.log('Inicia update sessao experida...');
+                    setShowMsgFeedback('');
+                    setLoadingSessaoExpirada(true);
+                    let numerosCarrinhoDecode = JSON.parse(numerosCarrinhoCookie);
+
+                    let deuErro = false;
+                    for(let num of numerosCarrinhoDecode) {
+                        try {
+                            const responseVerifica = await NUMEROS_GET_ID(num.id);
+                            console.log(responseVerifica);
+
+                            if(responseVerifica.update == num.update) {
+                                let idNum = num.id;
+                                // carrinho false
+                                let obj = {
+                                    preco: 20,
+                                    carrinho: false,
+                                    comprado_por: null,
+                                    contato: null
+                                };
+    
+                                let formData = new FormData();
+                                formData.append('id', idNum);
+                                formData.append('editObj', JSON.stringify(obj));
+    
+                                try {
+                                    const responseUpdate = await NUMEROS_UPDATE_ID(formData);
+                                    console.log('Sucesso: ', responseUpdate);
+                                }
+                                catch(erro) {
+                                    console.log(`ERRO NO UPDATE ${num.id}: `, erro);
+                                    deuErro = true;
+                                }
+                                
+                            }
+                        }
+                        catch(erro) {
+                            console.log(`ERRO NO GETID ${num.id}: `, erro);
+                            deuErro = true;
+                        }
+                    }
+                    // catch(erro) {
+                    //     console.log('DEU ERRO: ', erro);
+                    //     toast.error('Algum erro ao remover número do carrinho');
+                    // }
+                    if(deuErro) {
+                        toast.error('Houve algum erro!');
+                    }
+
+                    console.log('ZERA TUDO');
                     setNumbersCarrinho([]);
                     setNumbersSelecionados([]);
+
+
+                    //=> Carrega numeros
+                    try {
+                        const response = await NUMEROS_GET_ALL();
+                        console.log(response);
+                
+                        setNumbers(response);
+                    } 
+                    catch(erro) {
+                        console.log('Deu erro: ', erro);
+                        toast.error('Erro ao carregar números');
+                    }
+
+                    
+                    Cookies.remove('numerosCarrinho');
+                    console.log('fim varredura sessao expirada');
+                    setLoadingSessaoExpirada(false);
                 }
             }
         }
@@ -156,7 +227,12 @@ export default function Home() {
         else {
             //newLista.push(numeroClicado.id);
             //btns[numeroClicado.idx].classList.add('active');
-            setNumbersSelecionados(prev=> [...prev, numeroClicado.id]);
+            if(numbersSelecionados.length >= 20) {
+                toast.info('Você chegou no limite de 20 números!');
+            }
+            else {
+                setNumbersSelecionados(prev=> [...prev, numeroClicado.id]);
+            }
         }
     }
 
@@ -169,7 +245,8 @@ export default function Home() {
         if(!sessaoCookie) {
             console.log('INICIO DE SESSÃO');
             Cookies.set('sessao', JSON.stringify('iniciou'), {
-                expires: 1/96 //15min??
+                // expires: 1/96 //15min
+                expires: 1/144 //10min
             });
         }
         
@@ -288,7 +365,7 @@ export default function Home() {
 
             try {
                 const response = await NUMEROS_UPDATE_ID(formData);
-                numerosCarrinho.push(response.id);
+                numerosCarrinho.push(response);
             }
             catch(error) {
                 console.log('DEU ERRO: ', error);
@@ -296,9 +373,13 @@ export default function Home() {
             }
         }
 
-        setNumbersSelecionados(numerosCarrinho);
+        let numsIds = numerosCarrinho.map(num => num.id);
+        console.log(numsIds);
+        console.log(numerosCarrinho);
+        setNumbersSelecionados(numsIds);
         setNumbersCarrinho(numerosCarrinho);
-        Cookies.set('numerosCarrinho', JSON.stringify(numerosCarrinho), {
+        let string =  await JSON.stringify(numerosCarrinho);
+        Cookies.set('numerosCarrinho', string, {
             expires: 1 //24h
         });
     }
@@ -376,20 +457,20 @@ export default function Home() {
                 ) : (
 
                 numbers.length > 0 ? (
-                    <div className="list-numbers">
+                    <div className={`list-numbers ${loading || loadingSessaoExpirada ? 'loading-numbers' : ''}`}>
                         {numbers.map((numero)=> (
                         <button 
                         key={numero.id} 
                         onClick={()=> handleNumerosSelecionados(numero)} 
-                        className={`btn ${numbersCarrinho.includes(numero.id) ? '' : (numero.comprado_por ? 'comprado' : (numero.carrinho ? 'reservado' : ''))} ${numbersSelecionados.includes(numero.id) ? 'active' : ''}`}
-                        disabled={numero.comprado_por || numbersCarrinho.includes(numero.id) || numero.carrinho || loading}
+                        className={`btn ${numbersCarrinho.map(num => num.id).includes(numero.id) ? '' : (numero.comprado_por ? 'comprado' : (numero.carrinho ? 'reservado' : ''))} ${numbersSelecionados.includes(numero.id) ? 'active' : ''}`}
+                        disabled={numero.comprado_por || numbersCarrinho.map(num => num.id).includes(numero.id) || numero.carrinho || loading || loadingSessaoExpirada}
                         >
                             {formatarCasasNumero(numero.id)}
                         </button>
                         ))}                                                                                    
                     </div>
                 ) : (
-                    <p className='msg-erro'>Nenhum numero no DB</p>
+                    <p className='msg-erro'>Nenhum número foi carregado</p>
                 )
 
                 )}
@@ -410,7 +491,7 @@ export default function Home() {
                 <button 
                 className='btn-add' 
                 onClick={handleVerificaNumSelecionados}
-                disabled={numbersSelecionados.length == 0 || numbersSelecionados.length == numbersCarrinho.length || loading}
+                disabled={numbersSelecionados.length == 0 || numbersSelecionados.length == numbersCarrinho.length || loading || loadingSessaoExpirada}
                 >
                     {loading && numbersSelecionados.length !== numbersCarrinho.length ? (
                         <p>Adicionando...</p>
@@ -484,6 +565,7 @@ export default function Home() {
             setShowMsgFeedback={setShowMsgFeedback}
             // numbers={numbers}
             setNumbers={setNumbers}
+            loadingPai={loading || loadingSessaoExpirada}
         />        
         )}
         </>

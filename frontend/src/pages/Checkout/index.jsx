@@ -60,8 +60,8 @@ export default function Checkout() {
                     setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
                 }
                 else {
-                    toast.info('Sua sessão expirou. Recomece seu carrinho.');
-                    Cookies.remove('numerosCarrinho');
+                    // toast.info('Sua sessão expirou. Recomece seu carrinho.');
+                    // Cookies.remove('numerosCarrinho');
                     navigate('/');                    
                 }
             }
@@ -89,10 +89,16 @@ export default function Checkout() {
 
     async function handleDelNumberCarrinho(numeroDel) 
     {
-      console.log('update carrinho false...');
-      setLoading(true);
+        const sessionCookie = Cookies.get('sessao');
+        if(!sessionCookie) {
+            navigate('/');
+            return;
+        }
+        
+        console.log('update carrinho false...');
+        setLoading(true);
 
-      try {
+        try {
         let idCliente = numeroDel;
         // carrinho false
         let obj = {
@@ -107,86 +113,93 @@ export default function Checkout() {
         formData.append('editObj', JSON.stringify(obj));
 
         const response = await NUMEROS_UPDATE_ID(formData);
-        let newNumbersCarrinho = numbersCarrinho.filter((number)=> number != response?.id);
-        console.log('Novo carrinho: ', newNumbersCarrinho);
-        if(newNumbersCarrinho.length == 0) {
-            navigate('/');
-        }
-        
+        let newNumbersCarrinho = numbersCarrinho.filter((number)=> number.id != response?.id);
+        console.log('Novo carrinho: ', newNumbersCarrinho);      
 
         setNumbersCarrinho(newNumbersCarrinho);
         Cookies.set('numerosCarrinho', JSON.stringify(newNumbersCarrinho), {
-          expires: 1
+            expires: 1
         });
-      }
-      catch(erro) {
+
+        if(newNumbersCarrinho.length == 0) {
+            navigate('/');
+        }
+        }
+        catch(erro) {
         console.log('DEU ERRO: ', erro);
         toast.error('Algum erro ao remover número do carrinho');
-      }
-      
-      console.log('fim handleDelNumberCarrinho()');
-      setLoading(false);
+        }
+        
+        console.log('fim handleDelNumberCarrinho()');
+        setLoading(false);
     }
 
     async function handleSubmitConfirmarCompra(contato)
     {
-        setLoading(true);
-
-        console.log('Nome: ', inputNome);
-        console.log('Telefone: ', inputPhone);
-        console.log('Seus numeros: ', numbersCarrinho);
-        console.log('Total: ', subtotalCarrinho);
-
-        let btn;
-        if(contato == 'Carol') {
-            btn = document.querySelector('.lucas');
-            btn.classList.add('hidden');
-        } 
+        const sessionCookie = Cookies.get('sessao');
+        if(!sessionCookie) {
+            navigate('/');
+            return;
+        }
         else {
-            const btn = document.querySelector('.carol');
-            btn.classList.add('hidden');
-        }
+            setLoading(true);
 
-        try {
-            await updateNumComprado(numbersCarrinho);
+            console.log('Nome: ', inputNome);
+            console.log('Telefone: ', inputPhone);
+            console.log('Seus numeros: ', numbersCarrinho);
+            console.log('Total: ', subtotalCarrinho);
 
-
-            let listaMensagem = '';
-            for(let item of numbersCarrinho) {
-                listaMensagem += `-%20${item}%0A`;
-            }
-            let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`;
+            let btn;
             if(contato == 'Carol') {
-                // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
-                window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
-            }
+                btn = document.querySelector('.lucas');
+                btn.classList.add('hidden');
+            } 
             else {
-                // window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
-                window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
+                const btn = document.querySelector('.carol');
+                btn.classList.add('hidden');
             }
 
+            try {
+                await updateNumComprado(numbersCarrinho);
 
-            let objCookie = {
-                comprado_por: inputNome,
-                numeros: numbersCarrinho,
-                total: subtotalCarrinho
-            };
-            Cookies.set('pedidoConfirmado', JSON.stringify(objCookie), {
-                expires: 2 //48h
-            });
 
-            Cookies.remove('sessao');
-            Cookies.remove('numerosCarrinho');
-            setNumbersCarrinho([]);
+                let listaMensagem = '';
+                for(let item of numbersCarrinho) {
+                    listaMensagem += `-%20${item.id}%0A`;
+                }
+                let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`;
+                if(contato == 'Carol') {
+                    // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
+                    window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
+                }
+                else {
+                    // window.location.href = `https://wa.me/5511949066546?text=${mensagem}`;
+                    window.open(`https://wa.me/5511949066546?text=${mensagem}`, '_blank');
+                }
+
+
+                let objCookie = {
+                    comprado_por: inputNome,
+                    numeros: numbersCarrinho,
+                    total: subtotalCarrinho
+                };
+                Cookies.set('pedidoConfirmado', JSON.stringify(objCookie), {
+                    expires: 2 //48h
+                });
+
+                Cookies.remove('sessao');
+                Cookies.remove('numerosCarrinho');
+                setNumbersCarrinho([]);
+            }
+            catch(erro) {
+                console.log('DEU ERRO: ', erro);
+                toast.error('Algum erro ao confirmar o pedido!');
+            }
+
+            console.log('Fim handleSubmitConfirmarCompra()');
+            btn.classList.remove('hidden');
+            setLoading(false);
         }
-        catch(erro) {
-            console.log('DEU ERRO: ', erro);
-            toast.error('Algum erro ao confirmar o pedido!');
-        }
-
-        console.log('Fim handleSubmitConfirmarCompra()');
-        btn.classList.remove('hidden');
-        setLoading(false);
     }
 
     async function updateNumComprado(arrayNumCarrinho) 
@@ -196,8 +209,8 @@ export default function Checkout() {
         console.log(arrayNumCarrinho);
 
         try {
-            for(let id of arrayNumCarrinho) {
-                let idNum = id;
+            for(let num of arrayNumCarrinho) {
+                let idNum = num.id;
                 let obj = {
                     preco: 20,
                     carrinho: true,
@@ -256,13 +269,13 @@ export default function Checkout() {
 
                         <div className="list-numbers">
                             {numbersCarrinho.map((numero)=> (
-                            <div key={numero}>
+                            <div key={numero.id}>
                                 <button
                                 className='btn active'
                                 >
-                                    {formatarCasasNumero(numero)}
+                                    {formatarCasasNumero(numero.id)}
                                 </button>
-                                <ion-icon name="trash-outline" onClick={()=> handleDelNumberCarrinho(numero)}></ion-icon>
+                                <ion-icon name="trash-outline" onClick={()=> handleDelNumberCarrinho(numero.id)}></ion-icon>
                             </div>
                             ))}
                         </div>

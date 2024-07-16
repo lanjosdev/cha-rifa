@@ -49,7 +49,7 @@ export function ModalIntro({ closeModal, firstAcess }) {
           </div>
 
           <div className="content-window">
-            <img src={Banner} alt="" />
+            <img src={Banner} alt="Imagem das informações e instruções da rifa solidária" />
 
             {/* <div className="check-not-show">
               <input type="checkbox" name="" id="not-show" />

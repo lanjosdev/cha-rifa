@@ -52,7 +52,7 @@ export default function Fim() {
     function reenviarPedido(contato) {
         let listaMensagem = '';
         for(let item of objPedido.numeros) {
-            listaMensagem += `-%20${item}%0A`;
+            listaMensagem += `-%20${item.id}%0A`;
         }
         let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${objPedido.comprado_por})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${objPedido.numeros.length}%0A*Valor%20total%20do%20pedido:*%20R$${objPedido.total},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`;
         if(contato == 'Carol') {
@@ -105,9 +105,9 @@ export default function Fim() {
                             <span>
                                 {objPedido?.numeros?.length > 1 ? 'Seus números:' : 'Seu número:'}
                             </span>
-                            {objPedido?.numeros?.map((num, idx)=> (
-                                <span className='btn active' key={idx}>
-                                    {formatarCasasNumero(num)}
+                            {objPedido?.numeros?.map((num)=> (
+                                <span className='btn active' key={num.id}>
+                                    {formatarCasasNumero(num.id)}
                                 </span>
                             ))}
                         </p>

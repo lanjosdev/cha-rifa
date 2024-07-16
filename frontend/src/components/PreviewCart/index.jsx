@@ -26,9 +26,10 @@ PreviewCart.propTypes = {
   setNumbersCarrinho: PropTypes.func,
   subtotalCarrinho: PropTypes.any,
   setNumbersSelecionados: PropTypes.func,
-  setNumbers: PropTypes.func
+  setNumbers: PropTypes.func,
+  loadingPai: PropTypes.bool
 }
-export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNumbersCarrinho, subtotalCarrinho, setShowMsgFeedback, setNumbers }) {
+export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNumbersCarrinho, subtotalCarrinho, setShowMsgFeedback, setNumbers, loadingPai }) {
     const [loading, setLoading] = useState(false); 
     // const [showMsgFeedback, setShowMsgFeedback] = useState('');
 
@@ -56,9 +57,11 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
         formData.append('editObj', JSON.stringify(obj));
 
         const response = await NUMEROS_UPDATE_ID(formData);
-        let newNumbersCarrinho = numbersCarrinho.filter((number)=> number != response?.id);
+        let newNumbersCarrinho = numbersCarrinho.filter((number)=> number.id != response?.id);
 
         console.log('Novo carrinho: ', newNumbersCarrinho);
+
+
         //=> Carrega numeros
         try {
             const response = await NUMEROS_GET_ALL();
@@ -86,6 +89,17 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
       setLoading(false);
     }
 
+    function handleIrCarrinho() {
+      const sessaoCookie = Cookies.get('sessao');
+
+      if(sessaoCookie) {
+        navigate('/checkout');
+      }
+      else {
+        closeCart();
+      }
+    }
+
 
     return (
       <div className='PreviewCart'>
@@ -108,14 +122,14 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
                 <div className="list-numbers">
 
                     {numbersCarrinho.map((numero)=> (
-                    <div key={numero}>
+                    <div key={numero.id}>
                       <button
                       className='btn active'
                       >
-                          {formatarCasasNumero(numero)}
+                          {formatarCasasNumero(numero.id)}
                       </button>
 
-                      <ion-icon name="trash-outline" onClick={()=> handleDelNumberCarrinho(numero)}></ion-icon>
+                      <ion-icon name="trash-outline" onClick={()=> handleDelNumberCarrinho(numero.id)}></ion-icon>
                     </div>
                     ))}
 
@@ -175,13 +189,13 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
               {numbersCarrinho.length > 0 ? 'Selecionar mais números' : 'Selecionar números'}
             </button>
 
-            <button className='btn-carrinho' onClick={()=> navigate('/checkout')} disabled={numbersCarrinho.length == 0 || loading}>
+            <button className='btn-carrinho' onClick={handleIrCarrinho} disabled={numbersCarrinho.length == 0 || loading}>
               Ir para o carrinho
             </button>
           </div>
 
 
-          {loading && (
+          {loading || loadingPai && (
             <div className="loading-window">
               <p>Atualizando...</p>
             </div>
