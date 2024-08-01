@@ -115,8 +115,8 @@
 
         > div {
             background-repeat: no-repeat;
-            background-size: 120%;
-            background-position: center;
+            background-size: contain;
+            /* background-position: center; */
             border-radius: 10px;
 
             /* width: 100%; */
@@ -129,7 +129,7 @@
             }
         }
         .primeiro {
-            background-image: url('../../assets/1.jpg');
+            background-image: url('../../assets/img1.png');
 
             /* &:hover::after {
                 visibility: visible;
@@ -137,10 +137,10 @@
             } */
         }
         .segundo {
-            background-image: url('../../assets/2.jpg');
+            background-image: url('../../assets/img2.png');
         }
         .terceiro {
-            background-image: url('../../assets/3.jpg');
+            background-image: url('../../assets/img3.png');
         }
     }
     .info-premios {
