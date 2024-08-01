@@ -8,7 +8,7 @@
 //import Button from 'react-bootstrap/Button';
 
 // Assets:
-import Banner from '../../assets/banner.jpg';
+import Banner from '../../assets/banner.webp';
 
 // Estilo:
 import './style.css';
