@@ -24,7 +24,7 @@ export function ModalPix({ showModal, closeModal }) {
   
     function handleCopiarChavePix() {
         console.log('copiando chave...');
-        let texto = 'partoetravessia@gmail.com';
+        let texto = 'partoetravessia@gmail.com'; ////
         navigator.clipboard.writeText(texto);
 
         toast.success('Chave Pix Copiada!');

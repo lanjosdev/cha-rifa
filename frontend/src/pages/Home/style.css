@@ -113,16 +113,22 @@
             display: none;
         }
 
+        &:hover > div:not(:hover) {
+            transform: scale(0.95);
+        }
+
         > div {
             background-repeat: no-repeat;
             background-size: contain;
-            /* background-position: center; */
+            background-position: center;
             border-radius: 10px;
 
             /* width: 100%; */
             width: 17rem;
             min-width: 17rem;
             height: 16rem;
+
+            transition: all .3s ease-in-out;
 
             &:hover {
                 cursor: pointer;
@@ -186,7 +192,19 @@
             button {
                 height: 3rem;
                 font-family: var(--font-main), sans-serif;
-                padding: 0 1rem;
+                padding: 0 0.7rem;
+
+                display: flex;
+                align-items: center;
+                gap: .3rem;
+
+                small {
+                    background-color: #66666628;
+                    border-radius: 5px;
+                    padding: .1rem .3rem;
+
+                    font-size: 1.3rem;
+                }
             }
         }
 
