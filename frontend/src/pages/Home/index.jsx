@@ -191,7 +191,7 @@ export default function Home() {
             console.log('Effect atualiza subtotal');
 
             let valorNum = 20;
-            if(numbersCarrinho.length >= 5) {
+            if(numbersCarrinho.length >= 3) {
                 valorNum = 15;
             }
             let subtotal = valorNum * numbersCarrinho.length;

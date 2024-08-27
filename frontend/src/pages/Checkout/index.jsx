@@ -77,7 +77,7 @@ export default function Checkout() {
             console.log('Effect atualiza subtotal');
 
             let valorNum = 20;
-            if(numbersCarrinho.length >= 5) {
+            if(numbersCarrinho.length >= 3) {
                 valorNum = 15;
             }
             let subtotal = valorNum * numbersCarrinho.length;
@@ -167,7 +167,7 @@ export default function Checkout() {
                 for(let item of numbersCarrinho) {
                     listaMensagem += `-%20${item.id}%0A`;
                 }
-                let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento:*%20partoetravessia@gmail.com%0A`; ////
+                let mensagem = `Ol%C3%A1%20${contato}%0A%0ASegue%20os%20detalhes%20do%20meu%20pedido%20(identificado%20como:%20${inputNome})%0A*N%C3%BAmeros%20selecionados:*%0A${listaMensagem}%0A*Quantidade%20de%20n%C3%BAmeros:*%20${numbersCarrinho.length}%0A*Valor%20total%20do%20pedido:*%20R$${subtotalCarrinho},00%0A%0A%0A*Chave%20pix%20para%20pagamento%20(celular):*%0A11%2098280-9221%0A`;
                 if(contato == 'Carol') {
                     // window.location.href = `https://wa.me/5511982809221?text=${mensagem}`;
                     window.open(`https://wa.me/5511982809221?text=${mensagem}`, '_blank');
@@ -292,7 +292,7 @@ export default function Checkout() {
 
                             <div className="ligador"></div>
                             
-                            {numbersCarrinho.length >= 5 ? (
+                            {numbersCarrinho.length >= 3 ? (
                                 <p className='valor'><span>R$20,00</span> <span>R$15,00</span></p>                  
                             ) : (
                                 <p className='valor'>R$20,00</p>

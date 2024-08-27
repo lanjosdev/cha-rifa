@@ -152,7 +152,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
 
                   <div className="ligador"></div>
                 
-                  {numbersCarrinho.length >= 5 ? (
+                  {numbersCarrinho.length >= 3 ? (
                     <p className='valor'><span>R$20,00</span> <span>R$15,00</span></p>                  
                   ) : (
                     <p className='valor'>R$20,00</p>

@@ -24,7 +24,7 @@ export function ModalPix({ showModal, closeModal }) {
   
     function handleCopiarChavePix() {
         console.log('copiando chave...');
-        let texto = 'partoetravessia@gmail.com'; ////
+        let texto = '11 98280-9221';
         navigator.clipboard.writeText(texto);
 
         toast.success('Chave Pix Copiada!');
@@ -54,15 +54,15 @@ export function ModalPix({ showModal, closeModal }) {
                     <div>
                         <p>CAROLINE OLIVEIRA SANTOS</p>
                         <p>CPF: ***.840.208-**</p>
-                        <p>Banco: BCO C6 S.A.</p>
+                        <p>Banco: BCO SOFISA S.A.</p>
                     </div>
                 </div>
 
                 <div className="chave-pix">
-                    <h4>Chave Pix</h4>
+                    <h4>Chave Pix (celular)</h4>
 
                     <div>
-                        <p onClick={handleCopiarChavePix}>partoetravessia@gmail.com</p>
+                        <p onClick={handleCopiarChavePix}>11 98280-9221</p>
 
                         <button className='btn-pix' onClick={handleCopiarChavePix}>
                             <img src={LogoPix} alt="" />
