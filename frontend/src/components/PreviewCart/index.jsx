@@ -195,7 +195,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
           </div>
 
 
-          {loading || loadingPai && (
+          {(loading || loadingPai) && (
             <div className="loading-window">
               <p>Atualizando...</p>
             </div>

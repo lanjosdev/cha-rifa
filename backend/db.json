@@ -1,43 +1,43 @@
 [
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "LUcas",
+        "contato": null,
         "id": 1,
+        "update": "02\/09\/2024 00:26:30"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 2,
+        "update": "02\/09\/2024 01:57:45"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 3,
+        "update": "02\/09\/2024 02:01:36"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 4,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "02\/09\/2024 00:27:58"
     },
     {
-        "id": 5,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 5,
+        "update": "02\/09\/2024 00:27:56"
     },
     {
         "id": 6,
@@ -48,12 +48,12 @@
         "update": null
     },
     {
-        "id": 7,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 7,
+        "update": "02\/09\/2024 01:47:21"
     },
     {
         "id": 8,
@@ -88,36 +88,36 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 12,
+        "update": "02\/09\/2024 02:04:07"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 13,
+        "update": "02\/09\/2024 02:03:54"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 14,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "02\/09\/2024 02:04:05"
     },
     {
-        "id": 15,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 15,
+        "update": "02\/09\/2024 02:03:56"
     },
     {
         "id": 16,
@@ -136,12 +136,12 @@
         "update": null
     },
     {
-        "id": 18,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 18,
+        "update": "02\/09\/2024 01:29:41"
     },
     {
         "id": 19,
