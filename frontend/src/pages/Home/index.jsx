@@ -537,9 +537,11 @@ export default function Home() {
                 </div>
 
                 <div className="content-window" id='Premios'>
-                    <p><span>1° Lugar:</span> Ensaio Fotográfico com <a href="https://www.instagram.com/fotografia_caroline.b?igsh=MW02dXpoNHljOXQyZg==" target='_blank'>Cacau Brandão</a> (solo ou casal) <span>+</span> Vale compra de R$100 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
+                    <p><span>1° Lugar:</span> Ensaio Fotográfico com <a href="https://www.instagram.com/fotografia_caroline.b?igsh=MW02dXpoNHljOXQyZg==" target='_blank'>Cacau Brandão</a> (solo ou casal) <span>+</span> Vale compra de R$120 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
                     <p><span>2° Lugar:</span> Vale compra de R$100 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
-                    <p><span>3° Lugar:</span> Vale compra de R$80 no Ifood.</p>                   
+                    <p><span>3° Lugar:</span> Vale compra de R$80 no Ifood.</p>     
+
+                    <p>Observação: Os vales compra poderão ser optados por dinheiro.</p>              
                 </div>
             </div>
         </div>
