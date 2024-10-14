@@ -78,28 +78,36 @@ function createNumber($newObj)
 // REQUESTS & RESPONSES:
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
+    $token = $_POST['token'] ?? null;
     $qtd = $_POST['qtd'] ?? null;
     $preco = $_POST['preco'] ?? 15.0;
     //OU
     $newObj = $_POST['newObj'] ?? null; //sem precisar da prop id
 
-    if(isset($qtd) && $qtd > 0) {
-        $response = createNumbers(intval($qtd), floatval($preco));
-    }
-    else if(isset($newObj) && $newObj != null) {
-        $newObj = json_decode($newObj); //recebe em string e transforma em obj/array
-        //var_dump($newObj);
-        if(json_last_error()) {
+    if($token == $API_KEY) {
+        if(isset($qtd) && $qtd > 0) {
+            $response = createNumbers(intval($qtd), floatval($preco));
+        }
+        else if(isset($newObj) && $newObj != null) {
+            $newObj = json_decode($newObj); //recebe em string e transforma em obj/array
+            //var_dump($newObj);
+            if(json_last_error()) {
+                $response = [
+                    'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
+                ];
+            } 
+    
+            $response = createNumber($newObj);
+        }
+        else {
             $response = [
-                'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
+                'erro' => 'Erro no POST'
             ];
-        } 
-
-        $response = createNumber($newObj);
+        }
     }
     else {
         $response = [
-            'erro' => 'Erro no POST'
+            'erro' => 'Token inválido'
         ];
     }
 

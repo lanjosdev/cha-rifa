@@ -43,7 +43,7 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
       setLoading(true);
 
       try {
-        let idCliente = numeroDel;
+        let idNum = numeroDel;
         // carrinho false
         let obj = {
             preco: 20,
@@ -52,11 +52,11 @@ export function PreviewCart({ closeCart, showMsgFeedback, numbersCarrinho, setNu
             contato: null
         };
         
-        let formData = new FormData();
-        formData.append('id', idCliente);
-        formData.append('editObj', JSON.stringify(obj));
+        // let formData = new FormData();
+        // formData.append('id', idNum);
+        // formData.append('editObj', JSON.stringify(obj));
 
-        const response = await NUMEROS_UPDATE_ID(formData);
+        const response = await NUMEROS_UPDATE_ID(idNum, obj);
         let newNumbersCarrinho = numbersCarrinho.filter((number)=> number.id != response?.id);
 
         console.log('Novo carrinho: ', newNumbersCarrinho);

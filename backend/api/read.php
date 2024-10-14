@@ -112,39 +112,47 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
         $id = $_GET['id'] ?? null;
         $carrinho = $_GET['carrinho'] ?? null;
         $comprado_por = $_GET['comprado_por'] ?? null;
+        $token = $_GET['token'] ?? null;
 
-        if($id) {
-            if(strpos($id, ",")) {
-                //echo "por array \n";
-
-                $ids = explode(",", $id);
-                $response = getIdsNumbers($ids, $jsonDecode);
+        if($token == $API_KEY) {
+            if($id) {
+                if(strpos($id, ",")) {
+                    //echo "por array \n";
+    
+                    $ids = explode(",", $id);
+                    $response = getIdsNumbers($ids, $jsonDecode);
+                }
+                else {
+                    //echo "por id \n";
+    
+                    $id = intval($id);
+                    $response = getIdNumber($id, $jsonDecode);
+                }
             }
+            else if($carrinho || isset($comprado_por)) {
+                // echo "por params \n";
+    
+                if($carrinho) {
+                    $response = getParamsNumbers($carrinho, 1, $jsonDecode);
+                }
+                else {
+                    $response = getParamsNumbers($comprado_por, 2, $jsonDecode);
+                }
+            }
+            else if($id === null) {
+                //echo "get All \n";
+    
+                $response = getAllNumbers($jsonDecode);            
+            } 
             else {
-                //echo "por id \n";
-
-                $id = intval($id);
-                $response = getIdNumber($id, $jsonDecode);
+                $response = [
+                    'erro' => 'Parametro sem valor'
+                ];
             }
         }
-        else if($carrinho || isset($comprado_por)) {
-            echo "por params \n";
-
-            if($carrinho) {
-                $response = getParamsNumbers($carrinho, 1, $jsonDecode);
-            }
-            else {
-                $response = getParamsNumbers($comprado_por, 2, $jsonDecode);
-            }
-        }
-        else if($id === null) {
-            //echo "get All \n";
-
-            $response = getAllNumbers($jsonDecode);            
-        } 
         else {
             $response = [
-                'erro' => 'Parametro sem valor'
+                'erro' => 'Token inválido'
             ];
         }
     }

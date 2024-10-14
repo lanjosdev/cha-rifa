@@ -57,6 +57,7 @@ export default function Checkout() {
                     if(JSON.parse(numerosCarrinhoCookie).length == 0) {
                         navigate('/');
                     }
+
                     setNumbersCarrinho(JSON.parse(numerosCarrinhoCookie));
                 }
                 else {
@@ -70,7 +71,7 @@ export default function Checkout() {
             }
         }
         verificaCookies();
-    }, [numerosCarrinhoCookie, sessaoCookie, pedidoConfirmadoCookie, navigate]);
+    }, [numerosCarrinhoCookie, sessaoCookie, pedidoConfirmadoCookie, navigate, inputNome, btnAvancar]);
 
     useEffect(()=> {
         function atualizaSubtotal() {
@@ -80,6 +81,7 @@ export default function Checkout() {
             if(numbersCarrinho.length >= 3) {
                 valorNum = 15;
             }
+
             let subtotal = valorNum * numbersCarrinho.length;
             setSubtotalCarrinho(subtotal);
         }
@@ -99,7 +101,7 @@ export default function Checkout() {
         setLoading(true);
 
         try {
-        let idCliente = numeroDel;
+        let idNum = numeroDel;
         // carrinho false
         let obj = {
             preco: 20,
@@ -108,11 +110,11 @@ export default function Checkout() {
             contato: null
         };
         
-        let formData = new FormData();
-        formData.append('id', idCliente);
-        formData.append('editObj', JSON.stringify(obj));
+        // let formData = new FormData();
+        // formData.append('id', idNum);
+        // formData.append('editObj', JSON.stringify(obj));
 
-        const response = await NUMEROS_UPDATE_ID(formData);
+        const response = await NUMEROS_UPDATE_ID(idNum, obj);
         let newNumbersCarrinho = numbersCarrinho.filter((number)=> number.id != response?.id);
         console.log('Novo carrinho: ', newNumbersCarrinho);      
 
@@ -137,6 +139,7 @@ export default function Checkout() {
     async function handleSubmitConfirmarCompra(contato)
     {
         const sessionCookie = Cookies.get('sessao');
+        console.log(sessionCookie);
         if(!sessionCookie) {
             navigate('/');
             return;
@@ -197,7 +200,7 @@ export default function Checkout() {
             }
 
             console.log('Fim handleSubmitConfirmarCompra()');
-            btn.classList.remove('hidden');
+            // btn.classList.remove('hidden');
             setLoading(false);
         }
     }
@@ -218,11 +221,11 @@ export default function Checkout() {
                     contato: inputPhone || null
                 };
                 
-                let formData = new FormData();
-                formData.append('id', idNum);
-                formData.append('editObj', JSON.stringify(obj));
+                // let formData = new FormData();
+                // formData.append('id', idNum);
+                // formData.append('editObj', JSON.stringify(obj));
     
-                const response = await NUMEROS_UPDATE_ID(formData);
+                const response = await NUMEROS_UPDATE_ID(idNum, obj);
                 console.log(response);
             }
         }

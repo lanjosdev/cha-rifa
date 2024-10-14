@@ -51,26 +51,34 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pega requisição via post
     $id = $_POST['id'] ?? null;
     $objEdit = $_POST['editObj'] ?? null;
+    $token = $_POST['token'] ?? null;
 
     if(isset($id) && isset($objEdit)) {
-        $id = intval($id);
-        $objEdit = json_decode($objEdit); //recebe em string e transforma em obj/array
+        if($token == $API_KEY) {
+            $id = intval($id);
+            $objEdit = json_decode($objEdit); //recebe em string e transforma em obj/array
 
-        if(json_last_error()) {
-            $response = [
-                'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
-            ];
-        }
-        else if($id > 0) {
-            // var_dump($id);
-            // var_dump($objEdit);
-            $response = updateItem($id, $objEdit, $jsonDecode);
+            if(json_last_error()) {
+                $response = [
+                    'erro' => 'Erro de JSON: Code (' . json_last_error() . ')'
+                ];
+            }
+            else if($id > 0) {
+                // var_dump($id);
+                // var_dump($objEdit);
+                $response = updateItem($id, $objEdit, $jsonDecode);
+            }
+            else {
+                $response = [
+                    'erro' => 'ID não definido'
+                ];
+            }
         }
         else {
             $response = [
-                'erro' => 'ID não definido'
+                'erro' => 'Token inválido'
             ];
-        }     
+        }
     }
     else {
         $response = [

@@ -1,5 +1,5 @@
 // Funcionalidades / Libs:
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NUMEROS_GET_ALL, NUMEROS_GET_ID, NUMEROS_UPDATE_ID, NUMEROS_GET_FILTER } from '../../API/requestAPI';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
@@ -50,6 +50,8 @@ export default function Home() {
     const numerosCarrinhoCookie = Cookies.get('numerosCarrinho');
     const sessaoCookie = Cookies.get('sessao');
     const pedidoConfirmadoCookie = Cookies.get('pedidoConfirmado');
+
+    const erroAPI = useRef(false);
     
     
     useEffect(()=> {
@@ -81,7 +83,12 @@ export default function Home() {
             try {
                 const response = await NUMEROS_GET_ALL();
                 console.log(response);
-        
+                
+                if(response?.erro) {
+                    setNumbers([]);
+                    return;
+                }
+
                 setNumbers(response);
             } 
             catch(erro) {
@@ -131,12 +138,12 @@ export default function Home() {
                                     contato: null
                                 };
     
-                                let formData = new FormData();
-                                formData.append('id', idNum);
-                                formData.append('editObj', JSON.stringify(obj));
+                                // let formData = new FormData();
+                                // formData.append('id', idNum);
+                                // formData.append('editObj', JSON.stringify(obj));
     
                                 try {
-                                    const responseUpdate = await NUMEROS_UPDATE_ID(formData);
+                                    const responseUpdate = await NUMEROS_UPDATE_ID(idNum, obj);
                                     console.log('Sucesso: ', responseUpdate);
                                 }
                                 catch(erro) {
@@ -264,6 +271,12 @@ export default function Home() {
             const response = await NUMEROS_GET_ID(idsStringConsulta);
             console.log(response);
 
+            if(response?.erro) {
+                toast.error(response.erro);
+                setLoading(false);
+                return;
+            }
+
             if(response?.length) {
                 let numsDisponiveis = response.filter((num)=> num.carrinho == false);
                 if(numbersCarrinho.length > 0) {
@@ -333,7 +346,9 @@ export default function Home() {
                 await updateAddNumCarrinho(updateAddCarrinho);
             }
 
-            setShowCart(true);
+            if(!erroAPI.current) {
+                setShowCart(true);
+            }
         }
         catch(erro) {
             console.log('DEU ERRO NA VERIFICAÇÃO: ', erro);
@@ -359,16 +374,25 @@ export default function Home() {
                 contato: null
             };
             
-            let formData = new FormData();
-            formData.append('id', idCliente);
-            formData.append('editObj', JSON.stringify(obj));
+            // let formData = new FormData();
+            // formData.append('id', idCliente);
+            // formData.append('editObj', JSON.stringify(obj));
 
             try {
-                const response = await NUMEROS_UPDATE_ID(formData);
+                const response = await NUMEROS_UPDATE_ID(idCliente, obj);
+                if(response?.erro) {
+                    console.error(response.erro);
+                    erroAPI.current = true;
+                    toast.error(response.erro);
+                    
+                    return;
+                }
+                erroAPI.current = false;
                 numerosCarrinho.push(response);
             }
             catch(error) {
-                console.log('DEU ERRO: ', error);
+                console.error('DEU ERRO: ', error);
+                erroAPI.current = true;
                 toast.error('Algum erro ao adicionar um numero no carrinho');
             }
         }
@@ -537,9 +561,9 @@ export default function Home() {
                 </div>
 
                 <div className="content-window" id='Premios'>
-                    <p><span>1° Lugar:</span> Ensaio Fotográfico com <a href="https://www.instagram.com/fotografia_caroline.b?igsh=MW02dXpoNHljOXQyZg==" target='_blank'>Cacau Brandão</a> (solo ou casal) <span>+</span> Vale compra de R$120 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
-                    <p><span>2° Lugar:</span> Vale compra de R$100 em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
-                    <p><span>3° Lugar:</span> Vale compra de R$80 no Ifood.</p>     
+                    <p><span>1° Lugar:</span> Ensaio Fotográfico com <a href="https://www.instagram.com/fotografia_caroline.b?igsh=MW02dXpoNHljOXQyZg==" target='_blank'>Cacau Brandão</a> (solo ou casal) <span>+</span> Vale compra de <b>R$120</b> em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
+                    <p><span>2° Lugar:</span> Vale compra de <b>R$100</b> em roupas e acessórios na <a href="https://www.instagram.com/afroperifa_?igsh=b2JwdDF5ZjFxcHp2" target='_blank'>Afroperifa</a>;</p>                   
+                    <p><span>3° Lugar:</span> Vale compra de <b>R$80</b> no Ifood.</p>     
 
                     <p>Observação: Os vales compra poderão ser optados por dinheiro.</p>              
                 </div>

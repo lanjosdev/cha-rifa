@@ -2,90 +2,90 @@
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "LUcas",
+        "comprado_por": null,
         "contato": null,
         "id": 1,
-        "update": "02\/09\/2024 00:26:30"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 2,
-        "update": "02\/09\/2024 01:57:45"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 3,
-        "update": "02\/09\/2024 02:01:36"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 4,
-        "update": "02\/09\/2024 00:27:58"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 5,
-        "update": "02\/09\/2024 00:27:56"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
-        "id": 6,
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 6,
+        "update": "09\/10\/2024 12:49:03"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 7,
-        "update": "02\/09\/2024 01:47:21"
+        "update": "09\/10\/2024 12:49:03"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 8,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:03"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 9,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:03"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 10,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:03"
     },
     {
-        "id": 11,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 11,
+        "update": "09\/10\/2024 13:19:34"
     },
     {
         "preco": 20.0,
@@ -93,23 +93,23 @@
         "comprado_por": null,
         "contato": null,
         "id": 12,
-        "update": "02\/09\/2024 02:04:07"
+        "update": "09\/10\/2024 13:19:34"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 13,
-        "update": "02\/09\/2024 02:03:54"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 14,
-        "update": "02\/09\/2024 02:04:05"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
@@ -117,319 +117,319 @@
         "comprado_por": null,
         "contato": null,
         "id": 15,
-        "update": "02\/09\/2024 02:03:56"
+        "update": "09\/10\/2024 12:07:07"
     },
     {
+        "preco": 15.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 16,
+        "update": "09\/10\/2024 12:44:23"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 17,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:17:12"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
+        "carrinho": true,
         "comprado_por": null,
         "contato": null,
         "id": 18,
-        "update": "02\/09\/2024 01:29:41"
+        "update": "11\/10\/2024 10:17:12"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 19,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:17:12"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 20,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:17:12"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 21,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:03"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 22,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:03"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 23,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 24,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 25,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 26,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 27,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 28,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 29,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 12:49:04"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 30,
+        "update": "09\/10\/2024 12:49:04"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 31,
+        "update": "11\/10\/2024 11:13:45"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 32,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 11:13:45"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Maria Linda",
+        "contato": "(11) 94906-6546",
         "id": 33,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "14\/10\/2024 02:05:52"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Maria Linda",
+        "contato": "(11) 94906-6546",
         "id": 34,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "14\/10\/2024 02:05:52"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Maria Linda",
+        "contato": "(11) 94906-6546",
         "id": 35,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "14\/10\/2024 02:05:52"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 36,
+        "update": "11\/10\/2024 10:17:12"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 37,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 38,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 39,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 40,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 41,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 42,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 43,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 44,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 45,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 46,
+        "update": "09\/10\/2024 13:30:48"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 47,
+        "update": "09\/10\/2024 13:30:48"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 48,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 49,
+        "update": "09\/10\/2024 13:03:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 50,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 13:03:20"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "MAria",
+        "contato": "(11) 94906-6546",
         "id": 51,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:35:58"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "MAria",
+        "contato": "(11) 94906-6546",
         "id": 52,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:35:58"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "MAria",
+        "contato": "(11) 94906-6546",
         "id": 53,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:35:58"
     },
     {
-        "id": 54,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 54,
+        "update": "11\/10\/2024 10:22:28"
     },
     {
         "id": 55,
@@ -480,28 +480,28 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Maria",
+        "contato": null,
         "id": 61,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:44:54"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Maria",
+        "contato": null,
         "id": 62,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:44:54"
     },
     {
-        "id": 63,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 63,
+        "update": "11\/10\/2024 10:42:55"
     },
     {
         "id": 64,
@@ -520,28 +520,28 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 66,
+        "update": "11\/10\/2024 10:46:31"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 67,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:46:31"
     },
     {
-        "id": 68,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 68,
+        "update": "11\/10\/2024 10:46:31"
     },
     {
         "id": 69,
@@ -560,28 +560,28 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 71,
+        "update": "09\/10\/2024 14:13:25"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 72,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 14:13:26"
     },
     {
-        "id": 73,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 73,
+        "update": "09\/10\/2024 14:13:27"
     },
     {
         "id": 74,
@@ -640,36 +640,36 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Mar",
+        "contato": "(11) 9490_-____",
         "id": 81,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:49:36"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Mar",
+        "contato": "(11) 9490_-____",
         "id": 82,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:49:36"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Mar",
+        "contato": "(11) 9490_-____",
         "id": 83,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 10:49:36"
     },
     {
-        "id": 84,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 84,
+        "update": "09\/10\/2024 14:13:36"
     },
     {
         "id": 85,
@@ -680,12 +680,12 @@
         "update": null
     },
     {
-        "id": 86,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 86,
+        "update": "11\/10\/2024 11:16:29"
     },
     {
         "id": 87,
@@ -720,20 +720,20 @@
         "update": null
     },
     {
-        "id": 91,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 91,
+        "update": "11\/10\/2024 10:53:40"
     },
     {
-        "id": 92,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 92,
+        "update": "11\/10\/2024 10:53:40"
     },
     {
         "id": 93,
@@ -768,12 +768,12 @@
         "update": null
     },
     {
-        "id": 97,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 97,
+        "update": "14\/10\/2024 02:17:54"
     },
     {
         "id": 98,
@@ -1200,20 +1200,20 @@
         "update": null
     },
     {
-        "id": 151,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 151,
+        "update": "11\/10\/2024 10:54:32"
     },
     {
-        "id": 152,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 152,
+        "update": "11\/10\/2024 10:54:32"
     },
     {
         "id": 153,
@@ -1248,12 +1248,12 @@
         "update": null
     },
     {
-        "id": 157,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 157,
+        "update": "14\/10\/2024 02:26:11"
     },
     {
         "id": 158,
@@ -1360,68 +1360,68 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 171,
+        "update": "11\/10\/2024 10:56:56"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 172,
+        "update": "11\/10\/2024 10:56:56"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 173,
+        "update": "11\/10\/2024 10:56:56"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 174,
+        "update": "11\/10\/2024 10:56:49"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 175,
+        "update": "11\/10\/2024 10:56:42"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 176,
+        "update": "11\/10\/2024 11:16:29"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 177,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 11:16:29"
     },
     {
-        "id": 178,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 178,
+        "update": "11\/10\/2024 11:15:50"
     },
     {
         "id": 179,
@@ -1440,163 +1440,163 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 181,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 11:14:05"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 182,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 11:14:05"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": null,
+        "contato": null,
         "id": 183,
+        "update": "11\/10\/2024 11:14:05"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 184,
+        "update": "09\/10\/2024 13:04:01"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 185,
+        "update": "11\/10\/2024 10:16:05"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 186,
+        "update": "11\/10\/2024 10:16:05"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 187,
+        "update": "11\/10\/2024 10:15:04"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 188,
+        "update": "11\/10\/2024 11:08:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 189,
+        "update": "11\/10\/2024 11:08:20"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 190,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "11\/10\/2024 11:08:20"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "ultimo",
+        "contato": null,
         "id": 191,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:13:33"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "cvbgf",
+        "contato": null,
         "id": 192,
+        "update": "09\/10\/2024 15:22:08"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 193,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:35:07"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Teste",
+        "contato": null,
         "id": 194,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:04:21"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Teste",
+        "contato": null,
         "id": 195,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:04:21"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "ds",
+        "contato": null,
         "id": 196,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:06:33"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Lucas",
+        "contato": null,
         "id": 197,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 14:41:39"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Outro",
+        "contato": null,
         "id": 198,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:03:23"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Outro",
+        "contato": null,
         "id": 199,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "09\/10\/2024 15:03:23"
     },
     {
-        "id": 200,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
+        "carrinho": true,
+        "comprado_por": "Lucas",
         "contato": null,
-        "update": null
+        "id": 200,
+        "update": "09\/10\/2024 14:41:39"
     }
 ]

@@ -273,6 +273,17 @@
         margin-top: 3rem;
         text-shadow: 0 0 5px #ffffff8f;
     }
+
+    @media (max-width: 480px) {
+        @media (min-height: 798px) {
+            padding: 4rem 1.7rem 6.5rem;
+        }
+    }
+    @media (min-width: 481px) {
+        @media (min-height: 840px) {
+            padding: 4rem 1.7rem 6.5rem;
+        }
+    }
 }
 
 footer {
@@ -290,14 +301,14 @@ footer {
 
     @media (max-width: 480px) {
         @media (min-height: 798px) {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
     }
     @media (min-width: 481px) {
         @media (min-height: 840px) {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }

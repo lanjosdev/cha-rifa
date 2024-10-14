@@ -1,17 +1,25 @@
-// Config JSON:
-import api from './configAPI.json';
 // Funcionalidades / Libs:
 import axios from "axios";
 
+// Config JSON:
+// import api from '../../public/configApi.json';
+
 // Variaveis:
 // Base URL: http://10.10.0.210:8000/api
-export const API_URL = api.api_url;
+export const API_URL = import.meta.env.VITE_API_URL;
+export const API_KEY = import.meta.env.VITE_API_KEY;
+// console.log(API_URL, API_KEY)
 
 
 // End-Points / Rotas da API:
 // Adiciona array de objetos (CREATE):
-export async function NUMEROS_CREATE_ALL(formData) {
+export async function NUMEROS_CREATE_ALL(qtd, preco) {
    console.log('CALL FUNCTION API');
+
+   let formData = new FormData();
+   formData.append('token', API_KEY);
+   formData.append('qtd', qtd);
+   formData.append('preco', preco);
 
    const response = await axios.post(API_URL + '/create.php', formData);
 
@@ -23,7 +31,7 @@ export async function NUMEROS_CREATE_ALL(formData) {
 export async function NUMEROS_GET_ALL() {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/read.php');
+   const response = await axios.get(API_URL + '/read.php?token=' + API_KEY);
 
    // console.log(response.data);
    return response.data;
@@ -33,7 +41,7 @@ export async function NUMEROS_GET_ALL() {
 export async function NUMEROS_GET_ID(id) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/read.php?id=' + id, { 
+   const response = await axios.get(API_URL + '/read.php?token=' + API_KEY + '&id=' + id, { 
       headers: { "Accept": "application/json" }
    });
 
@@ -45,7 +53,7 @@ export async function NUMEROS_GET_ID(id) {
 export async function NUMEROS_GET_FILTER(param) {
    console.log('CALL FUNCTION API');
 
-   const response = await axios.get(API_URL + '/numeros?' + param.key + '=' + param.value, { 
+   const response = await axios.get(API_URL + '/read.php?token=' + API_KEY + '&' + param.key + '=' + param.value, { 
       headers: { "Accept": "application/json" }
    });
 
@@ -54,13 +62,18 @@ export async function NUMEROS_GET_FILTER(param) {
 }
 
 // Edita Numero (UPDATE):
-export async function NUMEROS_UPDATE_ID(formData) {
+export async function NUMEROS_UPDATE_ID(id, obj) {
    console.log('CALL FUNCTION API');
+
+   let formData = new FormData();
+   formData.append('token', API_KEY);
+   formData.append('id', id);
+   formData.append('editObj', JSON.stringify(obj));
 
    const response = await axios({
       method: 'post',
       url: API_URL + '/update.php',
-      data: formData, // ID já está no formData
+      data: formData
    });
 
    // console.log(response.data);
