@@ -467,9 +467,9 @@ export default function Home() {
 
             <div className='filter'>
                 <div className="btns">
-                    <button className='btn'>Disponíveis<small>{numbers.filter(num => num.carrinho == false).length}</small></button>
-                    <button className='btn reservado'>Reservados<small>{numbers.filter(num => num.carrinho && num.comprado_por == null).length}</small></button>
-                    <button className='btn comprado'>Comprados<small>{numbers.filter(num => num.comprado_por).length}</small></button>
+                    <button className='btn'>Disponíveis<small>{numbers?.filter(num => num.carrinho == false).length}</small></button>
+                    <button className='btn reservado'>Reservados<small>{numbers?.filter(num => num.carrinho && num.comprado_por == null).length}</small></button>
+                    <button className='btn comprado'>Comprados<small>{numbers?.filter(num => num.comprado_por).length}</small></button>
                 </div>
             </div>
 
