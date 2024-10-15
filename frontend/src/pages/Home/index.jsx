@@ -79,7 +79,7 @@ export default function Home() {
             else {
                 preloadLink.setAttribute('rel', 'preload');
                 console.log(preloadLink);
-                setShowModalIntro(true);
+                setTimeout(()=> setShowModalIntro(true), 200);
             }
 
             
