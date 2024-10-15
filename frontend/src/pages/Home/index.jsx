@@ -66,6 +66,8 @@ export default function Home() {
 
             //=> Valida o primeiro acesso
             const primeiroAcesso = localStorage.getItem('primeiroAcesso');
+            const preloadLink = document.querySelector('[href="./banner.webp"]');
+            console.log(preloadLink);
             
             if(primeiroAcesso) {
                 setShowModalIntro(false);
@@ -75,6 +77,8 @@ export default function Home() {
                 }
             }
             else {
+                preloadLink.setAttribute('rel', 'preload');
+                console.log(preloadLink);
                 setShowModalIntro(true);
             }
 
