@@ -21,7 +21,8 @@ import { formatarCasasNumero } from '../../utils/formatNumbers';
 // Assets:
 import Logo from '../../assets/logo.png';
 import PixLogo from '../../assets/pix-logo-orange.svg';
-import Capa from '../../assets/capa.webp';
+import Capa from '../../assets/capaT.webp';
+import Preco from '../../assets/preco.png';
 // import primeiro from '../../assets/1.jpg';
 // import segundo from '../../assets/2.jpg';
 // import terceiro from '../../assets/3.jpg';
@@ -447,7 +448,8 @@ export default function Home() {
             <div className="grid">
 
             <div className="capa">
-                <img src={Capa} alt="Capa da rifa" />
+                <img className='img-capa' src={Capa} alt="Capa da rifa" />
+                <img className='img-preco' src={Preco} alt="Preço da rifa" />
 
                 <a className='btn-add move-down' href='#iniciar'>
                     <span>Escolha seus números</span>

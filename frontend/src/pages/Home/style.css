@@ -47,15 +47,28 @@
     } */
 
     .capa {
+        /* background-color: aqua; */
+        position: relative;
         padding-top: 3.5rem;
 
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        img {
-            max-width: 35rem;
-            transform: translateX(-.7rem);
+        .img-preco {
+            /* background-color: rgba(255, 0, 0, 0.315); */
+            max-width: 14rem;
+
+            position: absolute;
+            top: 1.8rem;
+            left: 1rem;
+
+            transform: rotate(-15deg);
+        }
+        .img-capa {
+            margin-top: 2rem;
+            max-width: 34rem;
+            transform: translateX(-.3rem);
         }
         .btn-add {
             transform: translateY(-30%);
