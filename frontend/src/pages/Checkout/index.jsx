@@ -346,10 +346,11 @@ export default function Checkout() {
                         mask="(99) 99999-9999"
                         value={inputPhone}
                         onChange={(e) => setInputPhone(e.target.value)}
+                        required
                         />
                     </div>
 
-                    <button className='btn-add' disabled={inputNome.length < 2} onClick={()=> setBtnAvancar(true)}>Avançar</button>
+                    <button className='btn-add' disabled={inputNome.length < 2 || inputPhone.match(/\d+/g)?.join('')?.length != 11} onClick={()=> setBtnAvancar(true)}>Avançar</button>
                 </div>
 
                 <div className={`top ${btnAvancar ? '' : 'desativado'}`}>
