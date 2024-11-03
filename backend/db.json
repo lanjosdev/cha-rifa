@@ -2,82 +2,82 @@
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Wallysson",
+        "contato": "(11) 95931-8458",
         "id": 1,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "01\/08\/2024 16:27:58"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
+        "comprado_por": "Vô Valdo",
         "contato": null,
         "id": 2,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "26\/07\/2024 00:15:38"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Larissa RIO",
+        "contato": "(21) 99349-5698",
         "id": 3,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "16\/07\/2024 20:49:48"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Natalia",
+        "contato": "(11) 97848-3103",
         "id": 4,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "17\/09\/2024 18:45:44"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
+        "comprado_por": "Vô Valdo",
         "contato": null,
         "id": 5,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "17\/07\/2024 13:31:39"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Wallysson",
+        "contato": "(11) 95931-8458",
         "id": 6,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "23\/07\/2024 00:49:33"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 7,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "17\/09\/2024 22:12:53"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Katielle ",
+        "contato": "(11) 99602-7062",
         "id": 8,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "03\/08\/2024 16:52:26"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 9,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "19\/08\/2024 13:05:43"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Ruan Mateus Francelino da Silva",
+        "contato": "(11) 98036-1616",
         "id": 10,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "16\/07\/2024 20:08:50"
     },
     {
         "preco": 20.0,
@@ -85,159 +85,159 @@
         "comprado_por": null,
         "contato": null,
         "id": 11,
-        "update": "09\/10\/2024 13:19:34"
+        "update": "19\/08\/2024 14:49:07"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Flor",
+        "contato": "(11) 96027-0623",
         "id": 12,
-        "update": "09\/10\/2024 13:19:34"
+        "update": "03\/08\/2024 16:55:36"
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Renato",
+        "contato": "(11) 96142-1443",
         "id": 13,
+        "update": "17\/07\/2024 11:30:47"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 14,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "16\/07\/2024 23:27:50"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Aruã Carlos Coelho ",
+        "contato": "(11) 98927-5716",
         "id": 15,
-        "update": "09\/10\/2024 12:07:07"
+        "update": "21\/07\/2024 18:57:04"
     },
     {
-        "preco": 15.0,
+        "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Ruan Mateus Francelino da Silva",
+        "contato": "(11) 98036-1616",
         "id": 16,
-        "update": "09\/10\/2024 12:44:23"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 17,
-        "update": "11\/10\/2024 10:17:12"
+        "update": "16\/07\/2024 20:08:50"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
+        "id": 17,
+        "update": "17\/07\/2024 19:21:22"
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Vô Valdo",
         "contato": null,
         "id": 18,
-        "update": "11\/10\/2024 10:17:12"
+        "update": "17\/07\/2024 13:31:39"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Rafaela",
+        "contato": "(11) 97414-0248",
         "id": 19,
-        "update": "11\/10\/2024 10:17:12"
+        "update": "03\/08\/2024 14:31:29"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Edileuza ",
+        "contato": "(11) 95703-1474",
         "id": 20,
-        "update": "11\/10\/2024 10:17:12"
+        "update": "17\/09\/2024 21:49:10"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 21,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "16\/07\/2024 23:27:49"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 22,
-        "update": "09\/10\/2024 12:49:03"
+        "update": "16\/07\/2024 23:27:41"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Wallysson",
+        "contato": "(11) 95931-8458",
         "id": 23,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "23\/07\/2024 00:49:34"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Isadora Melina ",
+        "contato": "(11) 98116-3560",
         "id": 24,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "16\/07\/2024 23:48:33"
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
         "id": 25,
-        "update": "09\/10\/2024 12:49:04"
-    },
-    {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 26,
-        "update": "09\/10\/2024 12:49:04"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Gilmara Bastos ",
+        "contato": "(11) 91256-2299",
         "id": 27,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "17\/09\/2024 20:07:11"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Katielle ",
+        "contato": "(11) 99602-7062",
         "id": 28,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "03\/08\/2024 16:52:26"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Natalia",
+        "contato": "(11) 97848-3103",
         "id": 29,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "17\/09\/2024 18:45:44"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 30,
-        "update": "09\/10\/2024 12:49:04"
+        "update": "16\/07\/2024 23:27:46"
     },
     {
         "preco": 20.0,
@@ -245,63 +245,63 @@
         "comprado_por": null,
         "contato": null,
         "id": 31,
-        "update": "11\/10\/2024 11:13:45"
+        "update": "16\/07\/2024 23:27:41"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
         "id": 32,
-        "update": "11\/10\/2024 11:13:45"
+        "update": "17\/07\/2024 19:21:22"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "Maria Linda",
-        "contato": "(11) 94906-6546",
+        "comprado_por": "Larissa RIO",
+        "contato": "(21) 99349-5698",
         "id": 33,
-        "update": "14\/10\/2024 02:05:52"
+        "update": "16\/07\/2024 20:49:48"
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Maria Linda",
-        "contato": "(11) 94906-6546",
         "id": 34,
-        "update": "14\/10\/2024 02:05:52"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "Maria Linda",
-        "contato": "(11) 94906-6546",
+        "comprado_por": "Camila Mayumi ",
+        "contato": "(11) 99240-9454",
         "id": 35,
-        "update": "14\/10\/2024 02:05:52"
+        "update": "17\/07\/2024 07:11:27"
+    },
+    {
+        "id": 36,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "id": 37,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
-        "id": 36,
-        "update": "11\/10\/2024 10:17:12"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 37,
-        "update": "09\/10\/2024 13:03:20"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "comprado_por": "Denise",
+        "contato": "(11) 98065-2462",
         "id": 38,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "17\/09\/2024 12:33:14"
     },
     {
         "preco": 20.0,
@@ -309,55 +309,55 @@
         "comprado_por": null,
         "contato": null,
         "id": 39,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "16\/07\/2024 23:27:40"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 40,
-        "update": "09\/10\/2024 13:03:20"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 41,
-        "update": "09\/10\/2024 13:03:20"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 42,
-        "update": "09\/10\/2024 13:03:20"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Ketellyn",
+        "contato": "(11) 98886-8104",
         "id": 43,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "31\/07\/2024 17:48:54"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Hiago ",
+        "contato": "(11) 97727-8509",
         "id": 44,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "03\/08\/2024 15:26:09"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Claudineia Santos Figueredo ",
+        "contato": "(11) 96555-0355",
         "id": 45,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "20\/08\/2024 18:12:08"
     },
     {
         "preco": 20.0,
@@ -365,23 +365,23 @@
         "comprado_por": null,
         "contato": null,
         "id": 46,
-        "update": "09\/10\/2024 13:30:48"
+        "update": "16\/07\/2024 23:27:40"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 47,
-        "update": "09\/10\/2024 13:30:48"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Gilmara ",
+        "contato": "(11) 91256-2299",
         "id": 48,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "18\/09\/2024 10:53:24"
     },
     {
         "preco": 20.0,
@@ -389,71 +389,71 @@
         "comprado_por": null,
         "contato": null,
         "id": 49,
-        "update": "09\/10\/2024 13:03:20"
+        "update": "17\/07\/2024 00:39:29"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 50,
-        "update": "09\/10\/2024 13:03:20"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "MAria",
-        "contato": "(11) 94906-6546",
+        "comprado_por": "Duca",
+        "contato": "(11) 94897-2415",
         "id": 51,
-        "update": "11\/10\/2024 10:35:58"
+        "update": "31\/07\/2024 18:34:16"
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "MAria",
-        "contato": "(11) 94906-6546",
         "id": 52,
-        "update": "11\/10\/2024 10:35:58"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "MAria",
-        "contato": "(11) 94906-6546",
+        "comprado_por": "Aruã Carlos Coelho ",
+        "contato": "(11) 98927-5716",
         "id": 53,
-        "update": "11\/10\/2024 10:35:58"
+        "update": "21\/07\/2024 18:57:04"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
         "id": 54,
-        "update": "11\/10\/2024 10:22:28"
+        "update": "17\/07\/2024 19:21:22"
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 55,
+        "update": "17\/09\/2024 18:43:57"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 56,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "17\/07\/2024 17:59:46"
     },
     {
-        "id": 57,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
+        "id": 57,
+        "update": "17\/07\/2024 19:21:23"
     },
     {
         "id": 58,
@@ -464,15 +464,23 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Vô Valdo",
+        "contato": null,
         "id": 59,
+        "update": "17\/07\/2024 13:31:39"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 60,
+        "update": "17\/09\/2024 18:43:58"
+    },
+    {
+        "id": 61,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
@@ -480,28 +488,20 @@
         "update": null
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Maria",
-        "contato": null,
-        "id": 61,
-        "update": "11\/10\/2024 10:44:54"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Maria",
-        "contato": null,
         "id": 62,
-        "update": "11\/10\/2024 10:44:54"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 63,
-        "update": "11\/10\/2024 10:42:55"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "id": 64,
@@ -512,44 +512,44 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
         "id": 65,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "17\/07\/2024 19:21:23"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Lucas Bastos",
+        "contato": "(11) 97300-1717",
         "id": 66,
-        "update": "11\/10\/2024 10:46:31"
+        "update": "23\/07\/2024 21:36:59"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
+        "carrinho": true,
+        "comprado_por": "Vô Valdo",
         "contato": null,
         "id": 67,
-        "update": "11\/10\/2024 10:46:31"
+        "update": "17\/07\/2024 13:31:40"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 68,
-        "update": "11\/10\/2024 10:46:31"
-    },
-    {
-        "id": 69,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Cacau ",
+        "contato": "(11) 99753-6551",
+        "id": 69,
+        "update": "16\/07\/2024 23:35:24"
     },
     {
         "id": 70,
@@ -560,36 +560,36 @@
         "update": null
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 71,
-        "update": "09\/10\/2024 14:13:25"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 72,
-        "update": "09\/10\/2024 14:13:26"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 73,
-        "update": "09\/10\/2024 14:13:27"
-    },
-    {
-        "id": 74,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "update": null
+    },
+    {
+        "id": 72,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "id": 73,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Juscelene  Jô ",
+        "contato": "(11) 94974-4195",
+        "id": 74,
+        "update": "21\/09\/2024 17:50:56"
     },
     {
         "id": 75,
@@ -616,12 +616,12 @@
         "update": null
     },
     {
-        "id": 78,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "Edileuza ",
+        "contato": "(11) 95703-1474",
+        "id": 78,
+        "update": "17\/09\/2024 21:49:10"
     },
     {
         "id": 79,
@@ -640,36 +640,36 @@
         "update": null
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Mar",
-        "contato": "(11) 9490_-____",
         "id": 81,
-        "update": "11\/10\/2024 10:49:36"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Mar",
-        "contato": "(11) 9490_-____",
-        "id": 82,
-        "update": "11\/10\/2024 10:49:36"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Mar",
-        "contato": "(11) 9490_-____",
-        "id": 83,
-        "update": "11\/10\/2024 10:49:36"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
+        "id": 82,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Larissa Riooo",
+        "contato": "(21) 99934-9569",
+        "id": 83,
+        "update": "19\/08\/2024 18:17:25"
+    },
+    {
         "id": 84,
-        "update": "09\/10\/2024 14:13:36"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "id": 85,
@@ -680,20 +680,20 @@
         "update": null
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 86,
-        "update": "11\/10\/2024 11:16:29"
-    },
-    {
-        "id": 87,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "id": 87,
+        "update": "17\/07\/2024 00:39:28"
     },
     {
         "id": 88,
@@ -720,28 +720,28 @@
         "update": null
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 91,
-        "update": "11\/10\/2024 10:53:40"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 92,
-        "update": "11\/10\/2024 10:53:40"
-    },
-    {
-        "id": 93,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "update": null
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Fabricio Martins",
+        "contato": "(11) 95407-7414",
+        "id": 92,
+        "update": "18\/07\/2024 18:24:28"
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Fabricio Martins",
+        "contato": "(11) 95407-7414",
+        "id": 93,
+        "update": "18\/07\/2024 18:24:28"
     },
     {
         "id": 94,
@@ -768,12 +768,12 @@
         "update": null
     },
     {
+        "id": 97,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "id": 97,
-        "update": "14\/10\/2024 02:17:54"
+        "update": null
     },
     {
         "id": 98,
@@ -784,20 +784,20 @@
         "update": null
     },
     {
-        "id": 99,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "Camila Mayumi ",
+        "contato": "(11) 99240-9454",
+        "id": 99,
+        "update": "17\/07\/2024 07:11:27"
     },
     {
-        "id": 100,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "Edileuza ",
+        "contato": "(11) 95703-1474",
+        "id": 100,
+        "update": "17\/09\/2024 21:49:10"
     },
     {
         "id": 101,
@@ -818,10 +818,10 @@
     {
         "id": 103,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
+        "carrinho": true,
+        "comprado_por": "Sivalda",
         "contato": null,
-        "update": null
+        "update": "27\/10\/2024 13:06:10"
     },
     {
         "id": 104,
@@ -832,12 +832,12 @@
         "update": null
     },
     {
-        "id": 105,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 105,
+        "update": "18\/07\/2024 18:23:49"
     },
     {
         "id": 106,
@@ -880,20 +880,20 @@
         "update": null
     },
     {
-        "id": 111,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 111,
+        "update": "26\/07\/2024 23:15:39"
     },
     {
-        "id": 112,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 112,
+        "update": "09\/10\/2024 14:01:44"
     },
     {
         "id": 113,
@@ -960,12 +960,12 @@
         "update": null
     },
     {
-        "id": 121,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "DANIELY MORAIS ",
+        "contato": "(11) 96925-7597",
+        "id": 121,
+        "update": "17\/07\/2024 19:21:23"
     },
     {
         "id": 122,
@@ -1016,12 +1016,12 @@
         "update": null
     },
     {
-        "id": 128,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 128,
+        "update": "17\/07\/2024 00:39:26"
     },
     {
         "id": 129,
@@ -1056,36 +1056,36 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 133,
+        "update": "17\/07\/2024 17:59:47"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 134,
+        "update": "18\/08\/2024 17:07:38"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 135,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "18\/08\/2024 17:07:39"
     },
     {
-        "id": 136,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 136,
+        "update": "18\/08\/2024 17:07:39"
     },
     {
         "id": 137,
@@ -1096,12 +1096,12 @@
         "update": null
     },
     {
-        "id": 138,
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "carrinho": true,
+        "comprado_por": "Lucas Bastos",
+        "contato": "(11) 97300-1717",
+        "id": 138,
+        "update": "23\/07\/2024 21:36:58"
     },
     {
         "id": 139,
@@ -1136,36 +1136,36 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 143,
+        "update": "18\/08\/2024 17:07:38"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 144,
+        "update": "18\/08\/2024 17:07:38"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 145,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "18\/08\/2024 17:07:39"
     },
     {
-        "id": 146,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 146,
+        "update": "18\/08\/2024 17:07:39"
     },
     {
         "id": 147,
@@ -1200,20 +1200,20 @@
         "update": null
     },
     {
+        "id": 151,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "id": 151,
-        "update": "11\/10\/2024 10:54:32"
+        "update": null
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Gilmara Bastos ",
+        "contato": "(11) 91256-2299",
         "id": 152,
-        "update": "11\/10\/2024 10:54:32"
+        "update": "17\/09\/2024 20:07:11"
     },
     {
         "id": 153,
@@ -1240,20 +1240,20 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Lucas Bastos",
+        "contato": "(11) 97300-1717",
         "id": 156,
+        "update": "23\/07\/2024 21:36:59"
+    },
+    {
+        "id": 157,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "update": null
-    },
-    {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "id": 157,
-        "update": "14\/10\/2024 02:26:11"
     },
     {
         "id": 158,
@@ -1280,84 +1280,84 @@
         "update": null
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 161,
+        "update": "14\/10\/2024 02:51:49"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 162,
+        "update": "14\/10\/2024 02:51:52"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 163,
+        "update": "14\/10\/2024 02:51:50"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 164,
+        "update": "14\/10\/2024 02:51:53"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 165,
+        "update": "14\/10\/2024 02:51:54"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 166,
+        "update": "14\/10\/2024 02:51:55"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 167,
+        "update": "14\/10\/2024 02:51:56"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 168,
+        "update": "14\/10\/2024 02:51:57"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 169,
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
-        "update": null
+        "update": "14\/10\/2024 02:51:58"
     },
     {
-        "id": 170,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
+        "id": 170,
+        "update": "14\/10\/2024 02:51:59"
     },
     {
         "preco": 20.0,
@@ -1365,7 +1365,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 171,
-        "update": "11\/10\/2024 10:56:56"
+        "update": "14\/10\/2024 02:52:38"
     },
     {
         "preco": 20.0,
@@ -1373,7 +1373,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 172,
-        "update": "11\/10\/2024 10:56:56"
+        "update": "14\/10\/2024 02:52:39"
     },
     {
         "preco": 20.0,
@@ -1381,7 +1381,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 173,
-        "update": "11\/10\/2024 10:56:56"
+        "update": "14\/10\/2024 02:52:31"
     },
     {
         "preco": 20.0,
@@ -1389,7 +1389,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 174,
-        "update": "11\/10\/2024 10:56:49"
+        "update": "14\/10\/2024 02:52:24"
     },
     {
         "preco": 20.0,
@@ -1397,7 +1397,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 175,
-        "update": "11\/10\/2024 10:56:42"
+        "update": "14\/10\/2024 02:52:18"
     },
     {
         "preco": 20.0,
@@ -1405,7 +1405,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 176,
-        "update": "11\/10\/2024 11:16:29"
+        "update": "14\/10\/2024 02:52:16"
     },
     {
         "preco": 20.0,
@@ -1413,7 +1413,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 177,
-        "update": "11\/10\/2024 11:16:29"
+        "update": "14\/10\/2024 02:52:15"
     },
     {
         "preco": 20.0,
@@ -1421,18 +1421,34 @@
         "comprado_por": null,
         "contato": null,
         "id": 178,
-        "update": "11\/10\/2024 11:15:50"
+        "update": "14\/10\/2024 02:52:14"
     },
     {
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
         "id": 179,
+        "update": "14\/10\/2024 02:52:11"
+    },
+    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
-        "update": null
-    },
-    {
         "id": 180,
+        "update": "14\/10\/2024 02:52:00"
+    },
+    {
+        "id": 181,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "id": 182,
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
@@ -1441,27 +1457,11 @@
     },
     {
         "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
-        "id": 181,
-        "update": "11\/10\/2024 11:14:05"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": null,
-        "contato": null,
-        "id": 182,
-        "update": "11\/10\/2024 11:14:05"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
+        "carrinho": false,
         "comprado_por": null,
         "contato": null,
         "id": 183,
-        "update": "11\/10\/2024 11:14:05"
+        "update": "17\/09\/2024 21:53:32"
     },
     {
         "preco": 20.0,
@@ -1469,31 +1469,31 @@
         "comprado_por": null,
         "contato": null,
         "id": 184,
-        "update": "09\/10\/2024 13:04:01"
+        "update": "17\/09\/2024 21:54:50"
     },
     {
-        "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
         "id": 185,
-        "update": "11\/10\/2024 10:16:05"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 186,
-        "update": "11\/10\/2024 10:16:05"
-    },
-    {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
         "contato": null,
+        "update": null
+    },
+    {
         "id": 187,
-        "update": "11\/10\/2024 10:15:04"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
@@ -1501,7 +1501,7 @@
         "comprado_por": null,
         "contato": null,
         "id": 188,
-        "update": "11\/10\/2024 11:08:20"
+        "update": "16\/10\/2024 18:20:13"
     },
     {
         "preco": 20.0,
@@ -1509,94 +1509,94 @@
         "comprado_por": null,
         "contato": null,
         "id": 189,
-        "update": "11\/10\/2024 11:08:20"
+        "update": "16\/10\/2024 18:20:15"
     },
     {
         "preco": 20.0,
-        "carrinho": false,
-        "comprado_por": null,
-        "contato": null,
+        "carrinho": true,
+        "comprado_por": "Lucas Bastos",
+        "contato": "(11) 97300-1717",
         "id": 190,
-        "update": "11\/10\/2024 11:08:20"
+        "update": "23\/07\/2024 21:36:59"
     },
     {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "ultimo",
-        "contato": null,
         "id": 191,
-        "update": "09\/10\/2024 15:13:33"
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
+    },
+    {
+        "id": 192,
+        "preco": 20.0,
+        "carrinho": false,
+        "comprado_por": null,
+        "contato": null,
+        "update": null
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "cvbgf",
-        "contato": null,
-        "id": 192,
-        "update": "09\/10\/2024 15:22:08"
+        "comprado_por": "Lucas Bastos",
+        "contato": "(11) 97300-1717",
+        "id": 193,
+        "update": "23\/07\/2024 21:37:00"
+    },
+    {
+        "preco": 20.0,
+        "carrinho": true,
+        "comprado_por": "Natalia",
+        "contato": "(11) 97848-3103",
+        "id": 194,
+        "update": "17\/09\/2024 18:45:44"
     },
     {
         "preco": 20.0,
         "carrinho": false,
         "comprado_por": null,
-        "contato": null,
-        "id": 193,
-        "update": "09\/10\/2024 15:35:07"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Teste",
-        "contato": null,
-        "id": 194,
-        "update": "09\/10\/2024 15:04:21"
-    },
-    {
-        "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Teste",
         "contato": null,
         "id": 195,
-        "update": "09\/10\/2024 15:04:21"
+        "update": "16\/10\/2024 18:20:22"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "ds",
+        "carrinho": false,
+        "comprado_por": null,
         "contato": null,
         "id": 196,
-        "update": "09\/10\/2024 15:06:33"
+        "update": "27\/08\/2024 02:46:58"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Lucas",
+        "carrinho": false,
+        "comprado_por": null,
         "contato": null,
         "id": 197,
-        "update": "09\/10\/2024 14:41:39"
+        "update": "02\/09\/2024 02:07:09"
     },
     {
         "preco": 20.0,
-        "carrinho": true,
-        "comprado_por": "Outro",
+        "carrinho": false,
+        "comprado_por": null,
         "contato": null,
         "id": 198,
-        "update": "09\/10\/2024 15:03:23"
+        "update": "16\/10\/2024 18:19:38"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "Outro",
-        "contato": null,
+        "comprado_por": "Wallysson",
+        "contato": "(11) 95931-8458",
         "id": 199,
-        "update": "09\/10\/2024 15:03:23"
+        "update": "01\/08\/2024 16:27:58"
     },
     {
         "preco": 20.0,
         "carrinho": true,
-        "comprado_por": "Lucas",
-        "contato": null,
+        "comprado_por": "Duca",
+        "contato": "(11) 94897-2415",
         "id": 200,
-        "update": "09\/10\/2024 14:41:39"
+        "update": "31\/07\/2024 18:34:16"
     }
 ]
