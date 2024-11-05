@@ -356,18 +356,19 @@ export default function Checkout() {
                 <div className={`top ${btnAvancar ? '' : 'desativado'}`}>
                     <h3><span>2</span> Confirmar pedido:</h3>
                 </div>
+
                 {btnAvancar && 
                 <div className="concluir-pedido">
                     <p>Basta clicar em um dos botões abaixo para confirmar o seu pedido. Assim que clicar, será gerado os detalhes do seu pedido e direcionado para o respectivo contato para seguir com pagamento.</p>
 
                     <div className="btns-links">
-                        <button className='carol' onClick={()=> handleSubmitConfirmarCompra('Carol')} disabled={loading}> 
+                        <button className='carol' onClick={()=> handleSubmitConfirmarCompra('Carol')} disabled={loading || inputNome.length < 2 || inputPhone.match(/\d+/g)?.join('')?.length != 11}> 
                             {/* <img src={LogoPix} alt="" /> */}
                             <ion-icon name="logo-whatsapp"></ion-icon>
                             {loading ? 'Direcionando p/ a Carol...' : 'Confirmar Pedido com a Carol'}
                         </button>
 
-                        <button className='lucas' onClick={()=> handleSubmitConfirmarCompra('Lucas')} disabled={loading}> 
+                        <button className='lucas' onClick={()=> handleSubmitConfirmarCompra('Lucas')} disabled={loading || inputNome.length < 2 || inputPhone.match(/\d+/g)?.join('')?.length != 11}> 
                             {/* <img src={LogoPix} alt="" /> */}
                             <ion-icon name="logo-whatsapp"></ion-icon>
                             {loading ? 'Direcionando p/ o Lucas...' : 'Confirmar Pedido com o Lucas'}
